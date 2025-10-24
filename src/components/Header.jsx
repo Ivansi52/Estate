@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 import styles from '@/styles/Header.module.css';
 import { FaEnvelope } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
@@ -9,10 +10,28 @@ import LangChoice from './LangChoice';
 export default function Header() {
   const router = useRouter();
   const currentPath = router.pathname;
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Логика скролла для глассморфизма
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Добавляем эффект при скролле - усиление глассморфизма
+      setIsScrolled(currentScrollY > 50);
+    };
+
+    // Добавляем обработчик с правильными опциями
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   // Пример смены фона для активной страницы "/projects"
   const isProjectsPage = currentPath === '/projects';
-  const headerClass = `${styles.header} ${isProjectsPage ? styles.projectsBackground : ''}`;
+  const headerClass = `${styles.header} ${isProjectsPage ? styles.projectsBackground : ''} ${isScrolled ? styles.scrolled : ''}`;
 
   return (
     <header className={headerClass}>

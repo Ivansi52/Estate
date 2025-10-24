@@ -1,6 +1,6 @@
 .container {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   position: relative;
   overflow: hidden;
 }
@@ -14,16 +14,19 @@
   font-size: 48px;
   font-weight: 700;
   color: #1a1a1a;
-  margin: 0 0 16px 0;
-  line-height: 1.2;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #0344DC 0%, #022fa1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: 20px;
   color: #666;
-  margin: 0;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .sliderWrapper {
@@ -33,25 +36,36 @@
 }
 
 .swiper {
-  padding: 20px 0 60px 0;
+  padding: 20px 0 60px;
 }
 
 .testimonialCard {
   background: white;
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(3, 68, 220, 0.1);
   height: 100%;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
+}
+
+.testimonialCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0344DC 0%, #022fa1 100%);
 }
 
 .testimonialCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 .rating {
@@ -61,15 +75,15 @@
 }
 
 .star {
-  color: #fbbf24;
+  color: #ffc107;
   font-size: 18px;
 }
 
 .content {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #374151;
-  margin: 0 0 24px 0;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 30px;
   flex-grow: 1;
   font-style: italic;
 }
@@ -77,7 +91,7 @@
 .author {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 15px;
   margin-top: auto;
 }
 
@@ -86,8 +100,8 @@
   height: 60px;
   border-radius: 50%;
   overflow: hidden;
+  border: 3px solid #0344DC;
   flex-shrink: 0;
-  border: 3px solid #e5e7eb;
 }
 
 .avatarImage {
@@ -101,15 +115,15 @@
 }
 
 .authorName {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #1a1a1a;
-  margin: 0 0 4px 0;
+  margin-bottom: 4px;
 }
 
 .authorPosition {
   font-size: 14px;
-  color: #6b7280;
+  color: #666;
   margin: 0;
 }
 
@@ -117,68 +131,84 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: white;
-  border: 2px solid #e5e7eb;
+  border: 2px solid #0344DC;
+  color: #0344DC;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
-  color: #6b7280;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .navButton:hover {
   background: #0344DC;
-  border-color: #0344DC;
   color: white;
   transform: translateY(-50%) scale(1.1);
 }
 
 .prevButton {
-  left: -24px;
+  left: -25px;
 }
 
 .nextButton {
-  right: -24px;
+  right: -25px;
 }
 
-.swiper-pagination {
-  position: relative;
-  margin-top: 40px;
-  text-align: center;
+/* Пагинация */
+.container :global(.swiper-pagination) {
+  bottom: 0 !important;
 }
 
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: #d1d5db;
-  opacity: 1;
-  margin: 0 6px;
-  transition: all 0.3s ease;
+.container :global(.swiper-pagination-bullet) {
+  background: #0344DC !important;
+  opacity: 0.3 !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 6px !important;
 }
 
-.swiper-pagination-bullet-active {
-  background: #0344DC;
-  transform: scale(1.2);
+.container :global(.swiper-pagination-bullet-active) {
+  opacity: 1 !important;
+  background: #0344DC !important;
 }
 
-@media (max-width: 1024px) {
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .container {
+    padding: 80px 20px;
+  }
+  
   .title {
     font-size: 40px;
   }
   
+  .subtitle {
+    font-size: 18px;
+  }
+  
   .navButton {
-    display: none;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .prevButton {
+    left: -20px;
+  }
+  
+  .nextButton {
+    right: -20px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 60px 20px;
+    padding: 60px 15px;
   }
   
   .title {
@@ -190,11 +220,15 @@
   }
   
   .testimonialCard {
-    padding: 24px;
+    padding: 30px 20px;
   }
   
   .content {
-    font-size: 15px;
+    font-size: 16px;
+  }
+  
+  .navButton {
+    display: none;
   }
 }
 
@@ -204,12 +238,12 @@
   }
   
   .testimonialCard {
-    padding: 20px;
+    padding: 25px 15px;
   }
   
   .author {
     flex-direction: column;
     text-align: center;
-    gap: 12px;
+    gap: 10px;
   }
 }

@@ -108,14 +108,40 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   border-radius: 15px;
   border: 1px solid #01203F4D;
+  overflow: hidden;
+}
+
+.cardSmall::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(3, 68, 220, 0.1) 0%, rgba(3, 68, 220, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 15px;
+}
+
+.cardSmall:hover::before {
+  opacity: 1;
+}
+
+.cardSmall.active {
+  background: linear-gradient(135deg, rgba(3, 68, 220, 0.1) 0%, rgba(3, 68, 220, 0.05) 100%);
+  border: 2px solid rgba(3, 68, 220, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(3, 68, 220, 0.2);
 }
 
 .cardSmall:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .cardLogo {
@@ -192,6 +218,19 @@
   overflow: hidden;
   background-color: #0344DC;
   color: white;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.cardLargeWithImage:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(3, 68, 220, 0.3);
+}
+
+.cardLargeWithImage.active {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(3, 68, 220, 0.4);
+  background: linear-gradient(135deg, #0344DC 0%, #022fa1 100%);
 }
 
 /* Левая часть — контент */
@@ -352,7 +391,8 @@
   display: flex;
   gap: 20px;
   flex-wrap: nowrap; /* по умолчанию не переносим */
-  justify-content: flex-start; /* по умолчанию слева */
+  justify-content: center; /* центрируем карточки */
+  align-items: center; /* выравниваем по центру */
 }
 
 @media (max-width: 1500px) {

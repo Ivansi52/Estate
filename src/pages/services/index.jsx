@@ -6,7 +6,6 @@ import ServicesGrid from '@/components/services/ServicesGrid';
 import FAQ from '@/components/services/FAQ';
 import ChoiceSection from '@/components/services/ChoiceSection';
 import FullCycleCare from '@/components/services/FullCycleCare';
-// import AwardsSlider from '@/components/AwardsSlider';
 
 export default function Services() {
   return (

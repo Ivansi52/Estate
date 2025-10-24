@@ -9,11 +9,13 @@ import { useEffect, useState } from 'react';
 import { getOptimizedImageProps } from '@/utils/imageOptimization';
 
 export default function FirstBlock() {
+  const [hoveredLogo, setHoveredLogo] = useState(null);
+
   const logos = [
-    { src: LexusIcon, alt: "Lexus" },
-    { src: pionerIcon, alt: "Pioner" },
-    { src: slavDvorIcon, alt: "Slav Dvor" },
-    { src: RPIcon, alt: "River Park" },
+    { src: LexusIcon, alt: "Lexus", name: "Lexus" },
+    { src: pionerIcon, alt: "Pioner", name: "Pioner" },
+    { src: slavDvorIcon, alt: "Slav Dvor", name: "Slav Dvor" },
+    { src: RPIcon, alt: "River Park", name: "River Park" },
   ];
 
   // Дублируем массив для бесшовной анимации
@@ -60,11 +62,21 @@ export default function FirstBlock() {
         <div className={styles.logosGradientLeft}></div>
         <div className={styles.logosCarousel}>
           {duplicatedLogos.map((logo, index) => (
-            <div key={index} className={styles.logoItem}>
+            <div 
+              key={index} 
+              className={styles.logoItem}
+              onMouseEnter={() => setHoveredLogo(logo.name)}
+              onMouseLeave={() => setHoveredLogo(null)}
+            >
               <Image 
                 {...getOptimizedImageProps(logo.src, logo.alt, 150, 60)}
                 className={styles.logoImage}
               />
+              {hoveredLogo === logo.name && (
+                <div className={styles.logoTooltip}>
+                  {logo.name}
+                </div>
+              )}
             </div>
           ))}
         </div>

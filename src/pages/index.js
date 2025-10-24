@@ -10,7 +10,6 @@ import ProjectStages from '@/components/ProjectStages';
 import SixthSection from "@/components/SixthSection";
 import TrustedBlock from "@/components/TrustedBlock";
 import FeedBack from "@/components/FeedBack";
-// import TestimonialsSlider from "@/components/TestimonialsSlider";
 
 export default function Home() {
   return (

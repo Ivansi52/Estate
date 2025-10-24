@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import styles from '@/styles/SecondBlockMainPage.module.css';
 import { FaArrowRight, FaArrowUp } from 'react-icons/fa';
 import LogoCardIcon from '@/images/Users_Group.png';
@@ -6,6 +7,12 @@ import HesterenkaImage from '@/images/hesterenka.png';
 import { getOptimizedImageProps } from '@/utils/imageOptimization';
 
 export default function HeroBlock() {
+  const [expandedCard, setExpandedCard] = useState(null);
+
+  const handleServiceClick = (cardId) => {
+    // Если карточка уже раскрыта - закрываем её, иначе раскрываем
+    setExpandedCard(expandedCard === cardId ? null : cardId);
+  };
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -30,167 +37,340 @@ export default function HeroBlock() {
         <div className={styles.cardGrid}>
           <div className={styles.row}>
             {/* Маленькие карточки */}
-            <a href="#" className={styles.cardSmall}>
-              <div className={styles.cardLogo}>
-                <div className={styles.logoCircle}>
-                  <Image {...getOptimizedImageProps(LogoCardIcon, "Logo", 40, 40)} />
+            {expandedCard === 'card1' ? (
+              <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card1')}>
+                <div className={styles.cardContent}>
+                  <div className={styles.categories}>
+                    <span className={styles.category}>Web Design</span>
+                    <span className={styles.category}>Redesign</span>
+                    <span className={styles.category}>E-Commerce</span>
+                  </div>
+                  <div className={styles.titleDescBlock}>
+                    <h3 className={styles.largeCardTitle}>WebSite Development</h3>
+                    <p className={styles.largeCardDesc}>
+                      Modern, responsive websites delivered turnkey.
+                    </p>
+                    <p className={styles.largeCardTags}>
+                      → Landing pages, corporate sites, redesigns.
+                    </p>
+                  </div>
                 </div>
-                <div className={styles.titleAndDesc}>
-                  <h3 className={styles.cardTitle}>Contextual Advertising</h3>
-                  <p className={styles.cardDesc}>
-                    Setup and optimization of advertising campaigns.
+                <div className={styles.imageWrapper}>
+                  <Image
+                    {...getOptimizedImageProps(HesterenkaImage, "WebSite Development", 675, 675, true)}
+                  />
+                </div>
+                <div className={styles.cutCorner}></div>
+                <button className={styles.cutCornerButton}>
+                  <FaArrowUp />
+                </button>
+              </div>
+            ) : (
+              <div 
+                className={styles.cardSmall}
+                onClick={() => handleServiceClick('card1')}
+              >
+                <div className={styles.cardLogo}>
+                  <div className={styles.logoCircle}>
+                    <Image {...getOptimizedImageProps(LogoCardIcon, "Logo", 40, 40)} />
+                  </div>
+                  <div className={styles.titleAndDesc}>
+                    <h3 className={styles.cardTitle}>Contextual Advertising</h3>
+                    <p className={styles.cardDesc}>
+                      Setup and optimization of advertising campaigns.
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.cardBottom}>
+                  <p className={styles.cardTags}>
+                    → Google Ads, Yandex.Direct, RSYA, retargeting.
                   </p>
+                  <div className={styles.diagonalArrow}>
+                    <FaArrowRight />
+                  </div>
                 </div>
               </div>
+            )}
 
-              <div className={styles.cardBottom}>
-                <p className={styles.cardTags}>
-                  → Google Ads, Yandex.Direct, RSYA, retargeting.
-                </p>
-                <div className={styles.diagonalArrow}>
-                  <FaArrowRight />
+            {expandedCard === 'card2' ? (
+              <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card2')}>
+                <div className={styles.cardContent}>
+                  <div className={styles.categories}>
+                    <span className={styles.category}>Web Design</span>
+                    <span className={styles.category}>Redesign</span>
+                    <span className={styles.category}>E-Commerce</span>
+                  </div>
+                  <div className={styles.titleDescBlock}>
+                    <h3 className={styles.largeCardTitle}>WebSite Development</h3>
+                    <p className={styles.largeCardDesc}>
+                      Modern, responsive websites delivered turnkey.
+                    </p>
+                    <p className={styles.largeCardTags}>
+                      → Landing pages, corporate sites, redesigns.
+                    </p>
+                  </div>
                 </div>
+                <div className={styles.imageWrapper}>
+                  <Image
+                    {...getOptimizedImageProps(HesterenkaImage, "WebSite Development", 675, 675, true)}
+                  />
+                </div>
+                <div className={styles.cutCorner}></div>
+                <button className={styles.cutCornerButton}>
+                  <FaArrowUp />
+                </button>
               </div>
-            </a>
-
-            <a href="#" className={styles.cardSmall}>
-              <div className={styles.cardLogo}>
-                <div className={styles.logoCircle}>
-                  <Image {...getOptimizedImageProps(LogoCardIcon, "Logo", 40, 40)} />
+            ) : (
+              <div 
+                className={styles.cardSmall}
+                onClick={() => handleServiceClick('card2')}
+              >
+                <div className={styles.cardLogo}>
+                  <div className={styles.logoCircle}>
+                    <Image {...getOptimizedImageProps(LogoCardIcon, "Logo", 40, 40)} />
+                  </div>
+                  <div className={styles.titleAndDesc}>
+                    <h3 className={styles.cardTitle}>Contextual Advertising</h3>
+                    <p className={styles.cardDesc}>
+                      Setup and optimization of advertising campaigns.
+                    </p>
+                  </div>
                 </div>
-                <div className={styles.titleAndDesc}>
-                  <h3 className={styles.cardTitle}>Contextual Advertising</h3>
-                  <p className={styles.cardDesc}>
-                    Setup and optimization of advertising campaigns.
+                <div className={styles.cardBottom}>
+                  <p className={styles.cardTags}>
+                    → Google Ads, Yandex.Direct, RSYA, retargeting.
                   </p>
+                  <div className={styles.diagonalArrow}>
+                    <FaArrowRight />
+                  </div>
                 </div>
               </div>
-
-              <div className={styles.cardBottom}>
-                <p className={styles.cardTags}>
-                  → Google Ads, Yandex.Direct, RSYA, retargeting.
-                </p>
-                <div className={styles.diagonalArrow}>
-                  <FaArrowRight />
-                </div>
-              </div>
-            </a>
+            )}
 
             {/* Большая карточка с изображением и кнопкой в вырезе */}
-            <div className={styles.cardLargeWithImage}>
-              <div className={styles.cardContent}>
-                <div className={styles.categories}>
-                  <span className={styles.category}>Web Design</span>
-                  <span className={styles.category}>Redesign</span>
-                  <span className={styles.category}>E-Commerce</span>
+            {expandedCard === 'card3' ? (
+              <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card3')}>
+                <div className={styles.cardContent}>
+                  <div className={styles.categories}>
+                    <span className={styles.category}>Web Design</span>
+                    <span className={styles.category}>Redesign</span>
+                    <span className={styles.category}>E-Commerce</span>
+                  </div>
+                  <div className={styles.titleDescBlock}>
+                    <h3 className={styles.largeCardTitle}>WebSite Development</h3>
+                    <p className={styles.largeCardDesc}>
+                      Modern, responsive websites delivered turnkey.
+                    </p>
+                    <p className={styles.largeCardTags}>
+                      → Landing pages, corporate sites, redesigns.
+                    </p>
+                  </div>
                 </div>
-
-                <div className={styles.titleDescBlock}>
-                  <h3 className={styles.largeCardTitle}>WebSite Development</h3>
-                  <p className={styles.largeCardDesc}>
-                    Modern, responsive websites delivered turnkey.
-                  </p>
-                  <p className={styles.largeCardTags}>
-                    → Landing pages, corporate sites, redesigns.
-                  </p>
+                <div className={styles.imageWrapper}>
+                  <Image
+                    {...getOptimizedImageProps(HesterenkaImage, "WebSite Development", 675, 675, true)}
+                  />
                 </div>
-              </div>
-
-              <div className={styles.imageWrapper}>
-                <Image
-                  {...getOptimizedImageProps(HesterenkaImage, "WebSite Development", 675, 675, true)}
-                />
-              </div>
-
-              {/* Вырез */}
-              <div className={styles.cutCorner}></div>
-
-              {/* Кнопка поверх выреза */}
-              <button className={styles.cutCornerButton}>
-                <FaArrowUp />
+                <div className={styles.cutCorner}></div>
+                <button className={styles.cutCornerButton}>
+                  <FaArrowUp />
                 </button>
-            </div>
+              </div>
+            ) : (
+              <div 
+                className={styles.cardSmall}
+                onClick={() => handleServiceClick('card3')}
+              >
+                <div className={styles.cardLogo}>
+                  <div className={styles.logoCircle}>
+                    <Image {...getOptimizedImageProps(LogoCardIcon, "Logo", 40, 40)} />
+                  </div>
+                  <div className={styles.titleAndDesc}>
+                    <h3 className={styles.cardTitle}>Contextual Advertising</h3>
+                    <p className={styles.cardDesc}>
+                      Setup and optimization of advertising campaigns.
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.cardBottom}>
+                  <p className={styles.cardTags}>
+                    → Google Ads, Yandex.Direct, RSYA, retargeting.
+                  </p>
+                  <div className={styles.diagonalArrow}>
+                    <FaArrowRight />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className={styles.row}>
             {/* Большая карточка слева */}
-            <div className={styles.cardLargeWithImage}>
+            {expandedCard === 'card6' ? (
+              <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card6')}>
                 <div className={styles.cardContent}>
-                <div className={styles.categories}>
+                  <div className={styles.categories}>
                     <span className={styles.category}>Web Design</span>
                     <span className={styles.category}>Redesign</span>
                     <span className={styles.category}>E-Commerce</span>
-                </div>
-
-                <div className={styles.titleDescBlock}>
+                  </div>
+                  <div className={styles.titleDescBlock}>
                     <h3 className={styles.largeCardTitle}>WebSite Development</h3>
                     <p className={styles.largeCardDesc}>
-                    Modern, responsive websites delivered turnkey.
+                      Modern, responsive websites delivered turnkey.
                     </p>
                     <p className={styles.largeCardTags}>
-                    → Landing pages, corporate sites, redesigns.
+                      → Landing pages, corporate sites, redesigns.
                     </p>
+                  </div>
                 </div>
-                </div>
-
                 <div className={styles.imageWrapper}>
-                <Image
+                  <Image
                     {...getOptimizedImageProps(HesterenkaImage, "WebSite Development", 675, 675, true)}
-                />
+                  />
                 </div>
-
                 <div className={styles.cutCorner}></div>
                 <button className={styles.cutCornerButton}>
-                <FaArrowUp />
+                  <FaArrowUp />
                 </button>
-            </div>
+              </div>
+            ) : (
+              <div 
+                className={styles.cardSmall}
+                onClick={() => handleServiceClick('card6')}
+              >
+                <div className={styles.cardLogo}>
+                  <div className={styles.logoCircle}>
+                    <Image {...getOptimizedImageProps(LogoCardIcon, "Logo", 40, 40)} />
+                  </div>
+                  <div className={styles.titleAndDesc}>
+                    <h3 className={styles.cardTitle}>Contextual Advertising</h3>
+                    <p className={styles.cardDesc}>
+                      Setup and optimization of advertising campaigns.
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.cardBottom}>
+                  <p className={styles.cardTags}>
+                    → Google Ads, Yandex.Direct, RSYA, retargeting.
+                  </p>
+                  <div className={styles.diagonalArrow}>
+                    <FaArrowRight />
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Две маленькие карточки справа */}
-            <a href="#" className={styles.cardSmall}>
-                <div className={styles.cardLogo}>
-                <div className={styles.logoCircle}>
-                    <Image {...getOptimizedImageProps(LogoCardIcon, "Logo", 40, 40)} />
+            {expandedCard === 'card4' ? (
+              <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card4')}>
+                <div className={styles.cardContent}>
+                  <div className={styles.categories}>
+                    <span className={styles.category}>Web Design</span>
+                    <span className={styles.category}>Redesign</span>
+                    <span className={styles.category}>E-Commerce</span>
+                  </div>
+                  <div className={styles.titleDescBlock}>
+                    <h3 className={styles.largeCardTitle}>WebSite Development</h3>
+                    <p className={styles.largeCardDesc}>
+                      Modern, responsive websites delivered turnkey.
+                    </p>
+                    <p className={styles.largeCardTags}>
+                      → Landing pages, corporate sites, redesigns.
+                    </p>
+                  </div>
                 </div>
-                <div className={styles.titleAndDesc}>
+                <div className={styles.imageWrapper}>
+                  <Image
+                    {...getOptimizedImageProps(HesterenkaImage, "WebSite Development", 675, 675, true)}
+                  />
+                </div>
+                <div className={styles.cutCorner}></div>
+                <button className={styles.cutCornerButton}>
+                  <FaArrowUp />
+                </button>
+              </div>
+            ) : (
+              <div 
+                className={styles.cardSmall}
+                onClick={() => handleServiceClick('card4')}
+              >
+                <div className={styles.cardLogo}>
+                  <div className={styles.logoCircle}>
+                    <Image {...getOptimizedImageProps(LogoCardIcon, "Logo", 40, 40)} />
+                  </div>
+                  <div className={styles.titleAndDesc}>
                     <h3 className={styles.cardTitle}>Contextual Advertising</h3>
                     <p className={styles.cardDesc}>
-                    Setup and optimization of advertising campaigns.
+                      Setup and optimization of advertising campaigns.
                     </p>
+                  </div>
                 </div>
-                </div>
-
                 <div className={styles.cardBottom}>
-                <p className={styles.cardTags}>
+                  <p className={styles.cardTags}>
                     → Google Ads, Yandex.Direct, RSYA, retargeting.
-                </p>
-                <div className={styles.diagonalArrow}>
+                  </p>
+                  <div className={styles.diagonalArrow}>
                     <FaArrowRight />
+                  </div>
                 </div>
-                </div>
-            </a>
+              </div>
+            )}
 
-            <a href="#" className={styles.cardSmall}>
-                <div className={styles.cardLogo}>
-                <div className={styles.logoCircle}>
-                    <Image {...getOptimizedImageProps(LogoCardIcon, "Logo", 40, 40)} />
+            {expandedCard === 'card5' ? (
+              <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card5')}>
+                <div className={styles.cardContent}>
+                  <div className={styles.categories}>
+                    <span className={styles.category}>Web Design</span>
+                    <span className={styles.category}>Redesign</span>
+                    <span className={styles.category}>E-Commerce</span>
+                  </div>
+                  <div className={styles.titleDescBlock}>
+                    <h3 className={styles.largeCardTitle}>WebSite Development</h3>
+                    <p className={styles.largeCardDesc}>
+                      Modern, responsive websites delivered turnkey.
+                    </p>
+                    <p className={styles.largeCardTags}>
+                      → Landing pages, corporate sites, redesigns.
+                    </p>
+                  </div>
                 </div>
-                <div className={styles.titleAndDesc}>
+                <div className={styles.imageWrapper}>
+                  <Image
+                    {...getOptimizedImageProps(HesterenkaImage, "WebSite Development", 675, 675, true)}
+                  />
+                </div>
+                <div className={styles.cutCorner}></div>
+                <button className={styles.cutCornerButton}>
+                  <FaArrowUp />
+                </button>
+              </div>
+            ) : (
+              <div 
+                className={styles.cardSmall}
+                onClick={() => handleServiceClick('card5')}
+              >
+                <div className={styles.cardLogo}>
+                  <div className={styles.logoCircle}>
+                    <Image {...getOptimizedImageProps(LogoCardIcon, "Logo", 40, 40)} />
+                  </div>
+                  <div className={styles.titleAndDesc}>
                     <h3 className={styles.cardTitle}>Contextual Advertising</h3>
                     <p className={styles.cardDesc}>
-                    Setup and optimization of advertising campaigns.
+                      Setup and optimization of advertising campaigns.
                     </p>
+                  </div>
                 </div>
-                </div>
-
                 <div className={styles.cardBottom}>
-                <p className={styles.cardTags}>
+                  <p className={styles.cardTags}>
                     → Google Ads, Yandex.Direct, RSYA, retargeting.
-                </p>
-                <div className={styles.diagonalArrow}>
+                  </p>
+                  <div className={styles.diagonalArrow}>
                     <FaArrowRight />
+                  </div>
                 </div>
-                </div>
-            </a>
+              </div>
+            )}
             </div>
         </div>
       </div>
