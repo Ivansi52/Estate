@@ -1,0 +1,106 @@
+.container {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.windowSmall,
+.middleWindow,
+.windowSmallRight {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border: 1px solid gray;
+  border-radius: 10px;
+  color: #000000;
+}
+
+.windowSmall {
+  width: 699px;
+  height: 230px;
+}
+
+.middleWindow {
+  width: 699px;
+  height: 470px;
+}
+
+.windowSmallRight {
+  width: 462px;
+  height: 230px;
+}
+
+/* Заголовки с линейным градиентом (левая колонка и правая) */
+.gradientTitle {
+  font-weight: 400;
+  font-size: 40px;
+  max-width: 440px;
+  background: linear-gradient(90deg, #0344DC, #022476);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+/* Тексты под заголовками слева */
+.leftTopText {
+  font-weight: 400;
+  font-size: 16px;
+  max-width: 484px;
+  margin: 0;
+  line-height: 1.4;
+  margin-top: auto; /* оттягиваем вниз */
+}
+
+.leftBottomText {
+  font-weight: 400;
+  font-size: 16px;
+  max-width: 270px;
+  margin: 0;
+  line-height: 1.4;
+  margin-top: auto; /* оттягиваем вниз */
+}
+
+/* Правая колонка */
+
+/* Заголовок Our Mission и 98% — делаем по стилю gradientTitle, но с меньшим max-width */
+.rightColumn .gradientTitle {
+  font-size: 40px;
+  max-width: 440px;
+  margin: 0 0 10px 0;
+}
+
+/* Текст под Our Mission */
+.rightTopText {
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.4;
+  margin-top: auto; /* оттягиваем вниз */
+}
+
+/* Текст под 98% */
+.rightBottomText {
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.4;
+  margin-top: auto; /* оттягиваем вниз */
+}

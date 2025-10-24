@@ -1,0 +1,523 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.imageWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Левый верхний прямоугольник */
+.overlayBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 890px;
+  height: 230px;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  border-radius: 30px;
+  pointer-events: none;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.title {
+  color: black;
+  font-size: 80px;
+  line-height: 1.2;
+  font-weight: normal;
+  margin: 0;
+  user-select: none;
+  color: #0344DC;
+}
+
+.subtitle {
+  display: block;
+  margin-left: 20px;
+  font-size: 80px;
+  font-weight: normal;
+  color: #0344DC;
+}
+
+/* Новый блок в правом верхнем углу */
+.topRightBox {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 400px;
+}
+
+/* Контейнер для фото сотрудников */
+.photos {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Фото работников с заходом друг на друга */
+.personPhoto {
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  margin-left: -15px;
+  user-select: none;
+  flex-shrink: 0;
+  width: 50px !important;
+  height: 50px !important;
+}
+
+/* У первого фото нет отрицательного отступа */
+.personPhoto:first-child {
+  margin-left: 0;
+}
+
+/* Круг с +87% */
+.circle {
+  width: 85px;
+  height: 85px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.circleText {
+  font-size: 24px;
+  font-weight: 400;
+  color: black;
+  user-select: none;
+}
+
+/* Текст справа */
+.topRightText {
+  max-width: 250px;
+  margin: 0;
+  padding-left: 20px;
+  font-size: 18px;
+  color: white;
+  user-select: none;
+}
+
+/* Прямоугольник соц. сетей в правом нижнем углу */
+.socialBox {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 440px;
+  height: 80px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+.socialBox a img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.socialBox a:hover img {
+  transform: scale(1.1);
+}
+
+
+/* 📦 Контейнер формы */
+.formBox {
+  position: absolute;
+  top: calc(50% + 20px); /* немного ниже центра */
+  left: 20px;
+  transform: translateY(-25%);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 2;
+}
+
+/* Отступ между чекбоксом и кнопкой */
+.checkboxLabel {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* 📏 Ряд из двух полей */
+.inputRow {
+  display: flex;
+  gap: 5px;
+}
+
+/* 📝 Поля ввода (353x67 вместо 72) */
+.inputField,
+.selectField {
+  width: 353px;
+  height: 67px;
+  border-radius: 5px;
+  padding: 0 20px;
+  font-size: 18px;
+  outline: none;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.inputField:focus,
+.selectField:focus,
+.textArea:focus {
+  border-color: #0344DC;
+}
+
+/* 🔽 Селект с галочкой вниз */
+.selectField {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L5 6L10 0H0Z' fill='%23666'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 10px 6px;
+  cursor: pointer;
+}
+
+.selectField option {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(33px);
+  -webkit-backdrop-filter: blur(33px);
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+/* 🧾 Большое текстовое поле (711x143 вместо 148) */
+.textArea {
+  width: 726px;
+  height: 143px;
+  border-radius: 5px;
+  padding: 15px 20px;
+  font-size: 18px;
+  resize: none;
+  outline: none;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+/* ✅ Чекбокс и текст */
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: white;
+  user-select: none;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #0344DC;
+  cursor: pointer;
+}
+
+.sendButton {
+  width: 260px;
+  height: 67px;
+  border-radius: 15px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+
+  font-size: 24px;
+  font-weight: 400; /* regular */
+  color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* текст слева, стрелка справа */
+  padding: 0 20px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.sendButton:hover {
+  background-color: #f2f2f2;
+}
+
+/* Стрелка справа в круге */
+.arrowCircle {
+  width: 40px;
+  height: 40px;
+  background-color: #0344DC;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+
+/* ⏩ Круглая кнопка-стрелка внутри Send */
+.arrowCircle {
+  width: 40px;
+  height: 40px;
+  background-color: #0344DC;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.inputField,
+.selectField,
+.textArea {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(33px);
+  -webkit-backdrop-filter: blur(33px); /* Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  color: #fff;
+
+  font-size: 18px;
+  padding: 0 20px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Высоты и ширины */
+.inputField,
+.selectField {
+  width: 360px;
+  height: 67px;
+}
+
+.textArea {
+  width: 726px;
+  height: 143px;
+  padding: 15px 20px;
+  resize: none;
+}
+
+/* Placeholder стили (для светлого текста на фоне) */
+.inputField::placeholder,
+.selectField::placeholder,
+.textArea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Focus — белая граница */
+.inputField:focus,
+.selectField:focus,
+.textArea:focus {
+  border: 1px solid #fff;
+}
+
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+/* Стилизация состояния "checked" */
+.checkbox:checked {
+  background-color: white; /* фон остаётся белым */
+  border: 1px solid #0344DC;
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border: solid #0344DC;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .overlayBox {
+    width: 700px;
+    height: 180px;
+  }
+  
+  .title {
+    font-size: 60px;
+  }
+  
+  .subtitle {
+    font-size: 60px;
+  }
+  
+  .formBox {
+    width: 600px;
+    padding: 30px;
+  }
+  
+  .inputField,
+  .selectField {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .textArea {
+    font-size: 14px;
+  }
+  
+  .sendButton {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .overlayBox {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  
+  .title {
+    font-size: 40px;
+  }
+  
+  .subtitle {
+    font-size: 40px;
+  }
+  
+  .topRightBox {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+  }
+  
+  .formBox {
+    position: static;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .inputRow {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .inputField,
+  .selectField {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+  
+  .textArea {
+    font-size: 14px;
+    padding: 12px;
+  }
+  
+  .sendButton {
+    width: 100%;
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+  
+  .socialBox {
+    position: static;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .overlayBox {
+    padding: 10px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .subtitle {
+    font-size: 28px;
+  }
+  
+  .topRightBox {
+    padding: 10px;
+  }
+  
+  .formBox {
+    padding: 15px;
+  }
+  
+  .inputField,
+  .selectField {
+    font-size: 12px;
+    padding: 10px;
+  }
+  
+  .textArea {
+    font-size: 12px;
+    padding: 10px;
+  }
+  
+  .sendButton {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+  
+  .socialBox {
+    padding: 10px;
+    gap: 10px;
+  }
+}

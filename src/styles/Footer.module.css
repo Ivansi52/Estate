@@ -1,0 +1,523 @@
+.footer {
+  background-color: #0344DC;
+  padding: 40px 20px 20px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  border-radius: 15px;
+  max-width: 2000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* ЛЕВАЯ КОЛОНКА */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  position: relative;
+}
+
+.leftTop {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.logoWrapper {
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 128px;
+  width: 128px;
+  flex-shrink: 0;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+}
+
+.heading {
+  font-size: 26px;
+  font-weight: 400;
+  max-width: 350px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.details {
+  font-size: 14px;
+  color: #D1D1D1;
+  max-width: 230px;
+  margin-bottom: 12px;
+}
+
+.download {
+  font-size: 14px;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.leftBottom {
+  margin-top: auto;
+  display: flex;
+  gap: 40px;
+}
+
+/* NEWSLETTER BOX */
+.newsletterBox {
+  width: 440px;
+  height: 259px;
+  background-color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.newsletterTitle {
+  font-size: 40px;
+  font-weight: 400;
+  color: #0344DC;
+  margin: 0;
+}
+
+.newsletterSubtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #0344DC;
+  width: 398px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.emailInput {
+  border: none;
+  border-bottom: 2px solid #0344DC;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  color: #0344DC;
+  padding: 9px 4px;
+  width: 326px;
+}
+
+.sendButton {
+  width: 65px;
+  height: 65px;
+  background-color: #0344DC;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.agreeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #0344DC;
+  font-weight: 400;
+}
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #0344DC;
+  background-color: white;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid #0344DC;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox:focus {
+  outline: none;
+  outline-offset: 2px;
+}
+
+/* МЕНЮ И ЯЗЫК */
+.menuLangWrapper {
+  display: flex;
+  margin-top: -250px;
+  gap: 24px;
+  position: relative;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-left: 1200px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.menuColumns {
+  display: flex;
+  gap: 100px;
+  justify-content: flex-start;
+}
+
+
+.menuColumn {
+  min-width: 0;
+}
+
+.menuColumn:first-child {
+  margin-left: 0;
+}
+
+.menuTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.menuList li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menuList li:hover {
+  color: #A7B4FF;
+}
+
+/* ЯЗЫКОВОЙ СЕЛЕКТОР */
+.langSelector {
+  min-width: 80px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.langButton {
+  background: transparent;
+  border: none;
+  color: #0344DC;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.langButton:hover {
+  background-color: rgba(3, 68, 220, 0.1);
+}
+
+.langArrow {
+  transition: transform 0.3s ease;
+}
+
+.langSelector[aria-expanded='true'] .langArrow {
+  transform: rotate(180deg);
+}
+
+.langDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  width: 150px;
+  margin-top: 8px;
+  padding: 8px 0;
+  z-index: 100;
+  list-style: none;
+}
+
+.langOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  cursor: pointer;
+  color: #0344DC;
+  font-weight: 500;
+}
+
+.langOption:hover,
+.langOption[aria-selected="true"] {
+  background-color: #0344DC;
+  color: white;
+  border-radius: 6px;
+}
+
+/* ЦЕНТРАЛЬНАЯ КОЛОНКА */
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+  min-width: 300px;
+}
+
+.phoneRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.phoneBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phoneNumber {
+  font-size: 46px;
+  font-weight: 500;
+}
+
+.requestCallback {
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.callNote {
+  font-size: 14px;
+  color: #D1D1D1;
+  text-align: left;
+  margin-left: 80px;
+}
+
+/* ПРАВАЯ КОЛОНКА */
+.right {
+  align-items: flex-end;
+  text-align: right;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactLine {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.socialNumber {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+.footerBottomText {
+  max-width: 400px;
+  font-size: 14px;
+  font-weight: 400;
+  color: white; /* если фон синий, чтобы текст был виден */
+  text-align: right;
+  margin-left: auto; /* чтобы прижать к правому краю */
+  margin-top: 20px; /* небольшой отступ сверху */
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .left {
+    max-width: 100%;
+  }
+  
+  .menuLangWrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .menuColumns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 15px 15px;
+  }
+  
+  .leftTop {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .logo {
+    height: 80px;
+    width: 80px;
+  }
+  
+  .heading {
+    font-size: 20px;
+  }
+  
+  .details {
+    font-size: 12px;
+  }
+  
+  .menuColumns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .menuTitle {
+    font-size: 16px;
+  }
+  
+  .menuList {
+    font-size: 14px;
+  }
+  
+  .newsletterBox {
+    padding: 20px;
+  }
+  
+  .newsletterTitle {
+    font-size: 18px;
+  }
+  
+  .newsletterSubtitle {
+    font-size: 14px;
+  }
+  
+  .emailInput {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .sendButton {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .footerBottomText {
+    text-align: center;
+    margin: 20px auto 0;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px 10px;
+  }
+  
+  .logo {
+    height: 60px;
+    width: 60px;
+  }
+  
+  .heading {
+    font-size: 18px;
+  }
+  
+  .newsletterBox {
+    padding: 15px;
+  }
+  
+  .inputRow {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .emailInput {
+    width: 100%;
+  }
+  
+  .phoneNumber {
+    font-size: 16px;
+  }
+  
+  .contactLine {
+    font-size: 12px;
+  }
+}
+
+/* Родитель кнопки и дропдауна */
+.langSelector {
+  position: relative; /* чтобы absolute внутри позиционировался относительно этого блока */
+  z-index: 1000; /* чтобы поднять родитель */
+}
+
+/* Сам выпадающий список */
+.langDropdown {
+  position: absolute;
+  top: 25%; /* под кнопкой */
+  right: 0;  /* выравнивание по правому краю */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  width: 160px;
+  margin-top: 8px;
+  padding: 8px 0;
+  z-index: 1100; /* больше, чем у родителя и других элементов */
+  list-style: none;
+}

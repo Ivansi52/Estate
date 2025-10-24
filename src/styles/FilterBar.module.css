@@ -1,0 +1,182 @@
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px;
+  background: #f9f9f9;
+  position: relative;
+  z-index: 10;
+
+  max-width: 2000px;      /* Максимальная ширина */
+  margin-left: auto;      /* Центрирование по горизонтали */
+  margin-right: auto;
+}
+
+
+/* Кнопка "All filters" */
+.buttonStatic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: white;
+  color: black;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  height: 50px;
+  width: 410px;
+  border: 1px solid #ccc;
+  cursor: default;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.buttonStatic:hover {
+  background-color: #0344DC;
+  color: white;
+}
+
+/* Обёртка для кнопки и дропдауна */
+.filterButtonWrapper {
+  position: relative;
+  height: 50px;
+}
+
+.filterButtonWrapper:hover .filterButton {
+  background-color: #0344DC;
+  color: white;
+}
+
+.filterButtonWrapper:hover .dropdown {
+  display: block;
+}
+
+.filterButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Центрует текст */
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 0 16px;
+  height: 50px;
+  width: 226px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 400;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filterButton span {
+  z-index: 1;
+}
+
+.iconRight {
+  position: absolute;
+  right: 16px; /* отступ от правого края */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+
+.icon {
+  font-size: 16px;
+}
+
+/* Выпадающий список */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0344DC;
+  color: white;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  min-width: 226px;
+  z-index: 100;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.option:last-child {
+  margin-bottom: 0;
+}
+
+.option input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid white;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.option input:checked {
+  background-color: #0344DC;
+}
+
+.option input:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.iconLeftCircle {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  background-color: #0344DC;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.buttonLabel {
+  flex: 1;
+  text-align: center;
+  z-index: 1;
+}
+
+.filterButtonWrapper:hover .iconLeftCircle {
+  background-color: white;
+  color: #0344DC;
+}
+
+/* Для svg-иконок внутри круга - изменяем цвет fill и stroke */
+.filterButtonWrapper:hover .iconLeftCircle svg {
+  fill: #0344DC !important;
+  stroke: #0344DC !important;
+}
+
+/* Для текста (буква F) внутри круга */
+.filterButtonWrapper:hover .iconLeftCircle span,
+.filterButtonWrapper:hover .iconLeftCircle .figmaIcon {
+  color: #0344DC;
+}
+

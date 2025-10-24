@@ -1,0 +1,265 @@
+.faqContainer {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.mainContent {
+  display: flex;
+  gap: 60px;
+  /* margin-bottom: 60px; */
+}
+
+.leftColumn {
+  flex: 1;
+}
+
+.rightColumn {
+  flex: 1;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.number {
+  font-size: 300px;
+  font-weight: 400;
+  color: #B9B9C3;
+  line-height: 0.8;
+  flex-shrink: 0;
+}
+
+.headerContent {
+  max-width: 345px;
+  margin-top: -30px; /* Поднимаем заголовок и описание выше */
+  /* padding-top: 40px; убрал, чтобы не мешал */
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 400;
+  color: #01203F;
+  /* margin-bottom: 20px; */
+  line-height: 1.2;
+}
+
+.highlightedWord {
+  background-color: #0344DC;
+  color: white;
+  padding: 0 6px;
+  border-radius: 10px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 319px;
+  line-height: 1.5;
+  margin-top: 5px;
+  color: #7a7a7a;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.accordionItem {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordionButton {
+  width: 100%;
+  padding: 20px;
+  background: white;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #01203F;
+  transition: all 0.3s ease;
+}
+
+.accordionButton:hover {
+  background: #f8f8f8;
+}
+
+.accordionButton.active {
+  background: #f0f0f0;
+}
+
+.accordionButton.active .arrow {
+  transform: rotate(180deg);
+}
+
+.questionText {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: white;
+}
+
+.accordionContent.show {
+  max-height: 200px;
+}
+
+.accordionContent p {
+  padding: 0 20px 20px;
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.bottomSection {
+  width: 100%;
+}
+
+.blueCard {
+  background-color: #0344DC;
+  color: white;
+  padding: 20px;
+  height: 312px;
+  width: 612px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 32px;
+  font-weight: 400;
+  max-width: 350px;
+  /* margin-bottom: 20px; */
+  line-height: 1.3;
+}
+
+.cardDescription {
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 374px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #B9B9C3;
+}
+
+.requestButton {
+  background: white;
+  color: #0344DC;
+  border: none;
+  padding: 20px 30px;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 380px;
+  height: 73px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.requestButton:hover {
+  background: #f8f8f8;
+  transform: translateY(-2px);
+}
+
+.arrowCircle {
+  background: #0344DC;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.requestButton:hover .arrowCircle {
+  transform: translateX(4px);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .mainContent {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .headerWrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .number {
+    font-size: 200px;
+  }
+  
+  .headerContent {
+    padding-top: 0;
+    max-width: 100%;
+    margin-top: 0; /* Чтобы на планшете не поднималось слишком */
+  }
+  
+  .blueCard {
+    width: 100%;
+    max-width: 612px;
+  }
+}
+
+@media (max-width: 768px) {
+  .number {
+    font-size: 150px;
+  }
+  
+  .title {
+    font-size: 32px;
+  }
+  
+  .blueCard {
+    height: auto;
+    padding: 30px 20px;
+  }
+  
+  .requestButton {
+    width: 100%;
+    max-width: 380px;
+    font-size: 20px;
+    padding: 15px 20px;
+  }
+  
+  .cardTitle {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,90 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 20px;
+
+  max-width: 2000px; /* Максимальная ширина контейнера */
+  width: 100%;       /* Адаптивная ширина */
+  margin: 0 auto;    /* Центрируем по горизонтали */
+  justify-items: center; /* Центрируем содержимое ячеек по горизонтали */
+}
+
+.card {
+  width: 100%;       /* Занимает всю ширину ячейки */
+  max-width: 463px;  /* Максимальная ширина карточки */
+  height: 641px;
+  padding: 24px;
+  border: 1px solid #E0E0E0;
+  border-radius: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.category {
+  font-size: 16px;
+  color: #B9B9C3;
+  border: 1px solid #B9B9C3;
+  border-radius: 10px;
+  padding: 4px 12px;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 389px;
+  margin-bottom: 24px;
+  line-height: 1.4;
+  color: #000;
+}
+
+.bottomBlock {
+  margin-top: auto; /* прижимаем к низу */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px; /* расстояние между заголовком и изображением */
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 600;
+  max-width: 260px;
+  margin: 0;
+  color: #000;
+  line-height: 1.2;
+}
+
+.imageContainer {
+  width: 212px;
+  height: 212px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 0;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+/* Ограничим ширину при очень больших экранах */
+@media (min-width: 1600px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

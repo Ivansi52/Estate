@@ -1,0 +1,175 @@
+.background {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  height: 762px;
+  background: linear-gradient(135deg, #022476, #0344DC);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Вырез */
+.background::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 950px;
+  height: 450px;
+  background: #f6f6f6;
+  border-top-right-radius: 30px;
+  z-index: 1;
+}
+
+/* Контейнер внутри (если захочешь что-то добавить) */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Номер блока */
+.numberBadge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 300px;
+  font-weight: 400;
+  line-height: 0.9;
+  color: #b9b9c3;
+  z-index: -1;
+  letter-spacing: -0.11em;
+}
+
+/* Заголовок */
+.cornerText {
+  position: absolute;
+  bottom: 90px;
+  left: 20px;
+  max-width: 849px;
+  font-size: 130px;
+  font-weight: 400;
+  line-height: 0.9;
+  z-index: 2;
+
+  background: linear-gradient(135deg, #0344DC, #022476);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Описание */
+.cornerDescription {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  max-width: 849px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #01203F;
+  line-height: 1.6;
+  z-index: 2;
+}
+
+/* Контейнер с картинкой и текстом справа */
+.rightBlock {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 20px;
+  padding-top: 50px;
+  pointer-events: none;
+}
+
+/* Обёртка для картинки */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 95%;
+}
+
+/* Картинка */
+.image {
+  object-fit: contain;
+}
+
+/* Текст под фото */
+.underImageText {
+  display: flex;
+  align-items: center;
+  margin-top: -200px;
+  margin-left: 60px;
+  gap: 8px;
+}
+
+/* Текст "Implementing innovations" */
+.implementText {
+  max-width: 104px;
+  font-weight: 600;
+  color: white;
+  font-size: 16px;
+  line-height: 1.2;
+  user-select: none;
+}
+
+/* Контейнер для белых прямоугольников */
+.whiteBoxes {
+  position: absolute;
+  bottom: 20px;
+  right: 80px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  z-index: 2;
+}
+
+/* Одна карточка */
+.whiteBox {
+  width: 380px;
+  height: 120px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Правая карточка — текст выравниваем вправо */
+.whiteBox:last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Цифры */
+.whiteBoxNumber {
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 1;
+  display: block;
+
+  background: linear-gradient(135deg, #0344DC, #022476, #0344DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Подпись */
+.whiteBoxDescription {
+  font-size: 24px;
+  font-weight: 400;
+  color: #01203F;
+  max-width: 280px;
+  line-height: 1.2;
+}

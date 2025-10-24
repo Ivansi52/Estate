@@ -1,0 +1,426 @@
+/* ---------- Обёртка и заголовок ---------- */
+
+.wrapper {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.blockNumber {
+  font-size: 250px;
+  color: #B9B9C3;
+  font-weight: 400;
+  line-height: 1;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.textContent {
+  margin-left: 20px;
+  color: black;
+  max-width: 390px;
+}
+
+.heading {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.highlight {
+  background-color: #0344DC;
+  color: white;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.description {
+  font-size: 18px;
+  color: gray;
+  font-weight: 400;
+}
+
+/* ---------- Фон с изображением ---------- */
+
+.backgroundBlock {
+  background-color: #0344DC;
+  width: 100%;
+  height: 1043px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: -80px;
+  padding-top: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.imageWrapper {
+  width: 1682px;
+  height: 828px;
+  position: relative;
+  max-width: 100%;
+  z-index: 1;
+}
+
+/* ---------- Тексты поверх изображения ---------- */
+
+.textOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: 400;
+  color: white;
+  pointer-events: none;
+}
+
+.projectStages {
+  font-size: 48px;
+  font-weight: 400;
+  margin-top: 49px;
+  margin-bottom: 0;
+}
+
+.discovery {
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 138px;
+  margin-bottom: 0;
+}
+
+.information {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(201, 201, 201);
+  margin-top: 155px;
+  margin-bottom: 0;
+}
+
+.design {
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 67px;
+  margin-bottom: 0;
+}
+
+.growth {
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 250px;
+  margin-bottom: 0;
+}
+
+.support {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  margin-top: 120px;
+  margin-bottom: 0;
+}
+
+/* ---------- Step-тексты слева ---------- */
+
+.stepLabels {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+  color: white;
+  font-weight: 400;
+  width: 100%;
+  max-width: 1682px; /* как imageWrapper */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+.step {
+  font-size: 24px;
+  margin: 0 0 270px 0;
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ---------- Текст справа от центра ---------- */
+
+.stepDescriptions {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+  color: white;
+  font-weight: 400;
+  width: 100%;
+  max-width: 1682px; /* как imageWrapper */
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.descriptionText {
+  font-size: 14px;
+  max-width: 318px;
+  text-align: right;
+  margin-bottom: 200px;
+  line-height: 1.5;
+}
+
+.descriptionText:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ---------- Дополнительные тексты по краям ---------- */
+
+/* Левый текст: Wireframes */
+.wireframes {
+  position: absolute;
+  top: 445px;
+  left: 410px;
+  font-size: 14px;
+  color: white;
+  z-index: 3;
+  pointer-events: none;
+  font-weight: 400;
+  max-width: 200px;
+}
+
+/* Левый текст: Testing */
+.testing {
+  position: absolute;
+  bottom: 150px;
+  left: 370px;
+  font-size: 14px;
+  color: white;
+  z-index: 3;
+  pointer-events: none;
+  font-weight: 400;
+  max-width: 200px;
+}
+
+/* Правый текст: Interactive Prototype */
+.prototype {
+  position: absolute;
+  top: 445px;
+  right: 410px;
+  font-size: 14px;
+  color: white;
+  z-index: 3;
+  pointer-events: none;
+  font-weight: 400;
+  max-width: 200px;
+  text-align: right;
+}
+
+/* Правый текст: Launch */
+.launch {
+  position: absolute;
+  bottom: 150px;
+  right: 370px;
+  font-size: 14px;
+  color: white;
+  z-index: 3;
+  pointer-events: none;
+  font-weight: 400;
+  max-width: 200px;
+  text-align: right;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .blockNumber {
+    font-size: 200px;
+  }
+  
+  .heading {
+    font-size: 32px;
+  }
+  
+  .description {
+    font-size: 16px;
+  }
+  
+  .stepLabels {
+    left: 20px;
+  }
+  
+  .stepDescriptions {
+    right: 20px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0 15px;
+  }
+  
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .blockNumber {
+    font-size: 120px;
+    margin-bottom: 20px;
+  }
+  
+  .textContent {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  
+  .heading {
+    font-size: 28px;
+  }
+  
+  .description {
+    font-size: 14px;
+  }
+  
+  .backgroundBlock {
+    height: 400px;
+  }
+  
+  .imageWrapper {
+    height: 400px;
+  }
+  
+  .stepLabels {
+    position: static;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .step {
+    position: static;
+    background: rgba(255, 255, 255, 0.9);
+    color: #0344DC;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .step.active {
+    background: #0344DC;
+    color: white;
+  }
+  
+  .stepDescriptions {
+    position: static;
+    max-width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    margin: 20px 0;
+  }
+  
+  .stepTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .descriptionText {
+    font-size: 14px;
+  }
+  
+  .textOverlay {
+    position: static;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+  }
+  
+  .projectStages {
+    font-size: 24px;
+  }
+  
+  .discovery,
+  .design,
+  .growth {
+    font-size: 18px;
+  }
+  
+  .information,
+  .support {
+    font-size: 14px;
+  }
+  
+  /* Скрыть абсолютно позиционированные тексты на мобильных */
+  .wireframes,
+  .testing,
+  .prototype,
+  .launch {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .blockNumber {
+    font-size: 80px;
+  }
+  
+  .heading {
+    font-size: 24px;
+  }
+  
+  .description {
+    font-size: 12px;
+  }
+  
+  .step {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+  
+  .stepTitle {
+    font-size: 18px;
+  }
+  
+  .descriptionText {
+    font-size: 12px;
+  }
+  
+  .projectStages {
+    font-size: 20px;
+  }
+  
+  .discovery,
+  .design,
+  .growth {
+    font-size: 16px;
+  }
+}

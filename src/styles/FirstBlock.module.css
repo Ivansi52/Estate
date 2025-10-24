@@ -1,0 +1,240 @@
+.background {
+  width: 100%;
+  height: 1000px;
+  background: linear-gradient(to bottom, #022476, blue);
+  position: relative;
+  font-family: 'Helvetica', sans-serif;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 80px;
+  position: relative;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 3;
+  position: relative;
+}
+
+.buildingText {
+  font-size: 100px;
+  color: white;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.yourDigitalText {
+  font-size: 100px;
+  color: white;
+  line-height: 1;
+  margin: 0 0 30px 0;
+}
+
+.quoteButton {
+  height: 57px;
+  width: 260px;
+  background: white;
+  color: black;
+  border-radius: 15px;
+  border: none;
+  font-size: 20px;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quoteButton:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.arrowCircle {
+  width: 30px;
+  height: 30px;
+  background: #022476;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.waterImage {
+  object-fit: contain;
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  z-index: 3;
+  position: relative;
+}
+
+.description {
+  font-size: 16px;
+  color: white;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.successText {
+  font-size: 100px;
+  color: white;
+  line-height: 1;
+  margin: 0;
+}
+
+.togetherText {
+  font-size: 100px;
+  color: white;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Стили для карусели логотипов */
+.logosContainer {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.logosGradientLeft {
+  width: 100px;
+  height: 80px;
+  background: linear-gradient(to right, #F0F0F0, #0344DC);
+  z-index: 4;
+  position: relative;
+}
+
+.logosGradientRight {
+  width: 100px;
+  height: 80px;
+  background: linear-gradient(to left, #F0F0F0, #0344DC);
+  z-index: 4;
+  position: relative;
+}
+
+.logosCarousel {
+  display: flex;
+  animation: scroll 28s linear infinite;
+  transition: transform 1s ease-in-out;
+}
+
+.logoItem {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.logoImage {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Делает логотипы белыми */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .content {
+    padding: 0 40px;
+  }
+  
+  .buildingText,
+  .yourDigitalText {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .leftSection {
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .buildingText,
+  .yourDigitalText {
+    font-size: 60px;
+  }
+  
+  .quoteButton {
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+  }
+  
+  .rightSection {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .logoItem {
+    width: 150px;
+    height: 60px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buildingText,
+  .yourDigitalText {
+    font-size: 40px;
+  }
+  
+  .quoteButton {
+    width: 180px;
+    height: 45px;
+    font-size: 16px;
+  }
+  
+  .logoItem {
+    width: 120px;
+    height: 50px;
+    margin: 0 5px;
+  }
+}

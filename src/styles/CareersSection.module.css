@@ -1,0 +1,254 @@
+.careersSection {
+  padding: 80px 20px;
+  background: #f6f6f6;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.headerBlock {
+  position: relative;
+  margin-bottom: 60px;
+  max-width: 782px;
+}
+
+.numberBadge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 300px;
+  font-weight: 400;
+  line-height: 0.9;
+  color: #b9b9c3;
+  z-index: -1;
+  letter-spacing: -0.11em;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 0.9;
+  color: #01203f;
+  margin: 0 0 20px 0;
+  padding-left: 300px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  color: #01203f;
+  opacity: 0.5;
+  margin: 0;
+  padding-left: 300px;
+}
+
+.positionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 40px auto 40px;
+}
+
+.positionCard {
+  width: 699px;
+  height: 226px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.positionCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.positionContent {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 70px;
+  z-index: 2;
+}
+
+.positionNumber {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #b9b9c3;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+
+.positionTitle {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 0.9;
+  color: #01203f;
+  text-align: right;
+  letter-spacing: -0.07em;
+}
+
+.ellipse {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(3, 68, 220, 0.2);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.ellipse1 {
+  background-image: url('/images/ellipse1.png');
+}
+
+.ellipse2 {
+  background-image: url('/images/ellipse2.png');
+}
+
+.ellipse3 {
+  background-image: url('/images/ellipse3.png');
+}
+
+.ellipse4 {
+  background-image: url('/images/ellipse4.png');
+}
+
+.moreButton {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -20px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  background: #0344dc;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 191px;
+  height: 57px;
+  justify-content: center;
+}
+
+.button:hover {
+  background: #022476;
+  transform: translateY(-2px);
+}
+
+.buttonText {
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  font-family: Inter;
+}
+
+.arrowIcon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 50%;
+  color: #01203f;
+}
+
+.arrowIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .positionsGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .positionCard {
+    width: 100%;
+    max-width: 699px;
+    margin: 0 auto;
+  }
+  
+  .ellipse1,
+  .ellipse2,
+  .ellipse3,
+  .ellipse4 {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+    padding-left: 0;
+  }
+  
+  .subtitle {
+    padding-left: 0;
+  }
+  
+  .numberBadge {
+    font-size: 200px;
+  }
+  
+  .positionCard {
+    height: 180px;
+    border-radius: 100px;
+  }
+  
+  .positionContent {
+    padding: 0 40px;
+    gap: 10px;
+  }
+  
+  .positionNumber {
+    font-size: 48px;
+  }
+  
+  .positionTitle {
+    font-size: 24px;
+  }
+  
+  .button {
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  .buttonText {
+    font-size: 20px;
+  }
+  
+  .arrowIcon {
+    width: 35px;
+    height: 35px;
+  }
+}
+

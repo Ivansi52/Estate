@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+
+.header {
+  width: 100%;
+  height: 624px;
+  background: linear-gradient(to left, #022476, #0344DC);
+  position: relative;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 2000px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleContainer {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.h1 {
+  font-size: clamp(120px, 20vw, 340px);
+  color: white;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0344DC;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.breadcrumb {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.home {
+  color: white;
+  font-weight: 400;
+}
+
+.arrow {
+  color: rgb(206, 206, 206);
+}
+
+.current {
+  color: rgb(206, 206, 206);
+  font-weight: 400;
+}

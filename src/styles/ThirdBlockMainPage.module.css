@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.wrapper {
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 2000px;
+  position: relative;
+}
+
+/* ---------- Заголовок блока ---------- */
+/* ---------- Заголовок блока ---------- */
+.topBlock {
+  display: flex;
+  align-items: flex-start; /* Выравниваем элементы по верхнему краю */
+  gap: 30px; /* Отступ между номером и текстом */
+  margin-bottom: 10px;
+  position: relative; /* Контекст для абсолютного позиционирования, если нужно */
+  padding-left: 250px; /* Важно: Освобождаем место для абсолютно позиционированного номера */
+
+}
+
+.number {
+  position: absolute; /* Абсолютное позиционирование относительно .topBlock */
+  left: 0; /* Прижимаем номер к левому краю .topBlock */
+  top: -40px; /* Смещаем номер немного вверх относительно текста (регулируйте по вкусу) */
+  font-size: 200px;
+  color: #B9B9C3;
+  line-height: 1;
+  font-family: 'Inter', sans-serif;
+  z-index: 0;
+}
+
+.textBlock {
+  /* Убираем max-width: 268px; он слишком маленький и ломает layout */
+  color: black;
+  font-size: 40px;
+  font-weight: 400;
+  flex: 1; /* Позволяет текстовому блоку занимать все оставшееся пространство */
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 12px;
+}
+
+.highlight {
+  background-color: #0344DC;
+  color: white;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+.subtext {
+  max-width: 431px;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Первый ряд ---------- */
+.topRow {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+
+/* Карточки */
+.cardLarge {
+  width: 935px;
+  height: 585px;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* Вырезы */
+.cutBottomRight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 85px;
+  height: 85px;
+  background: white;
+  border-top-left-radius: 100%;
+  z-index: 2;
+}
+
+.cutBottomLeft::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 85px;
+  height: 85px;
+  background: white;
+  border-top-right-radius: 100%;
+  z-index: 2;
+}
+
+.cutTopRight::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85px;
+  height: 85px;
+  background: white;
+  border-bottom-left-radius: 100%;
+  z-index: 2;
+}
+
+.cutTopLeft::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 85px;
+  height: 85px;
+  background: white;
+  border-bottom-right-radius: 100%;
+  z-index: 2;
+}
+
+/* Категории для левой карточки - левый верхний угол */
+.categoriesLeft {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 3;
+}
+
+/* Категории для правой карточки - левый верхний угол */
+.categoriesRight {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 3;
+}
+
+.category {
+  font-size: 16px;
+  color: black;
+  border: 1px solid #D1D1D1;
+  padding: 4px 12px;
+  border-radius: 50px;
+  width: fit-content;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Центр фото (иконки) */
+.imageWrapper {
+  flex-shrink: 0;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+/* Нижний левый текст для левой карточки */
+.bottomLeftText {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  max-width: 40%;
+  z-index: 3;
+  text-align: left;
+}
+
+.bottomLeftText .cardTitle {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0 0 10px;
+  width: 393px;
+  color: black;
+  font-family: 'Inter', sans-serif;
+}
+
+.bottomLeftText .cardDescription {
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
+}
+
+/* Нижний правый текст для правой карточки */
+.bottomRightText {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  max-width: 40%;
+  z-index: 3;
+  text-align: right;
+}
+
+.bottomRightText .cardTitle {
+  font-size: 32px;
+  padding-right: 40px;
+  font-weight: 400;
+  margin: 0 0 10px;
+  color: black;
+  width: 393px;
+  font-family: 'Inter', sans-serif;
+}
+
+.bottomRightText .cardDescription {
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
+}
+
+/* ---------- Центр круга ---------- */
+.centerImage {
+  position: absolute;
+  top: 42.5%;
+  left: 50%;
+  transform: translate(-50%, 32%);
+  z-index: 5;
+  width: 178px;
+  height: 178px;
+}
+
+.centerImage::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* background-color: #0344DC; */
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ---------- Второй ряд ---------- */
+.bottomRow {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: -85px;
+}
+
+.cardSmall {
+  width: 463px;
+  height: 585px;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Границы через псевдоэлемент */
+.cardLarge::before,
+.cardSmall::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid #D1D1D1;
+  border-radius: 15px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.categoriesLeft,
+.categoriesRight {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  border-radius: 50%;
+  flex-direction: row; /* было column, стало row */
+  gap: 12px; /* промежуток между категориями */
+  z-index: 3;
+}
+
+/* ---------- Второй ряд ---------- */
+.bottomRow {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: -85px;
+}
+
+.cardSmall {
+  width: 463px;
+  height: 585px;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* Иконки на крайних карточках */
+.bottomCardIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  z-index: 2;
+}
+
+
+/* Левая нижняя карточка: текст внизу слева */
+.bottomLeftText {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  max-width: 80%;
+  text-align: left;
+  z-index: 2;
+}
+
+/* Правая нижняя карточка: текст внизу справа */
+.bottomRightText {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  max-width: 80%;
+  text-align: right;
+  z-index: 2;
+}
+
+/* Заголовок в нижних карточках */
+.cardTitle {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0 0 10px;
+  color: black;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Описание в нижних карточках */
+.cardDescription {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
+
+/* Категория для центральных карточек */
+/* Общий базовый стиль */
+.categoriesBottomCenter {
+  position: absolute;
+  top: 30px;
+  z-index: 2;
+}
+
+/* Левая центральная карточка */
+.cutTopRight .categoriesBottomCenter {
+  left: 30px;
+}
+
+/* Правая центральная карточка */
+.cutTopLeft .categoriesBottomCenter {
+  right: 30px;
+}
+
+
+/* Большое число (15+, 50+) с градиентом */
+.gradientNumber {
+  font-size: 98px;
+  font-weight: 700;
+  background: linear-gradient(to bottom, #0344DC, #022476);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  text-align: left;
+  z-index: 2;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Текст под числом у центральных карточек */
+.centerCardText {
+  z-index: 2;
+  text-align: left;
+  max-width: 90%;
+}
+
+/* Границы (если нужны) */
+.cardSmall::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid #D1D1D1;
+  border-radius: 15px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .wrapper {
+    padding: 80px 20px;
+  }
+  
+  .number {
+    font-size: 150px;
+    top: -30px;
+  }
+  
+  .topBlock {
+    padding-left: 200px;
+  }
+  
+  .heading {
+    font-size: 20px;
+  }
+  
+  .description {
+    font-size: 16px;
+  }
+  
+  .cardLarge {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+  }
+  
+  .cardSmall {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+  }
+  
+  .cardNumber {
+    font-size: 40px;
+  }
+  
+  .cardTitle {
+    font-size: 16px;
+  }
+  
+  .cardDescription {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 60px 15px;
+  }
+  
+  .topBlock {
+    flex-direction: column;
+    padding-left: 0;
+    text-align: center;
+  }
+  
+  .number {
+    position: static;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .textBlock {
+    font-size: 32px;
+  }
+  
+  .heading {
+    font-size: 18px;
+  }
+  
+  .description {
+    font-size: 14px;
+  }
+  
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .cardLarge {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+  }
+  
+  .cardSmall {
+    width: 100%;
+    max-width: 300px;
+    height: 180px;
+  }
+  
+  .cardNumber {
+    font-size: 32px;
+  }
+  
+  .cardTitle {
+    font-size: 14px;
+  }
+  
+  .cardDescription {
+    font-size: 11px;
+  }
+  
+  .centerCardText {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 40px 10px;
+  }
+  
+  .number {
+    font-size: 60px;
+  }
+  
+  .textBlock {
+    font-size: 24px;
+  }
+  
+  .heading {
+    font-size: 16px;
+  }
+  
+  .description {
+    font-size: 12px;
+  }
+  
+  .cardLarge {
+    height: 200px;
+  }
+  
+  .cardSmall {
+    height: 150px;
+  }
+  
+  .cardNumber {
+    font-size: 24px;
+  }
+  
+  .cardTitle {
+    font-size: 12px;
+  }
+  
+  .cardDescription {
+    font-size: 10px;
+  }
+}
+

@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.container {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.imageBlock {
+  position: relative;
+  margin-top: 60px;
+}
+
+/* Блок с номером и текстом поверх изображения слева сверху */
+.contentBlock {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  z-index: 2;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.number {
+  font-size: 300px;
+  font-weight: 400;
+  color: #B9B9C3;
+  line-height: 1;
+  margin: 0;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  max-width: 302px;
+  font-size: 40px;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+}
+
+.careHighlight {
+  background-color: #007BFF;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+
+.description {
+  max-width: 345px;
+  font-size: 18px;
+  color: #01203F;
+  margin-top: 20px;
+}
+
+/* Изображение */
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Блок с текстом поверх изображения */
+.overlayContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.overlayTitle {
+  font-size: 0; /* Убираем отступ между inline-block span'ами */
+}
+
+.titleLineTop,
+.titleLineBottom {
+  display: inline-block;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  color: #0344DC;
+  font-size: 55px;
+  font-weight: 400;
+  padding: 12px 20px;
+  line-height: 1.2;
+}
+
+.titleLineTop {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.titleLineBottom {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.overlayDescription {
+  max-width: 385px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #0344DC;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+/* Кнопки */
+.actionButton {
+  font-family: 'Inter', sans-serif;
+  color: #0344DC;
+  background-color: #fff;
+  border: 1px solid rgb(167, 167, 167);
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.actionButton:hover {
+  background-color: #0344DC;
+  color: #ffffff;
+}
+
+.btnRequest {
+  left: -200px;
+  top: 25%;
+}
+
+.btnSupport {
+  left: -100px;
+  top: 125%;
+}
+
+.btnDiscuss {
+  right: -50px;
+  top: -50%;
+}
+
+.btnDevelop {
+  right: -300px;
+  top: 20%;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .number {
+    font-size: 200px;
+  }
+  
+  .title {
+    font-size: 32px;
+    max-width: 250px;
+  }
+  
+  .description {
+    font-size: 16px;
+  }
+  
+  .overlayTitle {
+    font-size: 32px;
+  }
+  
+  .overlayDescription {
+    font-size: 16px;
+  }
+  
+  .actionButton {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 15px;
+  }
+  
+  .imageBlock {
+    margin-top: 30px;
+  }
+  
+  .contentBlock {
+    position: static;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .number {
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    max-width: 100%;
+  }
+  
+  .description {
+    font-size: 14px;
+  }
+  
+  .overlayContent {
+    position: static;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .overlayTitle {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .overlayDescription {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .buttonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .actionButton {
+    position: static;
+    font-size: 12px;
+    padding: 8px 12px;
+    margin: 5px;
+    transform: none;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px 10px;
+  }
+  
+  .contentBlock {
+    padding: 15px;
+  }
+  
+  .number {
+    font-size: 60px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .description {
+    font-size: 12px;
+  }
+  
+  .overlayContent {
+    padding: 15px;
+  }
+  
+  .overlayTitle {
+    font-size: 20px;
+  }
+  
+  .overlayDescription {
+    font-size: 12px;
+  }
+  
+  .buttonsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .actionButton {
+    width: 100%;
+    max-width: 200px;
+    font-size: 11px;
+    padding: 10px 15px;
+  }
+}

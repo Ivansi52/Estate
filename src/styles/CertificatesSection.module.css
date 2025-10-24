@@ -1,0 +1,279 @@
+.certificatesSection {
+  padding: 80px 20px;
+  background: #f6f6f6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.headerBlock {
+  position: relative;
+  margin-bottom: 0;
+  max-width: 630px;
+}
+
+.numberBadge {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  font-size: 300px;
+  font-weight: 400;
+  line-height: 0.9;
+  color: #b9b9c3;
+  z-index: 0;
+  letter-spacing: -0.11em;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0 0 8px 0;
+  padding-left: 300px;
+  padding-top: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.titleBlack {
+  color: #01203f;
+}
+
+.titleWhite {
+  color: #ffffff;
+  background: #0344dc;
+  padding: 5px 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  color: #01203f;
+  opacity: 0.5;
+  margin: 0;
+  padding-left: 300px;
+  padding-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.certificatesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 40px;
+  margin-top: 60px;
+}
+
+.certificateCard {
+  width: 100%;
+  height: 77px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.certificateCard:hover {
+  background: #0344dc;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.certificateCard:hover .certificateTitle {
+  color: #ffffff;
+}
+
+.certificateCard:hover .arrowIcon {
+  color: #ffffff;
+}
+
+.certificateCard.active .arrowIcon {
+  color: #ffffff;
+}
+
+.certificateCard.active {
+  background: #0344dc;
+  color: #ffffff;
+}
+
+.certificateContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.certificateTitle {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
+  color: #01203f;
+}
+
+.certificateCard.active .certificateTitle {
+  color: #ffffff;
+}
+
+.arrowIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #01203f;
+  transition: color 0.3s ease;
+}
+
+.arrowIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.certificateImage {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 593px;
+  height: 458px;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .certificateImage {
+    position: static;
+    transform: none;
+    margin: 40px auto 0;
+    width: 100%;
+    max-width: 593px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+    padding-left: 0;
+  }
+  
+  .subtitle {
+    padding-left: 0;
+  }
+  
+  .numberBadge {
+    font-size: 200px;
+  }
+  
+  .certificateCard {
+    padding: 0 20px;
+    height: 60px;
+  }
+  
+  .certificateTitle {
+    font-size: 24px;
+  }
+  
+  .arrowIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Стили для модального окна */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  z-index: 1001;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modalImageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .modalOverlay {
+    padding: 10px;
+  }
+  
+  .closeButton {
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    right: 10px;
+  }
+}
