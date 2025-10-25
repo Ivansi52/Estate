@@ -22,6 +22,16 @@
   flex-direction: column;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: #f8f9fa;
 }
 
 .categories {
@@ -71,13 +81,29 @@
   overflow: hidden;
   border-radius: 12px;
   margin-top: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .imageContainer img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.3s ease;
 }
+
+.card:hover {
+  background-image: var(--hover-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card:hover .imageContainer {
+  display: none;
+}
+
 
 
 

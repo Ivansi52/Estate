@@ -1,14 +1,20 @@
 .filterBar {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  padding: 20px;
-  background: #f9f9f9;
+  gap: 16px;
+  padding: 24px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   position: relative;
   z-index: 10;
+  border-radius: 20px;
+  box-shadow: 
+    0 4px 20px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
 
-  max-width: 2000px;      /* Максимальная ширина */
-  margin-left: auto;      /* Центрирование по горизонтали */
+  max-width: 2000px;
+  margin-left: auto;
   margin-right: auto;
 }
 
@@ -56,8 +62,8 @@
   display: flex;
   align-items: center;
   justify-content: center; /* Центрует текст */
-  background-color: white;
-  color: black;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #333;
   border: 1px solid #ccc;
   padding: 0 16px;
   height: 50px;
@@ -66,7 +72,32 @@
   font-size: 16px;
   cursor: pointer;
   font-weight: 400;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.filterButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(3, 68, 220, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.filterButton:hover::before {
+  left: 100%;
+}
+
+.filterButton:hover {
+  background: linear-gradient(135deg, #0344DC 0%, #0230a8 100%);
+  color: white;
+  border-color: #0344DC;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(3, 68, 220, 0.3);
 }
 
 .filterButton span {
@@ -178,5 +209,519 @@
 .filterButtonWrapper:hover .iconLeftCircle span,
 .filterButtonWrapper:hover .iconLeftCircle .figmaIcon {
   color: #0344DC;
+}
+
+/* Стили для многоуровневого меню */
+.buttonStatic {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.buttonStatic:hover {
+  background: linear-gradient(135deg, #0344DC 0%, #0230a8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(3, 68, 220, 0.3);
+}
+
+.buttonStatic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.buttonStatic:hover::before {
+  left: 100%;
+}
+
+.arrow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+}
+
+.categoriesDropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid rgba(3, 68, 220, 0.1);
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,0.12),
+    0 2px 8px rgba(0,0,0,0.08);
+  z-index: 1000;
+  min-width: 320px;
+  max-height: 500px;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.categoryWrapper {
+  position: relative;
+  border-radius: 8px;
+  margin: 4px;
+  overflow: hidden;
+}
+
+.categoryButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  margin: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.categoryButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(3, 68, 220, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.categoryButton:hover::before {
+  left: 100%;
+}
+
+.categoryButton:hover {
+  background: linear-gradient(135deg, #0344DC 0%, #0230a8 100%);
+  color: white;
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(3, 68, 220, 0.2);
+  border-color: rgba(3, 68, 220, 0.3);
+}
+
+.categoryLabel {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.categoryButton:hover .categoryLabel {
+  color: white;
+}
+
+.optionsDropdown {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid rgba(3, 68, 220, 0.1);
+  border-radius: 12px;
+  margin: 4px 8px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.optionsDropdown .option {
+  padding: 12px 20px 12px 40px;
+  margin-bottom: 0;
+  color: #495057;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.optionsDropdown .option:hover {
+  background: linear-gradient(135deg, rgba(3, 68, 220, 0.05) 0%, rgba(3, 68, 220, 0.1) 100%);
+  color: #0344DC;
+  transform: translateX(4px);
+}
+
+.optionsDropdown .option:last-child {
+  border-bottom: none;
+  border-radius: 0 0 12px 12px;
+}
+
+.optionsDropdown .option input {
+  border: 2px solid #dee2e6;
+  border-radius: 6px;
+  width: 18px;
+  height: 18px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.optionsDropdown .option input:hover {
+  border-color: #0344DC;
+  transform: scale(1.1);
+}
+
+.optionsDropdown .option input:checked {
+  background: linear-gradient(135deg, #0344DC 0%, #0230a8 100%);
+  border-color: #0344DC;
+  box-shadow: 0 2px 8px rgba(3, 68, 220, 0.3);
+}
+
+.optionsDropdown .option input:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  animation: checkmark 0.3s ease;
+}
+
+@keyframes checkmark {
+  from {
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+.popularButton {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #333;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.popularButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(3, 68, 220, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.popularButton:hover::before {
+  left: 100%;
+}
+
+.popularButton:hover {
+  background: linear-gradient(135deg, #0344DC 0%, #0230a8 100%);
+  color: white;
+  border-color: #0344DC;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(3, 68, 220, 0.3);
+}
+
+/* Кастомный скроллбар для выпадающих меню */
+.categoriesDropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.categoriesDropdown::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 3px;
+}
+
+.categoriesDropdown::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #0344DC 0%, #0230a8 100%);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.categoriesDropdown::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #0230a8 0%, #0344DC 100%);
+}
+
+/* Дополнительные эффекты для лучшего UX */
+.categoryWrapper:first-child .categoryButton {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.categoryWrapper:last-child .categoryButton {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Эффект пульсации для активных элементов */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(3, 68, 220, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(3, 68, 220, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(3, 68, 220, 0);
+  }
+}
+
+.categoryButton:active {
+  animation: pulse 0.6s;
+}
+
+/* Улучшенные переходы для всех интерактивных элементов */
+.filterBar * {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Эффект свечения для выбранных опций */
+.optionsDropdown .option:has(input:checked) {
+  background: linear-gradient(135deg, rgba(3, 68, 220, 0.1) 0%, rgba(3, 68, 220, 0.05) 100%);
+  border-left: 3px solid #0344DC;
+  font-weight: 600;
+}
+
+/* Активное состояние для горизонтальных фильтров */
+.filterButtonActive {
+  background: linear-gradient(135deg, #0344DC 0%, #0230a8 100%) !important;
+  color: white !important;
+  border-color: #0344DC !important;
+  box-shadow: 0 4px 16px rgba(3, 68, 220, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+.filterButtonActive::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background: linear-gradient(90deg, #0344DC, #0230a8);
+  border-radius: 2px;
+  animation: activeIndicator 0.3s ease;
+}
+
+@keyframes activeIndicator {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 30px;
+    opacity: 1;
+  }
+}
+
+/* Дополнительные стили для подфильтров */
+.optionsDropdown .option {
+  position: relative;
+  overflow: hidden;
+}
+
+.optionsDropdown .option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(3, 68, 220, 0.05), transparent);
+  transition: left 0.4s;
+}
+
+.optionsDropdown .option:hover::before {
+  left: 100%;
+}
+
+/* Улучшенные стили для чекбоксов */
+.optionsDropdown .option input {
+  position: relative;
+  z-index: 2;
+}
+
+.optionsDropdown .option input::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #0344DC, #0230a8);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.optionsDropdown .option input:hover::before {
+  opacity: 0.1;
+}
+
+.optionsDropdown .option input:checked::before {
+  opacity: 1;
+}
+
+/* Анимация появления опций с задержкой */
+.optionsDropdown .option {
+  animation: fadeInUp 0.3s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.optionsDropdown .option:nth-child(1) { animation-delay: 0.05s; }
+.optionsDropdown .option:nth-child(2) { animation-delay: 0.1s; }
+.optionsDropdown .option:nth-child(3) { animation-delay: 0.15s; }
+.optionsDropdown .option:nth-child(4) { animation-delay: 0.2s; }
+.optionsDropdown .option:nth-child(5) { animation-delay: 0.25s; }
+.optionsDropdown .option:nth-child(6) { animation-delay: 0.3s; }
+.optionsDropdown .option:nth-child(7) { animation-delay: 0.35s; }
+.optionsDropdown .option:nth-child(8) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Эффект волны при клике на опцию */
+.optionsDropdown .option:active {
+  animation: ripple 0.6s ease;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Улучшенные стили для категорий */
+.categoryButton {
+  position: relative;
+}
+
+.categoryButton::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0344DC, #0230a8);
+  transition: width 0.3s ease;
+}
+
+.categoryButton:hover::after {
+  width: 100%;
+}
+
+/* Стили для активной категории */
+.categoryWrapper:has(.categoryButton:hover) .optionsDropdown {
+  border-left: 4px solid #0344DC;
+  box-shadow: 
+    inset 4px 0 0 rgba(3, 68, 220, 0.1),
+    0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Стили для Coming Soon секции */
+.comingSoonSection {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+.comingSoonHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(108, 117, 125, 0.05) 0%, rgba(108, 117, 125, 0.1) 100%);
+  border-radius: 8px;
+  margin: 4px 0;
+  transition: all 0.2s ease;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.comingSoonHeader:hover {
+  background: linear-gradient(135deg, rgba(108, 117, 125, 0.1) 0%, rgba(108, 117, 125, 0.15) 100%);
+  color: #495057;
+}
+
+.comingSoonSubmenu {
+  background: linear-gradient(135deg, rgba(108, 117, 125, 0.03) 0%, rgba(108, 117, 125, 0.08) 100%);
+  border-radius: 8px;
+  margin: 4px 0;
+  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.comingSoonOption {
+  padding: 12px 20px;
+  color: #6c757d;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  cursor: default;
+  transition: all 0.2s ease;
+  position: relative;
+  opacity: 0.7;
+}
+
+.comingSoonOption:last-child {
+  border-bottom: none;
+  border-radius: 0 0 16px 16px;
+}
+
+.comingSoonOption::before {
+  content: '🔒';
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.comingSoonOption:hover {
+  background: linear-gradient(135deg, rgba(108, 117, 125, 0.05) 0%, rgba(108, 117, 125, 0.1) 100%);
+  color: #495057;
 }
 
