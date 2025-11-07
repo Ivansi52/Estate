@@ -1,7 +1,8 @@
 User-agent: *
 Disallow: /
 
-# Сайт в разработке - закрыт от индексации
-# После запуска удалить этот файл или изменить на:
-# User-agent: *
-# Allow: /
+# Sitemap
+Sitemap: https://2clients.com/sitemap.xml
+
+# Note: This site is currently in development
+# Remove "Disallow: /" when ready for production

@@ -3,15 +3,41 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import FeedBack from "@/components/FeedBack";
 import GoogleMap from "@/components/GoogleMap";
+import StructuredDataContact from "@/components/SEO/StructuredDataContact";
 import styles from "@/styles/Contacts.module.css";
 
 export default function Contacts() {
   return (
     <>
       <Head>
-        <title>Contact Us - Get in Touch</title>
-        <meta name="description" content="Contact our web development team for consultation and project inquiries" />
+        <title>Contact Us - Get in Touch with 2Clients Digital Agency</title>
+        <meta name="description" content="Contact 2Clients digital marketing agency for web development, SEO, and digital strategy consultation. Multiple office locations across Poland. Get in touch today!" />
+        <meta name="keywords" content="contact 2clients, digital marketing consultation, web development contact, SEO services contact, digital agency contact, office locations" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://2clients.com/contacts" />
+        <meta property="og:title" content="Contact Us - 2Clients Digital Agency" />
+        <meta property="og:description" content="Contact 2Clients digital marketing agency for consultation and project inquiries." />
+        <meta property="og:image" content="https://2clients.com/contacts-og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://2clients.com/contacts" />
+        <meta name="twitter:title" content="Contact Us - 2Clients Digital Agency" />
+        <meta name="twitter:description" content="Contact 2Clients digital marketing agency for consultation and project inquiries." />
+        <meta name="twitter:image" content="https://2clients.com/contacts-twitter-image.jpg" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://2clients.com/contacts" />
+        
+        {/* Additional SEO */}
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="2Clients" />
+        <meta name="language" content="English" />
       </Head>
+      
+      <StructuredDataContact />
       
       {/* Hero Section with Header */}
       <section className={styles.heroSection}>

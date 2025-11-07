@@ -7,6 +7,7 @@ import EnglandFlag from '@/images/EnglandFlag.png';
 import EsFlag from '@/images/EsFlag.png';
 import RussiaFlag from '@/images/RussiaFlag.png';
 import Image from 'next/image';
+import Link from 'next/link';
 import { BsArrowRight, BsChevronDown } from 'react-icons/bs';
 import { useState, useRef, useEffect } from 'react';
 
@@ -120,11 +121,11 @@ export default function Footer() {
               <div className={styles.menuColumn}>
                 <h3 className={styles.menuTitle}>Menu</h3>
                 <ul className={styles.menuList}>
-                  <li>Services</li>
-                  <li>Portfolio</li>
-                  <li>Pricing</li>
-                  <li>Calculator</li>
-                  <li>About us</li>
+                  <li><Link href="/services">Services</Link></li>
+                  <li><Link href="/projects">Portfolio</Link></li>
+                  <li><Link href="/prices">Pricing</Link></li>
+                  <li><Link href="/calculator">Calculator</Link></li>
+                  <li><Link href="/about">About us</Link></li>
                 </ul>
               </div>
               <div className={styles.menuColumn}>

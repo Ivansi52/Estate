@@ -265,3 +265,143 @@
     height: auto;
   }
 }
+
+/* Стили для анимации логотипов компаний */
+.logosContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 60px;
+  background: #f6f6f6;
+  padding: 40px 0;
+}
+
+.logosGradientLeft {
+  width: 100px;
+  height: 80px;
+  background: linear-gradient(to right, #f6f6f6, transparent);
+  z-index: 4;
+  position: relative;
+}
+
+.logosGradientRight {
+  width: 100px;
+  height: 80px;
+  background: linear-gradient(to left, #f6f6f6, transparent);
+  z-index: 4;
+  position: relative;
+}
+
+.logosCarousel {
+  display: flex;
+  animation: scroll 28s linear infinite;
+  transition: transform 1s ease-in-out;
+}
+
+.logoItem {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.logoItem:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(3, 68, 220, 0.3));
+}
+
+.logoImage {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+  filter: brightness(0) invert(0);
+  transition: all 0.3s ease;
+}
+
+.logoItem:hover .logoImage {
+  filter: brightness(0) invert(0) drop-shadow(0 0 15px rgba(3, 68, 220, 0.5));
+  transform: scale(1.05);
+}
+
+.logoTooltip {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(3, 68, 220, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 10;
+  animation: fadeInUp 0.3s ease;
+}
+
+.logoTooltip::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid rgba(3, 68, 220, 0.9);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Адаптивность для логотипов */
+@media (max-width: 768px) {
+  .logosContainer {
+    margin-top: 40px;
+    padding: 30px 0;
+  }
+  
+  .logoItem {
+    width: 150px;
+    height: 60px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logosContainer {
+    margin-top: 30px;
+    padding: 20px 0;
+  }
+  
+  .logoItem {
+    width: 120px;
+    height: 50px;
+    margin: 0 5px;
+  }
+}

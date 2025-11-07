@@ -6,8 +6,31 @@ export default function Prices() {
   return (
     <>
       <Head>
-        <title>Pricing - Web Development Services</title>
-        <meta name="description" content="Transparent pricing for our web development services and packages" />
+        <title>Pricing Plans - Web Development Services & Packages | 2Clients</title>
+        <meta name="description" content="Transparent pricing for web development services, e-commerce solutions, and digital marketing packages. Choose the perfect plan for your business needs." />
+        <meta name="keywords" content="web development pricing, digital marketing packages, e-commerce pricing, website development costs, digital agency pricing" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://2clients.com/prices" />
+        <meta property="og:title" content="Pricing Plans - Web Development Services | 2Clients" />
+        <meta property="og:description" content="Transparent pricing for web development services and digital marketing packages." />
+        <meta property="og:image" content="https://2clients.com/prices-og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://2clients.com/prices" />
+        <meta name="twitter:title" content="Pricing Plans - Web Development Services | 2Clients" />
+        <meta name="twitter:description" content="Transparent pricing for web development services and digital marketing packages." />
+        <meta name="twitter:image" content="https://2clients.com/prices-twitter-image.jpg" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://2clients.com/prices" />
+        
+        {/* Additional SEO */}
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="2Clients" />
+        <meta name="language" content="English" />
       </Head>
       <main>
         <section className={styles.pricesHero}>

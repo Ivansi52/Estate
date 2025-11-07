@@ -6,6 +6,7 @@ import { getOptimizedImageProps } from '@/utils/imageOptimization';
 
 const FullCycleCare = () => {
   const [activeButton, setActiveButton] = useState('Request');
+  const [isAnimating, setIsAnimating] = useState(false);
   
   const buttonTexts = {
     Request: {
@@ -30,6 +31,16 @@ const FullCycleCare = () => {
     }
   };
 
+  const handleButtonClick = (buttonName) => {
+    if (buttonName === activeButton || isAnimating) return;
+    
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActiveButton(buttonName);
+      setIsAnimating(false);
+    }, 175); // Половина от 350мс для плавной анимации
+  };
+
   const currentText = buttonTexts[activeButton];
 
   return (
@@ -51,40 +62,55 @@ const FullCycleCare = () => {
 
         {/* Интерактивный контент поверх изображения */}
         <div className={styles.overlayContent}>
-          <h2 className={styles.overlayTitle}>
+          <h2 className={`${styles.overlayTitle} ${isAnimating ? styles.animating : ''}`}>
             <span className={styles.titleLineTop}>{currentText.title}</span><br />
             <span className={styles.titleLineBottom}>{currentText.subtitle}</span>
           </h2>
-          <p className={styles.overlayDescription}>
+          <p className={`${styles.overlayDescription} ${isAnimating ? styles.animating : ''}`}>
             {currentText.description}
           </p>
 
-          {/* Интерактивные кнопки */}
+          {/* Интерактивные кнопки вокруг сферы */}
           <div className={styles.buttonsContainer}>
-            <button 
-              className={`${styles.actionButton} ${styles.btnRequest} ${activeButton === 'Request' ? styles.active : ''}`}
-              onClick={() => setActiveButton('Request')}
-            >
-              Request
-            </button>
-            <button 
-              className={`${styles.actionButton} ${styles.btnSupport} ${activeButton === 'Support' ? styles.active : ''}`}
-              onClick={() => setActiveButton('Support')}
-            >
-              Support
-            </button>
-            <button 
-              className={`${styles.actionButton} ${styles.btnDiscuss} ${activeButton === 'Discuss' ? styles.active : ''}`}
-              onClick={() => setActiveButton('Discuss')}
-            >
-              Discuss
-            </button>
-            <button 
-              className={`${styles.actionButton} ${styles.btnDevelop} ${activeButton === 'Develop' ? styles.active : ''}`}
-              onClick={() => setActiveButton('Develop')}
-            >
-              Develop
-            </button>
+            {/* Request - слева от сферы */}
+            <div className={styles.buttonRequestContainer}>
+              <button 
+                className={`${styles.actionButton} ${styles.btnRequest} ${activeButton === 'Request' ? styles.active : ''}`}
+                onClick={() => handleButtonClick('Request')}
+              >
+                Request
+              </button>
+            </div>
+            
+            {/* Support - слева снизу */}
+            <div className={styles.buttonSupportContainer}>
+              <button 
+                className={`${styles.actionButton} ${styles.btnSupport} ${activeButton === 'Support' ? styles.active : ''}`}
+                onClick={() => handleButtonClick('Support')}
+              >
+                Support
+              </button>
+            </div>
+            
+            {/* Discuss - справа сверху */}
+            <div className={styles.buttonDiscussContainer}>
+              <button 
+                className={`${styles.actionButton} ${styles.btnDiscuss} ${activeButton === 'Discuss' ? styles.active : ''}`}
+                onClick={() => handleButtonClick('Discuss')}
+              >
+                Discuss
+              </button>
+            </div>
+            
+            {/* Develop - справа от сферы */}
+            <div className={styles.buttonDevelopContainer}>
+              <button 
+                className={`${styles.actionButton} ${styles.btnDevelop} ${activeButton === 'Develop' ? styles.active : ''}`}
+                onClick={() => handleButtonClick('Develop')}
+              >
+                Develop
+              </button>
+            </div>
           </div>
         </div>
 

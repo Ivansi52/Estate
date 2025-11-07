@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactFormSchema } from '@/utils/validationSchemas';
@@ -14,14 +14,21 @@ const ServiceModal = ({ isOpen, onClose, serviceTitle }) => {
       name: '',
       email: '',
       phone: '',
-      service: serviceTitle || '',
+      service: '',
       description: '',
       privacyPolicy: false
     },
     mode: 'onChange'
   });
 
-  const { register, handleSubmit, formState: { errors }, reset } = form;
+  const { register, handleSubmit, formState: { errors }, reset, setValue } = form;
+
+  // Обновляем поле service при изменении serviceTitle
+  useEffect(() => {
+    if (serviceTitle) {
+      setValue('service', serviceTitle);
+    }
+  }, [serviceTitle, setValue]);
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
@@ -93,13 +100,16 @@ const ServiceModal = ({ isOpen, onClose, serviceTitle }) => {
             />
             {errors.email && <span className={styles.error}>{errors.email.message}</span>}
             
-            <input
-              type="text"
-              {...register('service')}
-              value={serviceTitle}
-              readOnly
-              className={`${styles.input} ${styles.readonly}`}
-            />
+            <div className={styles.serviceFieldWrapper}>
+              <label className={styles.serviceLabel}>Selected Service</label>
+              <input
+                type="text"
+                {...register('service')}
+                readOnly
+                className={`${styles.input} ${styles.readonly}`}
+                placeholder="Service will be selected automatically"
+              />
+            </div>
           </div>
 
           <textarea

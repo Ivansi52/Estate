@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from '@/styles/CertificatesSection.module.css';
 import Image from 'next/image';
 import { getOptimizedImageProps } from '@/utils/imageOptimization';
+import certificate from '@/images/certificate.png';
 
 export default function CertificatesSection() {
   const [activeCertificate, setActiveCertificate] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const certificates = [
     {
@@ -63,15 +63,6 @@ export default function CertificatesSection() {
     setActiveCertificate(null);
   };
 
-  // Автопрокрутка каждые 5 секунд
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % certificates.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [certificates.length]);
-
   return (
     <div className={styles.certificatesSection}>
       <div className={styles.container}>
@@ -90,7 +81,7 @@ export default function CertificatesSection() {
           {certificates.map((certificate, index) => (
             <div 
               key={certificate.id} 
-              className={`${styles.certificateCard} ${index === currentIndex ? styles.active : ''}`}
+              className={styles.certificateCard}
               onClick={() => handleCertificateClick(certificate)}
             >
               <div className={styles.certificateContent}>
@@ -106,11 +97,7 @@ export default function CertificatesSection() {
         </div>
 
         <div className={styles.certificateImage}>
-          {/* <img 
-            src="/images/rewies_logo.png" 
-            alt="2Clients amoSTART Certificate" 
-            className={styles.image}
-          /> */}
+          {/* Изображение показывается только в модальном окне при клике */}
         </div>
       </div>
 
@@ -125,7 +112,7 @@ export default function CertificatesSection() {
             </button>
             <div className={styles.modalImageContainer}>
               <Image 
-                {...getOptimizedImageProps("/images/certificate.png", "amoCRM Certificate 2025", 0, 0)}
+                {...getOptimizedImageProps(certificate, "amoCRM Certificate 2025", 0, 0)}
                 className={styles.modalImage}
               />
             </div>

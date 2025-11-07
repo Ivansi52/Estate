@@ -86,8 +86,24 @@
 
 .input.readonly {
   background-color: #f8f9fa;
-  color: #666;
-  cursor: not-allowed;
+  color: #495057;
+  cursor: default;
+  border-color: #dee2e6;
+  font-weight: 500;
+}
+
+.serviceFieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.serviceLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .textarea {

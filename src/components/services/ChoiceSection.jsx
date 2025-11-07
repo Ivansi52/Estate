@@ -4,6 +4,11 @@ import styles from '@/styles/ChoiceSection.module.css';
 import ussrsGroup2 from '@/images/Users_Group2.png';
 import { getOptimizedImageProps } from '@/utils/imageOptimization';
 
+import LexusIcon from '@/images/lexusIcon.png';
+import pionerIcon from '@/images/pioner.png';
+import slavDvorIcon from '@/images/slav_dvor.png';
+import RPIcon from '@/images/RiverPark.png';
+
 const cardsData = [
   {
     id: 1,
@@ -51,7 +56,17 @@ const cardsData = [
 
 const ChoiceSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [hoveredLogo, setHoveredLogo] = useState(null);
   const totalSlides = 3; // маркеры и слайды для окна справа
+
+  const logos = [
+    { src: LexusIcon, alt: "Lexus", name: "Lexus" },
+    { src: pionerIcon, alt: "Pioner", name: "Pioner" },
+    { src: slavDvorIcon, alt: "Slav Dvor", name: "Slav Dvor" },
+    { src: RPIcon, alt: "River Park", name: "River Park" },
+  ];
+
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
 
   const goPrev = () => {
     setActiveSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
@@ -125,6 +140,32 @@ const ChoiceSection = () => {
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Анимация логотипов компаний */}
+      <div className={styles.logosContainer}>
+        <div className={styles.logosGradientLeft}></div>
+        <div className={styles.logosCarousel}>
+          {duplicatedLogos.map((logo, index) => (
+            <div 
+              key={index} 
+              className={styles.logoItem}
+              onMouseEnter={() => setHoveredLogo(logo.name)}
+              onMouseLeave={() => setHoveredLogo(null)}
+            >
+              <Image 
+                {...getOptimizedImageProps(logo.src, logo.alt, 150, 60)}
+                className={styles.logoImage}
+              />
+              {hoveredLogo === logo.name && (
+                <div className={styles.logoTooltip}>
+                  {logo.name}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className={styles.logosGradientRight}></div>
       </div>
     </div>
   );

@@ -145,6 +145,7 @@
   display: flex;
   animation: scroll 28s linear infinite;
   transition: transform 1s ease-in-out;
+  gap: 40px;
 }
 
 .logoItem {
@@ -154,7 +155,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 20px;
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -223,7 +223,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
@@ -270,7 +270,10 @@
   .logoItem {
     width: 150px;
     height: 60px;
-    margin: 0 10px;
+  }
+  
+  .logosCarousel {
+    gap: 20px;
   }
 }
 
@@ -289,6 +292,9 @@
   .logoItem {
     width: 120px;
     height: 50px;
-    margin: 0 5px;
+  }
+  
+  .logosCarousel {
+    gap: 10px;
   }
 }

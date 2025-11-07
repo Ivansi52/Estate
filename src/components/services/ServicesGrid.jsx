@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from '@/styles/ServicesGrid.module.css';
 import FilterButtons from './FilterButtons';
 import ServiceModal from '@/components/ServiceModal';
@@ -193,6 +194,14 @@ export default function ServicesGrid() {
                   {/* Описание */}
                   <p className={styles.description}>
                     {service.description}
+                    <br />
+                    <Link 
+                      href="/projects" 
+                      className={styles.viewPortfolioLink}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      View our portfolio →
+                    </Link>
                   </p>
                 </div>
               );
