@@ -89,7 +89,10 @@ export default function Contacts() {
                 <button className={styles.scheduleButton}>
                   <span>Schedule a video call</span>
                   <div className={styles.arrowIcon}>
-                    →
+                    <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="22.5" cy="22.5" r="22.5" fill="white"/>
+                      <path d="M14.25 23.6248V21.5415H26.75L21.0208 15.8123L22.5 14.3331L30.75 22.5831L22.5 30.8331L21.0208 29.354L26.75 23.6248H14.25Z" fill="#01203F"/>
+                    </svg>
                   </div>
                 </button>
               </div>

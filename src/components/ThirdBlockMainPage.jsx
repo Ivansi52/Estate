@@ -16,7 +16,7 @@ export default function SecondSection() {
           <div className={styles.number}>02</div>
           <div className={styles.textBlock}>
             <h2 className={styles.heading}>
-              Why we’re the right <span className={styles.highlight}>choice</span>
+              Why we’re the <br /> right <span className={styles.highlight}>choice</span>
             </h2>
             <p className={styles.subtext}>
               We bring creativity and experience together to deliver results that exceed expectations.
@@ -38,7 +38,7 @@ export default function SecondSection() {
             <div className={styles.bottomLeftText}>
               <h3 className={styles.cardTitle}>Direct communication without barriers</h3>
               <p className={styles.cardDescription}>
-                Our team speaks fluent Russian, English, German, and Spanish. You’ll always be in touch directly with the developers.
+                Our team speaks fluent Russian, English, German, and Spanish. You’ll <br /> always be in touch directly with the developers.
               </p>
             </div>
           </div>
@@ -55,15 +55,10 @@ export default function SecondSection() {
             <div className={styles.bottomRightText}>
               <h3 className={styles.cardTitle}>Marketing effectiveness</h3>
               <p className={styles.cardDescription}>
-                We developed 20+ strategies and generated leads worth over $200,000. Reduced ineffective ad spending for 37 companies.
+                We developed 20+ strategies and generated leads worth over $200,000. <br /> Reduced ineffective ad spending for 37 companies.
               </p>
             </div>
           </div>
-        </div>
-
-        {/* Центр круга */}
-        <div className={styles.centerImage}>
-          <Image src={SharImage} alt="Circle" width={178} height={178} />
         </div>
 
         {/* Второй ряд - маленькие карточки */}
@@ -74,7 +69,7 @@ export default function SecondSection() {
               <Image src={leftCardIcon} alt="Left Icon" width={182} height={182} />
             </div>
             <div className={styles.bottomLeftText}>
-              <h3 className={styles.cardTitle}>Reliability and accountability guarantee</h3>
+              <h3 className={styles.cardTitle}>Reliability and <br /> accountability guarantee</h3>
               <p className={styles.cardDescription}>
                 We take 100% responsibility for your website’s performance, brand recognition, and customer loyalty.
               </p>
@@ -110,7 +105,7 @@ export default function SecondSection() {
                 <div className={styles.centerCardText}>
                     <h3 className={styles.cardTitle}>Ready integrations</h3>
                     <p className={styles.cardDescription}>
-                    We connect CRM, payment systems, chatbots, and other tools to boost conversion rates and save your managers’ time.
+                    We connect CRM, payment systems, chatbots, and <br /> other tools to boost conversion rates and save your managers’ time.
                     </p>
                 </div>
                 </div>
@@ -124,12 +119,17 @@ export default function SecondSection() {
               <Image src={rightCardIcon} alt="Right Icon" width={182} height={182} />
             </div>
             <div className={styles.bottomRightText}>
-              <h3 className={styles.cardTitle}>Partnership and expertise</h3>
+              <h3 className={styles.cardTitle}>Partnership and  expertise</h3>
               <p className={styles.cardDescription}>
-                We integrate into your business from day one, leveraging experience from 100+ successful cases and deep niche knowledge.
+                We integrate into your business from day one, <br /> leveraging experience from 100+ successful cases and <br /> deep niche knowledge.
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Центр круга */}
+        <div className={styles.centerImage}>
+          <Image src={SharImage} alt="Circle" width={178} height={178} />
         </div>
 
       </div>

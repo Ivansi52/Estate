@@ -1,5 +1,5 @@
 import styles from '@/styles/Footer.module.css';
-import logo from '@/images/Logo.png';
+import logo from '@/images/Logo.svg';
 import phoneIcon from '@/images/entypo_phone.png';
 import whatsappIcon from '@/images/ant-design_whats-app-outlined.png';
 import telegramIcon from '@/images/uil_telegram-alt.png';
@@ -62,11 +62,7 @@ export default function Footer() {
                   Web development & SEO
                 </h2>
 
-                <div className={styles.details}>
-                  <div>INN: 234809520206</div>
-                  <div>OGRNIP: 321237500143541</div>
-                </div>
-
+                
                 <div className={styles.download}>Download Company Presentation</div>
               </div>
             </div>
@@ -92,15 +88,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Центральная колонка (телефон) */}
-          <div className={styles.center}>
-            <div className={styles.phoneRow}>
-              <Image src={phoneIcon} width={28} height={28} alt="Phone" className={styles.phoneIcon} />
-              <span className={styles.phoneNumber}>8 800 1013536</span>
-              <div className={styles.requestCallback}>Request a Callback</div>
-            </div>
-            <div className={styles.callNote}>Calls from Russian regions are free</div>
-          </div>
+          
 
           {/* Правая колонка (контакты) */}
           <div className={styles.right}>
@@ -108,12 +96,7 @@ export default function Footer() {
             <div className={styles.contactLine}><strong>Adresse:</strong> ul. Nezavisimosti 25</div>
             <div className={styles.contactLine}><strong>Working hours:</strong> 08:00 - 20:00</div>
 
-            <div className={styles.social}>
-              <Image src={whatsappIcon} width={24} height={24} alt="WhatsApp" />
-              <Image src={telegramIcon} width={24} height={24} alt="Telegram" />
-              <span className={styles.socialNumber}>8 800 9303030</span>
             </div>
-          </div>
 
           {/* Колонки меню и языковой селектор */}
           <div className={styles.menuLangWrapper}>

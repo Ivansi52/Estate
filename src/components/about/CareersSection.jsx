@@ -30,8 +30,9 @@ export default function CareersSection() {
           <button className={styles.button}>
             <span className={styles.buttonText}>MORE</span>
             <div className={styles.arrowIcon}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <circle cx="22.1797" cy="22.1797" r="22.1797" fill="white"/>
+                <path d="M14.166 23.2214V21.138H26.666L20.9369 15.4089L22.416 13.9297L30.666 22.1797L22.416 30.4297L20.9369 28.9505L26.666 23.2214H14.166Z" fill="#01203F"/>
               </svg>
             </div>
           </button>

@@ -88,18 +88,54 @@
 .item {
   width: 610px;
   height: 134px;
-  border: 1px solid rgba(3, 68, 220, 0.5);
+  border: 1px solid rgba(1, 32, 63, 0.3);
   border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 0 30px;
-  font-size: 20px;
-  font-weight: 400;
+  padding: 0 30px 0 20px;
   color: black;
   background-color: white;
   box-sizing: border-box;
   position: relative;
+}
+
+.item span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 90%;
+  letter-spacing: -0.07em;
+  leading-trim: cap-height;
+  text-align: center;
+  width: calc(100% - 140px);
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  background-color: #F3F7FF;
+  border-radius: 50%;
+  position: relative;
+  z-index: 0;
+}
+
+.iconWrapper svg {
+  display: block;
+  width: 50px;
+  height: 50px;
+  max-height: 50px;
 }
 
 .leftColumn {

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import FeedBack from '@/components/FeedBack';
-import Header from '@/components/Services/HeaderServices';
+import Header from '@/components/services/HeaderServices';
 import FilterButtons from '@/components/services/FilterButtons';
 import ThirdBlock from '@/components/FourthSectionMainPage'
 import ServicesGrid from '@/components/services/ServicesGrid';

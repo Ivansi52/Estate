@@ -68,7 +68,9 @@ export default function FourthSection({ sectionNumber }) {
             <div className={styles.number}>{sectionNumber}</div>
             <div className={styles.textBlock}>
               <h2 className={styles.heading}>
-                Designs that <span className={styles.highlight}>speak</span> for themselves
+                <span>Designs that <span className={styles.highlight}>speak</span></span>
+                <br />
+                <span>for themselves</span>
               </h2>
               <p className={styles.description}>
                 Explore our portfolio and see how we turn ideas into impactful digital solutions.
@@ -79,27 +81,9 @@ export default function FourthSection({ sectionNumber }) {
           <button className={styles.moreButton}>
             MORE
             <span className={styles.arrowCircle}>
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 12H19"
-                  stroke="black"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M12 5L19 12L12 19"
-                  stroke="black"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+              <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22.1797" cy="22.1797" r="22.1797" fill="white"/>
+                <path d="M13.6256 23.2199V21.1076H26.2998L20.4908 15.2986L21.9906 13.7988L30.3555 22.1637L21.9906 30.5286L20.4908 29.0289L26.2998 23.2199H13.6256Z" fill="#01203F"/>
               </svg>
             </span>
           </button>

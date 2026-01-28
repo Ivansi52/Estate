@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.wrapper {
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  background-color: #F6F6F6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1810px;
+  position: relative;
+  height: 790px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 1056px;
+  position: relative;
+  z-index: 2;
+}
+
+.mainHeading {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 96px;
+  line-height: 100%;
+  letter-spacing: -0.07em;
+  color: #01203F;
+  margin: 0;
+}
+
+.calculatorWord {
+  color: white;
+}
+
+.subHeading {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 96px;
+  line-height: 100%;
+  letter-spacing: -0.07em;
+  color: #B9B9C3;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.blueRectangle {
+  position: absolute;
+  left: 292px;
+  top: 106px;
+  width: 427px;
+  height: 81px;
+  background-color: #0344DC;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.description {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 90%;
+  letter-spacing: -0.07em;
+  color: #666666;
+  margin: 0;
+  margin-top: 40px;
+  max-width: 930px;
+}
+
+.subDescription {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.05em;
+  color: #01203F;
+  margin: 0;
+  margin-top: 40px;
+  max-width: 463px;
+}
+
+.ctaButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  width: 393px;
+  height: 57px;
+  padding: 0;
+  background-color: #0344DC;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: Inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.05em;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.ctaButton:hover {
+  background-color: #022476;
+}
+
+.ctaButton span {
+  white-space: nowrap;
+}
+
+.ctaButton svg {
+  flex-shrink: 0;
+}
+
+/* Декоративная картинка */
+.decorativeImage {
+  position: absolute;
+  left: 186px;
+  top: 35px;
+  width: 973px;
+  height: 648px;
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.decorativeImageSvg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Декоративная группа справа */
+.decorativeGroup {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 675px;
+  height: 790px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.decorativeRect1 {
+  position: absolute;
+  left: 0;
+  bottom: 11px;
+  width: 272px;
+  height: 353px;
+  background-color: #0344DC;
+  border-radius: 46px 175px 46px 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.decorativeRect2 {
+  position: absolute;
+  left: 282px;
+  bottom: 0;
+  width: 393px;
+  height: 245px;
+  background-color: #0344DC;
+  border-radius: 37px 170px 47px 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decorativeRect3 {
+  position: absolute;
+  left: 408.8px;
+  top: 118px;
+  width: 266.2px;
+  height: 413.41px;
+  background-color: #0344DC;
+  border-radius: 36px 173px 46px 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.decorativeRect4 {
+  position: absolute;
+  left: 4px;
+  top: 0;
+  width: 393px;
+  height: 413px;
+  background-color: #0344DC;
+  border-radius: 170px 170px 170px 45.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decorativeContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.decorativeRect4 .decorativeContent {
+  justify-content: flex-end;
+  padding-bottom: 20px;
+}
+
+.decorativeRect2 .decorativeContent {
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 28px;
+}
+
+.decorativeRect4 .folderIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.decorativeRect2 .chatBubbles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+
+.folderIcon {
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+
+.chatBubbles img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.usersIcon,
+.chatIcon {
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.usersIcon img,
+.chatIcon img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.chatIcon img {
+  opacity: 1;
+  filter: brightness(2.5) contrast(0.9);
+}
+
+.decorativeText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.decorativeRect2 .decorativeText {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+}
+
+.decorativeTextMain {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 90%;
+  letter-spacing: 0%;
+  color: white;
+}
+
+.decorativeTextSub {
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 90%;
+  letter-spacing: 0%;
+  color: white;
+  opacity: 0.5;
+}
+
+.folderIcon {
+  width: 144px;
+  height: 159px;
+  opacity: 0.5;
+}
+
+@media (max-width: 1200px) {
+  .mainHeading,
+  .subHeading {
+    font-size: 72px;
+  }
+  
+  .description {
+    font-size: 32px;
+  }
+  
+  .subDescription {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .decorativeImage,
+  .decorativeGroup {
+    display: none;
+  }
+  
+  .container {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 60px 20px;
+  }
+  
+  .mainHeading,
+  .subHeading {
+    font-size: 48px;
+  }
+  
+  .description {
+    font-size: 24px;
+  }
+  
+  .subDescription {
+    font-size: 18px;
+  }
+  
+  .ctaButton {
+    padding: 20px;
+    gap: 20px;
+    font-size: 20px;
+  }
+  
+  .ctaButton svg {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .blueRectangle {
+    display: none;
+  }
+}
+

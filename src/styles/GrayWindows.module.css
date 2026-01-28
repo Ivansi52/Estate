@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
 /* ============================= */
 /* 🌐 ОСНОВНАЯ СЕКЦИЯ */
 /* ============================= */
@@ -33,22 +35,24 @@
 .title {
   font-size: 40px;
   font-weight: 400;
-  line-height: 0.9;
+  line-height: 1.2;
   color: #01203f;
   margin: 0 0 20px 0;
   padding-left: 300px;
+  overflow: visible;
+  padding-bottom: 5px;
 }
 
 .leaderBadge {
-  background: linear-gradient(90deg, #0344dc, #022476);
+  background: #0344DC;
   color: #ffffff;
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 4px 10px;
+  border-radius: 16px;
   font-size: 40px;
   font-weight: 400;
   line-height: 0.9;
   display: inline-block;
-  margin: 0 8px 0 0;
+  margin: 0 2px 0 0;
 }
 
 .subtitle {
@@ -98,14 +102,15 @@
 .windowSmall,
 .windowSmallRight {
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #d0d0d0;
   border-radius: 15px;
-  padding: 40px 20px;
+  padding: 20px 20px 40px 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
   height: 100%;
 }
 
@@ -119,50 +124,67 @@
 /* 🌀 ГРАДИЕНТНЫЕ ЗАГОЛОВКИ */
 /* ============================= */
 .gradientTitle {
+  font-family: 'Inter', sans-serif;
   font-size: 40px;
   font-weight: 400;
-  line-height: 0.9;
-  background: linear-gradient(90deg, #0344DC, #022476);
+  font-style: normal;
+  line-height: 90%;
+  letter-spacing: -0.07em;
+  background: linear-gradient(180deg, #0344DC 32.69%, #022476 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin: 0 0 20px 0;
-  letter-spacing: -0.07em;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 8px;
+  overflow: visible;
+  align-self: flex-start;
+  text-align: left;
 }
 
 /* ============================= */
 /* 🔸 ПРОЧЕЕ */
 /* ============================= */
 .spacer {
-  height: 20px;
+  height: 0;
+  display: none;
 }
 
 .leftTopText,
 .leftBottomText,
 .rightTopText,
 .rightBottomText {
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.6;
+  font-style: normal;
+  line-height: 100%;
+  letter-spacing: -0.05em;
   color: #01203f;
   margin: 0;
-  letter-spacing: -0.05em;
-  flex-grow: 1;
+  margin-top: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  overflow: visible;
+  align-self: flex-start;
+  text-align: left;
 }
 
 /* ============================= */
 /* 🏢 ЦЕНТРАЛЬНОЕ ОКНО */
 /* ============================= */
 .middleWindow {
-  width: 930px;
-  height: 100%;
+  width: 1150px;
+  height: auto;
+  min-height: 450px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  justify-content: center;
-  padding: 50px 60px;
+  justify-content: flex-start;
+  padding: 35px 40px 35px 20px;
   box-sizing: border-box;
   background: #fff;
+  border: 1px solid #d0d0d0;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   flex: 1;
@@ -183,28 +205,41 @@
 /* Левая часть текста */
 .centerText {
   max-width: 380px;
-  margin-right: 30px; /* ✅ отступ справа от текста до линии */
+  margin-right: 15px; /* ✅ отступ справа от текста до линии */
+  margin-left: 0;
 }
 
 /* Заголовок "Company Philosophy" */
 .centerTitle {
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
+  font-style: normal;
   font-size: 40px;
-  background: linear-gradient(90deg, #0344DC, #022476);
+  line-height: 90%;
+  letter-spacing: -0.07em;
+  background: linear-gradient(180deg, #0344DC 32.69%, #022476 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin: 0 0 20px 0;
-  line-height: 1.1;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  overflow: visible;
 }
 
 /* Текст под заголовком */
 .centerParagraph {
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 17px;
-  line-height: 1.6;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -0.05em;
   color: #000;
   margin-bottom: 12px;
-  letter-spacing: -0.02em;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  overflow: visible;
 }
 
 /* ============================= */
@@ -226,7 +261,7 @@
   text-align: left;
   color: #000;
   gap: 8px;
-  margin-left: 28px; /* ✅ от линии до фото */
+  margin-left: 15px; /* ✅ от линии до фото */
 }
 
 .centerRight img {
@@ -234,31 +269,49 @@
   margin-bottom: 10px;
   object-fit: cover;
   background: #f9f9f9;
+  width: 205px;
+  height: auto;
 }
 
 /* Имя */
 .name {
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 16px;
   color: #000;
   margin: 15px 0 5px 0;
+  line-height: 100%;
+  letter-spacing: -0.05em;
 }
 
 /* Должность */
 .position {
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 15px;
-  color: gray;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: -0.05em;
+  color: #B9B9C3;
   margin: 0 0 15px 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  overflow: visible;
 }
 
 /* Текст под должностью */
 .centerRightText {
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: -0.05em;
   color: #000;
-  line-height: 1.5;
   margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  overflow: visible;
   text-align: left;
 }
 

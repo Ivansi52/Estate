@@ -23,15 +23,15 @@ export default function GrayWindows() {
             <h2 className={styles.gradientTitle}>Solving Market Challenges</h2>
             <div className={styles.spacer}></div>
             <p className={styles.leftTopText}>
-              Every project has two sides — the business that wants to grow, and the customer who needs to quickly think: "This solution is for me."<br />
-              Many websites are created to please the owner, forgetting about the people who will actually use them.
+              Every project has two sides — the business that wants to grow, and<br /> the customer who needs to quickly think: "This solution is for me."<br />
+              Many websites are created to please the owner, forgetting about the<br /> people who will actually use them.
             </p>
           </div>
           <div className={styles.windowSmall}>
             <h2 className={styles.gradientTitle}>Boosting Business Profitability, Day by Day</h2>
             <div className={styles.spacer}></div>
             <p className={styles.leftBottomText}>
-              Over 50 successful projects and 5 years of proven expertise.
+              Over 50 successful projects and 5<br /> years of proven expertise.
             </p>
           </div>
         </div>
@@ -43,10 +43,24 @@ export default function GrayWindows() {
             <div className={styles.centerText}>
               <h2 className={styles.centerTitle}>Company Philosophy</h2>
               <p className={styles.centerParagraph}>
-                This is how 2Clients was founded. The name says it all: "Two Clients" — and at the same time, "to clients", meaning "for clients." <br /> <br />
-                This play on words reflects our philosophy: listening to the business, understanding the customer, and creating products that generate profit. <br /> <br />
-                For us, it's not just words — it's a method we apply to every project.
-              </p>
+                This is how 2Clients was<br />
+                founded. The name says it all:
+                "Two Clients" — and at the<br />
+                same time, "to clients",<br /> meaning
+                "for clients."
+              </p> <br />
+              <p className={styles.centerParagraph}>
+                This play on words reflects our<br />
+                philosophy: listening to the<br />
+                business, understanding the<br />
+                customer, and creating<br />
+                products that generate profit.
+              </p> <br />
+              <p className={styles.centerParagraph}>
+                For us, it's not just words — it's<br />
+                a method we apply to every<br />
+                project.
+              </p> <br />
             </div>
 
             {/* Вертикальная пунктирная линия */}
@@ -72,14 +86,14 @@ export default function GrayWindows() {
             <h2 className={styles.gradientTitle}>Our Mission</h2>
             <div className={styles.spacer}></div>
             <p className={styles.rightTopText}>
-              To unite the goals of businesses and customers, crafting products that represent the brand while resonating with the audience.
+              To unite the goals of businesses and<br /> customers, crafting products that<br /> represent the brand while resonating<br /> with the audience.
             </p>
           </div>
           <div className={styles.windowSmallRight}>
             <h2 className={styles.gradientTitle}>98% of our clients continue working with us</h2>
             <div className={styles.spacer}></div>
             <p className={styles.rightBottomText}>
-              We focus on fostering strong, long-term relationships.
+              We focus on fostering strong, long- <br /> term relationships.
             </p>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import FirstBlock from '@/components/FirstBlock'
 import SecondBlockMainPage from '@/components/SecondBlockMainPage';
 import ThirdBlockMainPage from '@/components/ThirdBlockMainPage';
-import CalculatorBlock from "@/components/CalculatorBlock";
+import CalculatorPromoBlock from '@/components/CalculatorPromoBlock';
 import FourthSection from "@/components/FourthSectionMainPage";
 import ProjectStages from '@/components/ProjectStages';
 import SixthSection from "@/components/SixthSection";
@@ -51,7 +51,7 @@ export default function Home() {
     <FirstBlock/>
     <SecondBlockMainPage/>
     <ThirdBlockMainPage/>
-    <CalculatorBlock/>
+    <CalculatorPromoBlock/>
     <FourthSection sectionNumber='04' />
     <ProjectStages/>
     <SixthSection/>

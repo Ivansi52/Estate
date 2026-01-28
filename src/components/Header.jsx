@@ -2,9 +2,6 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import styles from '@/styles/Header.module.css';
 import { FaEnvelope } from 'react-icons/fa';
-import { IoIosArrowDown } from 'react-icons/io';
-import Image from 'next/image';
-import Logo from '@/images/Logo.png';
 import LangChoice from './LangChoice';
 
 export default function Header() {
@@ -36,8 +33,15 @@ export default function Header() {
   return (
     <header className={headerClass}>
       <div className={styles.left} onClick={()=> router.push('/')}>
-        <Image src={Logo} alt="Logo" className={styles.logo} />
-        <span className={styles.brand} >Digital marketing agency in Moscow</span>
+        <svg className={styles.logo} width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0V31.8171H12.1095V27.9242H3.97915V3.8943H12.1095V0H0Z" fill="white"/>
+          <path d="M15.5757 0L15.5703 0.00419952V8.57393L25.1747 31.8182L25.1764 31.8172V23.2481L15.5757 0Z" fill="#FF1700"/>
+          <path d="M32.6115 0H28.6328V31.818H32.6115V0Z" fill="white"/>
+        </svg>
+        <div className={styles.brand}>
+          <span>Digital marketing agency</span>
+          <span>in Moscow</span>
+        </div>
       </div>
 
       <nav className={styles.nav}>
@@ -46,7 +50,7 @@ export default function Header() {
             className={`${styles.navItem} ${currentPath === '/services' ? styles.active : ''}`}
             onClick={() => router.push('/services')}
           >
-            Services <IoIosArrowDown className={styles.arrowIcon} />
+            Services
           </li>
           <li className={`${styles.navItem} ${currentPath === '/projects' ? styles.active : ''}`} onClick={() => router.push('/projects')}>
             Portfolio

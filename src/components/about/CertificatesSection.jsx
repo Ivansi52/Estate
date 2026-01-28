@@ -6,7 +6,6 @@ import certificate from '@/images/certificate.png';
 
 export default function CertificatesSection() {
   const [activeCertificate, setActiveCertificate] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const certificates = [
     {
@@ -54,13 +53,13 @@ export default function CertificatesSection() {
   ];
 
   const handleCertificateClick = (certificate) => {
-    setActiveCertificate(certificate);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setActiveCertificate(null);
+    if (activeCertificate && activeCertificate.id === certificate.id) {
+      // Если кликнули на уже активную карточку, скрываем изображение
+      setActiveCertificate(null);
+    } else {
+      // Иначе показываем изображение для выбранной карточки
+      setActiveCertificate(certificate);
+    }
   };
 
   return (
@@ -72,9 +71,7 @@ export default function CertificatesSection() {
             <span className={styles.titleBlack}>Certified for your </span>
             <span className={styles.titleWhite}>trust</span>
           </h2>
-          <p className={styles.subtitle}>
-            By meeting global standards, we ensure our partners and clients can rely on us with confidence.
-          </p>
+          <p className={styles.subtitle}>By meeting global standards, we ensure our partners and clients can rely<br /> on us withconfidence.</p>
         </div>
 
         <div className={styles.certificatesGrid}>
@@ -96,29 +93,15 @@ export default function CertificatesSection() {
           ))}
         </div>
 
-        <div className={styles.certificateImage}>
-          {/* Изображение показывается только в модальном окне при клике */}
+        <div className={`${styles.certificateImage} ${activeCertificate ? styles.certificateImageVisible : ''}`}>
+          {activeCertificate && (
+            <Image 
+              {...getOptimizedImageProps(certificate, "amoCRM Certificate 2025", 593, 458)}
+              className={styles.image}
+            />
+          )}
         </div>
       </div>
-
-      {/* Модальное окно для отображения сертификата */}
-      {isModalOpen && (
-        <div className={styles.modalOverlay} onClick={closeModal}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <button className={styles.closeButton} onClick={closeModal}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            </button>
-            <div className={styles.modalImageContainer}>
-              <Image 
-                {...getOptimizedImageProps(certificate, "amoCRM Certificate 2025", 0, 0)}
-                className={styles.modalImage}
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

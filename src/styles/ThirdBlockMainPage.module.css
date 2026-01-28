@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 .wrapper {
-  padding: 100px 20px;
+  padding: 200px 20px 100px 20px;
   display: flex;
   justify-content: center;
   font-family: 'Inter', sans-serif;
@@ -11,6 +11,7 @@
   width: 100%;
   max-width: 2000px;
   position: relative;
+  background: transparent;
 }
 
 /* ---------- Заголовок блока ---------- */
@@ -18,21 +19,25 @@
 .topBlock {
   display: flex;
   align-items: flex-start; /* Выравниваем элементы по верхнему краю */
-  gap: 30px; /* Отступ между номером и текстом */
-  margin-bottom: 10px;
+  gap: 10px; /* Отступ между номером и текстом */
+  margin-bottom: 0;
+  margin-top: 0.05em; /* Опускаем весь блок вниз */
   position: relative; /* Контекст для абсолютного позиционирования, если нужно */
-  padding-left: 250px; /* Важно: Освобождаем место для абсолютно позиционированного номера */
+  padding-left: 350px; /* Освобождаем место для абсолютно позиционированного номера, уменьшено для приближения к "02" */
 
 }
 
 .number {
   position: absolute; /* Абсолютное позиционирование относительно .topBlock */
   left: 0; /* Прижимаем номер к левому краю .topBlock */
-  top: -40px; /* Смещаем номер немного вверх относительно текста (регулируйте по вкусу) */
-  font-size: 200px;
-  color: #B9B9C3;
-  line-height: 1;
+  top: 0; /* Выравниваем верх "02" с верхом заголовка */
+  font-size: 300px;
   font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 70%;
+  letter-spacing: -0.13em;
+  color: var(--Gray, #B9B9C3);
   z-index: 0;
 }
 
@@ -45,39 +50,54 @@
 }
 
 .heading {
-  font-size: 24px;
+  font-family: 'Helvetica', sans-serif;
   font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 90%;
+  letter-spacing: -0.01em;
+  color: var(--Space-Blue, #01203F);
   margin: 0 0 12px;
 }
 
 .highlight {
   background-color: #0344DC;
   color: white;
-  padding: 0 6px;
-  border-radius: 4px;
+  padding: 1px 6px;
+  border-radius: 12px;
+  transform: translateY(2px);
+  line-height: 1;
 }
 
 .subtext {
   max-width: 431px;
-  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -0.07em;
   color: #444;
-  line-height: 1.6;
-  margin: 0;
+  margin: 15px 0 0;
+  opacity: 0.5;
 }
 
 /* ---------- Первый ряд ---------- */
 .topRow {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
+  margin-top: 50px;
   margin-bottom: 100px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Карточки */
 .cardLarge {
   width: 935px;
   height: 585px;
-  background-color: #f2f2f2;
+  background-color: #FFFFFF;
   border-radius: 15px;
   position: relative;
   overflow: hidden;
@@ -187,6 +207,13 @@
   text-align: left;
 }
 
+/* Для верхнего ряда - прижимаем к левому нижнему краю */
+.topRow .bottomLeftText {
+  bottom: 20px;
+  left: 20px;
+  max-width: none;
+}
+
 .bottomLeftText .cardTitle {
   font-size: 32px;
   font-weight: 400;
@@ -194,6 +221,14 @@
   width: 393px;
   color: black;
   font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+
+/* Для верхнего ряда - убираем width, прижимаем к левому краю */
+.topRow .bottomLeftText .cardTitle {
+  width: auto;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .bottomLeftText .cardDescription {
@@ -214,6 +249,13 @@
   text-align: right;
 }
 
+/* Для верхнего ряда - прижимаем к краю */
+.topRow .bottomRightText {
+  bottom: 20px;
+  right: 20px;
+  max-width: none;
+}
+
 .bottomRightText .cardTitle {
   font-size: 32px;
   padding-right: 40px;
@@ -222,6 +264,14 @@
   color: black;
   width: 393px;
   font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+
+/* Для верхнего ряда - убираем padding и width, прижимаем к правому краю */
+.topRow .bottomRightText .cardTitle {
+  padding-right: 0;
+  width: auto;
+  margin-right: 0;
 }
 
 .bottomRightText .cardDescription {
@@ -235,39 +285,36 @@
 /* ---------- Центр круга ---------- */
 .centerImage {
   position: absolute;
-  top: 42.5%;
+  top: 56%;
   left: 50%;
-  transform: translate(-50%, 32%);
-  z-index: 5;
+  transform: translate(-50%, -50%);
+  z-index: 10;
   width: 178px;
   height: 178px;
+  background: transparent;
+  overflow: visible;
 }
 
-.centerImage::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  /* background-color: #0344DC; */
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 10;
+.centerImage img,
+.centerImage :global(img) {
+  background: transparent !important;
+  display: block;
+  mix-blend-mode: screen;
+  object-fit: contain;
 }
 
 /* ---------- Второй ряд ---------- */
 .bottomRow {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
   margin-top: -85px;
 }
 
 .cardSmall {
   width: 463px;
   height: 585px;
-  background-color: #f2f2f2;
+  background-color: #FFFFFF;
   border-radius: 15px;
   position: relative;
   overflow: hidden;
@@ -301,14 +348,14 @@
 .bottomRow {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
   margin-top: -85px;
 }
 
 .cardSmall {
   width: 463px;
   height: 585px;
-  background-color: #f2f2f2;
+  background-color: #FFFFFF;
   border-radius: 15px;
   position: relative;
   overflow: hidden;
@@ -348,6 +395,18 @@
   z-index: 2;
 }
 
+/* Специальный стиль для правой крайней карточки - прижимаем к правому краю */
+.bottomRow .cardSmall .bottomRightText {
+  right: 20px;
+  max-width: none;
+}
+
+.bottomRow .cardSmall .bottomRightText .cardTitle {
+  width: auto;
+  margin-right: 0;
+  padding-right: 0;
+}
+
 /* Заголовок в нижних карточках */
 .cardTitle {
   font-size: 32px;
@@ -355,6 +414,7 @@
   margin: 0 0 10px;
   color: black;
   font-family: 'Inter', sans-serif;
+  white-space: nowrap;
 }
 
 /* Описание в нижних карточках */
@@ -406,6 +466,87 @@
   max-width: 90%;
 }
 
+/* Для левой центральной карточки - прижимаем к левому краю */
+.cutTopRight .centerCardText {
+  max-width: none;
+  padding-left: 0;
+}
+
+.cutTopRight .centerCardText .cardTitle {
+  width: auto;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Для нижнего ряда - прижимаем к левому нижнему углу */
+.bottomRow .cutTopRight .gradientNumber {
+  position: absolute;
+  bottom: 120px;
+  left: 20px;
+  margin: 0;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 96px;
+  line-height: 90%;
+  letter-spacing: -0.07em;
+  background: linear-gradient(100.96deg, #0344DC 14.8%, #022476 96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bottomRow .cutTopRight .centerCardText {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  max-width: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.bottomRow .cutTopRight .centerCardText .cardTitle {
+  width: auto;
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+
+/* Для правой центральной карточки в нижнем ряду - прижимаем к правому нижнему углу */
+.bottomRow .cutTopLeft .gradientNumber {
+  position: absolute;
+  bottom: 120px;
+  right: 20px;
+  margin: 0;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 96px;
+  line-height: 90%;
+  letter-spacing: -0.07em;
+  background: linear-gradient(180deg, #0344DC 0%, #022476 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bottomRow .cutTopLeft .centerCardText {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  max-width: none;
+  padding-right: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.bottomRow .cutTopLeft .centerCardText .cardTitle {
+  width: auto;
+  margin-right: 0;
+  padding-right: 0;
+  margin-bottom: 10px;
+}
+
 /* Границы (если нужны) */
 .cardSmall::before {
   content: '';
@@ -424,7 +565,7 @@
   }
   
   .number {
-    font-size: 150px;
+    font-size: 220px;
     top: -30px;
   }
   
@@ -478,7 +619,7 @@
   
   .number {
     position: static;
-    font-size: 100px;
+    font-size: 150px;
     margin-bottom: 20px;
   }
   
@@ -535,7 +676,7 @@
   }
   
   .number {
-    font-size: 60px;
+    font-size: 100px;
   }
   
   .textBlock {

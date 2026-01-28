@@ -27,24 +27,37 @@
 }
 
 .heading {
-  font-size: 40px;
+  font-family: Inter, sans-serif;
   font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 90%;
+  letter-spacing: -0.07em;
   color: black;
   max-width: 260px;
   margin: 0;
+  margin-top: 30px;
 }
 
 .highlight {
   background-color: #0344DC;
   color: white;
-  border-radius: 10px;
-  padding: 0 4px;
+  border-radius: 6px;
+  padding: 0 3px;
+  line-height: 0.9;
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 .description {
-  margin-top: 12px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 18px;
-  color: #01203F;
+  line-height: 100%;
+  letter-spacing: -0.07em;
+  color: #9CA3AF;
+  margin-top: 12px;
   max-width: 400px;
 }
 
@@ -139,7 +152,7 @@
 
 .category {
   font-size: 20px;
-  color: #0344DC;
+  color: #020F15;
   border: 1px solid rgba(3, 68, 220, 0.3);
   border-radius: 60px;
   padding: 10px 24px;
@@ -150,7 +163,7 @@
 .controls {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: -15px;
   width: 270px;
   height: 120px;
   display: flex;

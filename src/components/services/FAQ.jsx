@@ -10,6 +10,10 @@ const FAQ = () => {
 
   const faqItems = [
     {
+      question: "How much does a website/project cost?",
+      answer: "The cost of a website or project depends on various factors including complexity, features, design requirements, and timeline. We provide customized quotes based on your specific needs. Contact us for a detailed estimate tailored to your project."
+    },
+    {
       question: "How long does it take to implement your solution?",
       answer: "Typically, implementation takes 2-4 weeks depending on the complexity of your business processes."
     },

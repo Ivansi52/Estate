@@ -1,6 +1,6 @@
 .background {
   width: 100%;
-  height: 1000px;
+  height: 1124px;
   background: linear-gradient(to bottom, #022476, blue);
   position: relative;
   font-family: 'Helvetica', sans-serif;
@@ -22,33 +22,50 @@
   align-items: flex-start;
   z-index: 3;
   position: relative;
+  margin-top: 200px;
 }
 
 .buildingText {
-  font-size: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 150px;
+  line-height: 70%;
+  letter-spacing: -0.1em;
   color: white;
   margin-bottom: 10px;
-  line-height: 1;
+}
+
+.buildingWord {
+  display: inline-block;
+  margin-top: -30px;
 }
 
 .yourDigitalText {
-  font-size: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 150px;
+  line-height: 70%;
+  letter-spacing: -0.1em;
   color: white;
-  line-height: 1;
   margin: 0 0 30px 0;
 }
 
 .quoteButton {
-  height: 57px;
-  width: 260px;
+  width: 298px;
+  height: 58px;
   background: white;
   color: black;
   border-radius: 15px;
   border: none;
-  font-size: 20px;
   font-family: 'Helvetica', sans-serif;
-  font-weight: bold;
-  padding: 0 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  padding: 6px 6px 6px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -63,9 +80,9 @@
 }
 
 .arrowCircle {
-  width: 30px;
-  height: 30px;
-  background: #022476;
+  width: 46px;
+  height: 46px;
+  background: #0344DC;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -91,6 +108,7 @@
   text-align: right;
   z-index: 3;
   position: relative;
+  margin-top: 300px;
 }
 
 .description {
@@ -101,16 +119,24 @@
 }
 
 .successText {
-  font-size: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 150px;
+  line-height: 70%;
+  letter-spacing: -0.1em;
   color: white;
-  line-height: 1;
   margin: 0;
 }
 
 .togetherText {
-  font-size: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 150px;
+  line-height: 70%;
+  letter-spacing: -0.1em;
   color: white;
-  line-height: 1;
   margin: 0;
 }
 
@@ -143,9 +169,9 @@
 
 .logosCarousel {
   display: flex;
-  animation: scroll 28s linear infinite;
-  transition: transform 1s ease-in-out;
+  animation: scroll 20s linear infinite;
   gap: 40px;
+  will-change: transform;
 }
 
 .logoItem {
@@ -234,8 +260,10 @@
   }
   
   .buildingText,
-  .yourDigitalText {
-    font-size: 80px;
+  .yourDigitalText,
+  .successText,
+  .togetherText {
+    font-size: 120px;
   }
 }
 
@@ -252,8 +280,10 @@
   }
   
   .buildingText,
-  .yourDigitalText {
-    font-size: 60px;
+  .yourDigitalText,
+  .successText,
+  .togetherText {
+    font-size: 90px;
   }
   
   .quoteButton {
@@ -279,8 +309,10 @@
 
 @media (max-width: 480px) {
   .buildingText,
-  .yourDigitalText {
-    font-size: 40px;
+  .yourDigitalText,
+  .successText,
+  .togetherText {
+    font-size: 60px;
   }
   
   .quoteButton {

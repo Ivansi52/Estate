@@ -8,55 +8,58 @@ import LexusIcon from '@/images/lexusIcon.png';
 import pionerIcon from '@/images/pioner.png';
 import slavDvorIcon from '@/images/slav_dvor.png';
 import RPIcon from '@/images/RiverPark.png';
+import company1Icon from '@/images/company1.svg';
+import company2Icon from '@/images/company2.svg';
+import company4Icon from '@/images/company4.svg';
+import company5Icon from '@/images/company5.svg';
 
 const cardsData = [
   {
     id: 1,
     category: 'Experience',
     title: 'Experience in countries',
-    description: 'We take into account legal, cultural, and marketing specifics of each market.',
+    description: "We take into account legal, cultural, and marketing\n specifics of each market.",
     gradientText: '15+',
   },
   {
     id: 2,
-    category: 'Experience',
-    title: 'Experience in countries',
-    description: 'We take into account legal, cultural, and marketing specifics of each market.',
-    gradientText: '15+',
+    category: 'Support',
+    title: 'Support',
+    description: "We're always here to answer questions\nand solve issues quickly.",
+    gradientText: '24/7',
   },
   {
     id: 3,
-    category: 'Experience',
-    title: 'Experience in countries',
-    description: 'We take into account legal, cultural, and marketing specifics of each market.',
-    gradientText: '15+',
+    category: 'Faster Launch',
+    title: 'Faster Launch',
+    description: "Optimized processes help us bring your\nsite to life sooner.",
+    gradientText: '30%',
   },
   {
     id: 4,
-    category: 'Experience',
-    title: 'Experience in countries',
-    description: 'We take into account legal, cultural, and marketing specifics of each market.',
-    gradientText: '15+',
+    category: 'Custom design',
+    title: 'Custom design',
+    description: "Every website is crafted to match your brand's\nunique style and goals.",
+    gradientText: '100%',
   },
   {
     id: 5,
-    category: 'Experience',
-    title: 'Experience in countries',
-    description: 'We take into account legal, cultural, and marketing specifics of each market.',
-    gradientText: '15+',
+    category: 'Years of experience',
+    title: 'Years of experience',
+    description: "A proven track record of delivering successful\nprojects.",
+    gradientText: '10+',
   },
   {
     id: 6,
-    category: 'Experience',
-    title: 'Experience in countries',
-    description: 'We take into account legal, cultural, and marketing specifics of each market.',
-    gradientText: '15+',
+    category: 'Happy clients',
+    title: 'Happy clients',
+    description: "Businesses worldwide trust us to grow\ntheir online presence.",
+    gradientText: '500+',
   },
 ];
 
 const ChoiceSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [hoveredLogo, setHoveredLogo] = useState(null);
   const totalSlides = 3; // маркеры и слайды для окна справа
 
   const logos = [
@@ -64,9 +67,44 @@ const ChoiceSection = () => {
     { src: pionerIcon, alt: "Pioner", name: "Pioner" },
     { src: slavDvorIcon, alt: "Slav Dvor", name: "Slav Dvor" },
     { src: RPIcon, alt: "River Park", name: "River Park" },
+    { src: company1Icon, alt: "Company 1", name: "Company 1" },
+    { src: company2Icon, alt: "Company 2", name: "Company 2" },
+    { src: company4Icon, alt: "Company 4", name: "Company 4" },
+    { src: company5Icon, alt: "Company 5", name: "Company 5" },
   ];
 
-  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
+  // Функция для создания массива без повторений подряд
+  const createDuplicatedLogos = (sourceArray, times) => {
+    if (sourceArray.length === 0) return [];
+    if (sourceArray.length === 1) {
+      // Если только один элемент, просто повторяем его
+      return Array(times).fill(sourceArray[0]);
+    }
+    
+    let result = [...sourceArray];
+    
+    for (let i = 1; i < times; i++) {
+      const lastItem = result[result.length - 1];
+      let nextArray = [...sourceArray];
+      
+      // Всегда проверяем и перемещаем, если последний элемент совпадает с первым
+      while (nextArray.length > 0 && (lastItem.src === nextArray[0].src || lastItem.name === nextArray[0].name)) {
+        // Циклически сдвигаем массив на один элемент
+        nextArray = [...nextArray.slice(1), nextArray[0]];
+        
+        // Защита от бесконечного цикла (если все элементы одинаковые)
+        if (nextArray.every(item => item.src === lastItem.src)) {
+          break;
+        }
+      }
+      
+      result = [...result, ...nextArray];
+    }
+    
+    return result;
+  };
+
+  const duplicatedLogos = createDuplicatedLogos(logos, 4);
 
   const goPrev = () => {
     setActiveSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
@@ -150,18 +188,11 @@ const ChoiceSection = () => {
             <div 
               key={index} 
               className={styles.logoItem}
-              onMouseEnter={() => setHoveredLogo(logo.name)}
-              onMouseLeave={() => setHoveredLogo(null)}
             >
               <Image 
                 {...getOptimizedImageProps(logo.src, logo.alt, 150, 60)}
                 className={styles.logoImage}
               />
-              {hoveredLogo === logo.name && (
-                <div className={styles.logoTooltip}>
-                  {logo.name}
-                </div>
-              )}
             </div>
           ))}
         </div>

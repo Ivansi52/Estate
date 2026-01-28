@@ -68,7 +68,10 @@ export default function TeamSection() {
       <div className={styles.container}>
         <div className={styles.headerBlock}>
           <div className={styles.numberBadge}>02</div>
-          <h2 className={styles.title}>People behind our success</h2>
+          <h2 className={styles.title}>
+            People behind our<br />
+            <span className={styles.successBadge}>success</span>
+          </h2>
           <p className={styles.subtitle}>
             Together, we bring diverse perspectives and a shared commitment to driving innovation and excellence.
           </p>

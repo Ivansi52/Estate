@@ -54,15 +54,30 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  row-gap: 40px;
   max-width: 1400px;
   margin: 40px auto 40px;
+}
+
+.positionCard:nth-child(1),
+.positionCard:nth-child(2) {
+  justify-self: start;
+  margin-right: auto;
+  margin-left: -200px;
+}
+
+.positionCard:nth-child(3),
+.positionCard:nth-child(4) {
+  justify-self: end;
+  margin-left: auto;
+  margin-right: -200px;
 }
 
 .positionCard {
   width: 699px;
   height: 226px;
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #d0d0d0;
   border-radius: 200px;
   display: flex;
   align-items: center;
@@ -150,8 +165,8 @@
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 191px;
-  height: 57px;
+  width: 200px;
+  height: 60px;
   justify-content: center;
 }
 
@@ -170,19 +185,23 @@
 }
 
 .arrowIcon {
-  width: 44px;
-  height: 44px;
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  min-height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #ffffff;
   border-radius: 50%;
   color: #01203f;
+  flex-shrink: 0;
 }
 
 .arrowIcon svg {
-  width: 100%;
-  height: 100%;
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 1200px) {

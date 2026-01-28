@@ -35,7 +35,8 @@ export default function YourComponent({ number }) {
         <div className={styles.number}>{number}</div> {/* Здесь номер из пропса */}
         <div className={styles.content}>
           <h2 className={styles.heading}>
-            Trusted by our <span className={styles.highlight}>clients</span>
+            Trusted by<br />
+            our <span className={styles.highlight}>clients</span>
           </h2>
           <p className={styles.description}>
             Hear directly from our clients—real stories showcasing the impact of our work and the value we bring to every project.
@@ -89,8 +90,16 @@ export default function YourComponent({ number }) {
         </div>
 
         <div className={styles.controls}>
-          <button className={styles.controlButton} onClick={prevCard}>&larr;</button>
-          <button className={styles.controlButton} onClick={nextCard}>&rarr;</button>
+          <button className={styles.controlButton} onClick={prevCard}>
+            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M46 20V26H11L27 42L23 46L0 23L23 0L27 4L11 20H46Z" fill="white"/>
+            </svg>
+          </button>
+          <button className={styles.controlButton} onClick={nextCard}>
+            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: 'scaleX(-1)' }}>
+              <path d="M46 20V26H11L27 42L23 46L0 23L23 0L27 4L11 20H46Z" fill="white"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
