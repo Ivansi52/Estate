@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { setOptions, importLibrary } from '@googlemaps/js-api-loader';
-import styles from '../styles/CityBlocks.module.css';
+import styles from '@/styles/CityBlocks.module.css';
 
 const GoogleMap = () => {
   const mapRef = useRef(null);
