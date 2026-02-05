@@ -157,7 +157,9 @@ const ChoiceSection = () => {
 
           <div className={styles.sliderControls}>
             <button onClick={goPrev} className={styles.arrowBtn} aria-label="Previous">
-              &#8592;
+              <svg width="42.55" height="42.55" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: 'rotate(180deg)' }}>
+                <path d="M-0.00019455 24.05V18.5L32.3748 18.5L17.5748 3.7L21.2748 0L42.5498 21.275L21.2748 42.55L17.5748 38.85L32.3748 24.05L-0.00019455 24.05Z" fill="white"/>
+              </svg>
             </button>
 
             <div className={styles.dots}>
@@ -174,7 +176,9 @@ const ChoiceSection = () => {
             </div>
 
             <button onClick={goNext} className={styles.arrowBtn} aria-label="Next">
-              &#8594;
+              <svg width="42.55" height="42.55" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-0.00019455 24.05V18.5L32.3748 18.5L17.5748 3.7L21.2748 0L42.5498 21.275L21.2748 42.55L17.5748 38.85L32.3748 24.05L-0.00019455 24.05Z" fill="white"/>
+              </svg>
             </button>
           </div>
         </div>

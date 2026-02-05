@@ -14,26 +14,26 @@ const cardsData = [
   {
     image: img1,
     categoriesLeft: ['Web design', 'SEO optimization'],
-    categoriesRight: [],
-    title: ['E-commerce site', 'for Luxury', 'Marketplace'],
+    categoriesRight: ['Product Design'],
+    title: ['Corporate Site', 'for Real', 'Estate'],
   },
   {
     image: img2,
-    categoriesLeft: [],
-    categoriesRight: ['Product Design', 'Traffic growth'],
+    categoriesLeft: ['Web design', 'SEO optimization'],
+    categoriesRight: ['Traffic growth', 'Product Design'],
     title: ['E-commerce site', 'for Luxury', 'Marketplace'],
   },
   {
     image: img3,
     categoriesLeft: ['Web design', 'SEO optimization'],
-    categoriesRight: ['Product Design', 'Traffic growth'],
-    title: ['E-commerce site', 'for Luxury', 'Marketplace'],
+    categoriesRight: ['Traffic growth', 'Product Design'],
+    title: ['Multi-page site', 'for Auto', 'Retailers'],
   },
   {
     image: img4,
-    categoriesLeft: ['Web design'],
-    categoriesRight: ['Traffic growth'],
-    title: ['E-commerce site', 'for Luxury', 'Marketplace'],
+    categoriesLeft: ['Web design', 'SEO optimization'],
+    categoriesRight: ['Traffic growth', 'Product Design'],
+    title: ['Corporate site', 'for Premium ', 'Automotive'],
   },
 ];
 
@@ -171,9 +171,28 @@ export default function FourthSection({ sectionNumber }) {
                   </ul>
                   <div className={styles.seeCaseLink}>
                     {hoverInfoContent.linkText}
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 7L17 17" stroke="#000000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M7 17H17V7" stroke="#000000ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg
+                      className={styles.seeCaseArrow}
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7 7L17 17"
+                        stroke="#000000ff"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M7 17H17V7"
+                        stroke="#000000ff"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </div>
                 </div>

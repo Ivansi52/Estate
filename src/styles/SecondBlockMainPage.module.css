@@ -110,7 +110,7 @@
   align-items: center;
   justify-content: space-between;
   z-index: 10;
-  width: 191px;
+  width: 270px;
   height: 57px;
   font-size: 17px;
   line-height: 17px;
@@ -118,11 +118,12 @@
 }
 
 .ctaText {
-  width: 66px;
+  width: auto;
   height: 17px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  white-space: nowrap;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -195,12 +196,10 @@
 .cardSmall.active {
   background: linear-gradient(135deg, rgba(3, 68, 220, 0.1) 0%, rgba(3, 68, 220, 0.05) 100%);
   border: 2px solid rgba(3, 68, 220, 0.3);
-  transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(3, 68, 220, 0.2);
 }
 
 .cardSmall:hover {
-  transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -243,11 +242,11 @@
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 36px;
+  font-size: 32px;
   line-height: 100%;
   letter-spacing: -0.07em;
   color: #01203F;
-  white-space: nowrap;
+  white-space: normal;
   overflow: visible;
   text-overflow: ellipsis;
   margin: 0;
@@ -289,12 +288,10 @@
   color: #01203F;
   max-width: 338px;
   margin: 0;
+  padding-right: 52px; /* резервируем место под стрелку справа */
 }
 
 .diagonalArrow {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -323,12 +320,10 @@
 }
 
 .cardLargeWithImage:hover {
-  transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(3, 68, 220, 0.3);
 }
 
 .cardLargeWithImage.active {
-  transform: translateY(-5px);
   box-shadow: 0 12px 35px rgba(3, 68, 220, 0.4);
   background: linear-gradient(135deg, #0344DC 0%, #022fa1 100%);
 }
@@ -490,9 +485,9 @@
 .row {
   display: flex;
   gap: 20px;
-  flex-wrap: nowrap; /* по умолчанию не переносим */
+  flex-wrap: nowrap; /* по умолчанию не переносим, ряды сохраняются */
   justify-content: flex-start; /* выравниваем по левому краю */
-  align-items: center; /* выравниваем по центру */
+  align-items: flex-start; /* карточки выровнены по верхнему краю и не тянут друг друга по высоте */
 }
 
 .row > .cardSmall:nth-child(2) {

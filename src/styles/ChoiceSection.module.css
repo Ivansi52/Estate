@@ -160,7 +160,7 @@
 /* Правое окно */
 
 .rightWindow {
-  width: 600px;
+  width: 467px;
   background-color: #0344DC;
   border-radius: 10px;
   padding: 30px 30px 40px;
@@ -179,7 +179,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 54px;
 }
 
 .userPhotoWrapper {
@@ -222,7 +222,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  position: absolute;
+  bottom: 30.35px;
+  left: 0;
+  right: 0;
+  padding: 0 31.15px;
 }
 
 .arrowBtn {
@@ -231,9 +235,12 @@
   color: white;
   font-size: 28px;
   cursor: pointer;
-  padding: 10px;
+  padding: 0;
   user-select: none;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .arrowBtn:hover {
@@ -248,8 +255,8 @@
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;

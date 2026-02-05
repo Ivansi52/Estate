@@ -6,9 +6,9 @@ import EsFlag from '@/images/EsFlag.png';
 import EnglandFlag from '@/images/EnglandFlag.png';
 
 const LANGUAGES = [
-  { code: 'ru', label: 'Русский', flag: RussiaFlag },
-  { code: 'en', label: 'English', flag: EnglandFlag },
-  { code: 'es', label: 'Español', flag: EsFlag },
+  { code: 'ru', short: 'RU', label: 'Русский', flag: RussiaFlag },
+  { code: 'en', short: 'EN', label: 'English', flag: EnglandFlag },
+  { code: 'es', short: 'ES', label: 'Español', flag: EsFlag },
 ];
 
 export default function LangChoice() {
@@ -37,15 +37,24 @@ export default function LangChoice() {
   }
 
   return (
-    <div className={styles.flagWrapper} ref={dropdownRef}>
-      <Image
-        height={40}
-        width={40}
-        src={selectedLang.flag}
-        alt={selectedLang.label}
-        className={styles.flag}
-        onClick={toggleDropdown}
-      />
+    <div
+      className={`${styles.flagWrapper} ${dropdownOpen ? styles.open : ''}`}
+      ref={dropdownRef}
+      onClick={toggleDropdown}
+    >
+      <div className={styles.langTrigger}>
+        <Image
+          height={32}
+          width={32}
+          src={selectedLang.flag}
+          alt={selectedLang.label}
+          className={styles.flag}
+        />
+        <span>{selectedLang.short}</span>
+        <svg className={styles.langTriggerIcon} width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
       {dropdownOpen && (
         <ul className={styles.langDropdown}>
           {LANGUAGES.filter(lang => lang.code !== selectedLang.code).map(lang => (
@@ -54,8 +63,8 @@ export default function LangChoice() {
               className={styles.langItem}
               onClick={() => onSelectLang(lang)}
             >
-              <Image height={40} width={40} src={lang.flag} alt={lang.label} className={styles.flag} />
-              <span>{lang.label}</span>
+              <Image height={32} width={32} src={lang.flag} alt={lang.label} className={styles.flag} />
+              <span>{lang.short}</span>
             </li>
           ))}
         </ul>

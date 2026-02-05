@@ -118,10 +118,16 @@ export default function SixthSection() {
           <div className={styles.number}>06</div>
           <div className={styles.textBlock}>
             <h2 className={styles.heading}>
-              Powering growth in diverse <span className={styles.highlight}>fields</span>
+              Powering growth in
+              <br />
+              diverse <span className={styles.highlight}>fields</span>
             </h2>
             <p className={styles.description}>
-              Driving success across industries, we deliver tailored solutions that fuel growth and innovation no matter the field.
+              Driving success across industries, we deliver
+              <br />
+              tailored solutions that fuel growth and innovation
+              <br />
+              no matter the field.
             </p>
           </div>
         </div>

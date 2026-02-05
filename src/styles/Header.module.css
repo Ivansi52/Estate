@@ -1,10 +1,11 @@
+/* Header поверх FirstBlock, не в потоке — не ломает 100vh */
 .header {
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
-  position: fixed; /* Закрепленное меню */
-  top: 0; /* Важно: позиционируем сверху */
-  z-index: 100001;
+  z-index: 100000;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,18 +13,17 @@
   padding: 20px 20px 0;
   font-family: 'Helvetica', sans-serif;
   flex-wrap: wrap;
-  /* Фон убран - только навигационное меню имеет фон */
+  width: 100%;
   background: transparent;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(0);
   opacity: 1;
 }
 
 .left {
   display: flex;
   align-items: center;
-  gap: 5px;
-  /* Фон убран - использует фон header */
+  gap: 12px;
+  background: transparent !important;
   margin-top: 12px;
   margin-left: 0;
   margin-right: 0;
@@ -31,70 +31,63 @@
 }
 
 .logo {
-  width: 32.611507415771484px;
-  height: 31.81818389892578px;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
 }
 
 .brand {
   display: flex;
   flex-direction: column;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
+  letter-spacing: -0.02em;
   color: white;
   line-height: 1.2;
   margin: 0;
   padding: 0;
 }
 
-.nav {
-  flex-grow: 1;
+/* Спейсер под фиксированное нав-меню */
+.navSpacer {
+  flex: 1;
+  min-width: 0;
+  pointer-events: none;
+  background: transparent !important;
+}
+
+/* Плашка компактная, по ширине контента */
+.navFixed {
+  position: fixed;
+  top: 20px;
+  left: 396px;
+  z-index: 100001;
   display: flex;
-  justify-content: center;
-  margin-top: 0;
-  margin-right: -20px;
-  margin-bottom: 0;
-  margin-left: 0;
+  justify-content: flex-start;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
 }
 
 .navList {
   display: flex;
   align-items: center;
-  /* Глассморфизм для навигации - цвет #05238D */
-  background: rgba(5, 35, 141, 0.8);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  justify-content: flex-start;
+  background: #05238D;
   border: none;
-  width: 918px;
-  height: 64px;
-  padding: 0;
-  border-radius: 30px;
-  gap: 0;
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
+  width: auto;
+  min-height: 52px;
+  padding: 10px 20px 10px 32px; /* top right bottom left */
+  border-radius: 50px;
+  gap: 24px;
+  margin: 0;
   flex-wrap: nowrap;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
-}
-
-.navList::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(5, 35, 141, 0.9) 0%, 
-    rgba(5, 35, 141, 0.7) 50%, 
-    rgba(5, 35, 141, 0.9) 100%);
-  pointer-events: none;
-  border-radius: 30px;
+  overflow: visible;
 }
 
 .navItem:first-child {
@@ -102,13 +95,8 @@
 }
 
 .navItem {
-  width: 145px;
-  height: 40px;
-  padding: 0;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  margin-left: 0;
-  margin-right: 0;
+  padding: 12px 16px;
+  margin: 0;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -121,69 +109,35 @@
   align-items: center;
   justify-content: center;
   border-radius: 30px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.2s ease;
   position: relative;
-  overflow: hidden;
   z-index: 2;
-}
-
-.navItem::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.2) 0%, 
-    rgba(255, 255, 255, 0.1) 50%, 
-    rgba(255, 255, 255, 0.2) 100%);
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 30px;
-}
-
-.navItem::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.15);
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 30px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.navItem:hover::before {
-  opacity: 1;
-}
-
-.navItem:hover::after {
-  opacity: 1;
+  flex-shrink: 0;
 }
 
 .navItem:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 
-    0 8px 25px rgba(0, 0, 0, 0.2),
-    0 4px 12px rgba(3, 68, 220, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.homeButton {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeButton.active {
+  background: transparent; /* Убираем синий кругляш для активного состояния */
+}
+
+.homeButton svg {
+  display: block;
+  width: 24px;
+  height: 24px;
 }
 
 .active {
-  background: rgba(9, 58, 175, 0.8);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  box-shadow: 
-    0 6px 20px rgba(0, 0, 0, 0.25),
-    0 3px 8px rgba(9, 58, 175, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  transform: translateY(-1px);
+  background: #093AAF;
 }
 
 .dropdown {
@@ -195,23 +149,55 @@
 }
 
 .flagWrapper {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  margin-right: 12px;
-  margin-left: 0;
+  padding: 12px 16px;
+  margin: 0;
   position: relative;
   user-select: none;
   z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.2s ease;
 }
 
-/* Флаг - круглое изображение 40x40 */
+.flagWrapper:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.langTrigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.07em;
+}
+
+.langTriggerIcon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.flagWrapper.open .langTriggerIcon {
+  transform: rotate(180deg);
+}
+
+/* Флаг - круглое изображение */
 .flag {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  cursor: pointer;
   display: block;
   object-fit: cover;
+}
+
+.langTrigger .flag {
+  width: 32px;
+  height: 32px;
 }
 
 /* Выпадающий список языков */
@@ -246,9 +232,10 @@
   background-color: #eee;
 }
 
-.langItem img.flag {
-  width: 30px;
-  height: 30px;
+.langItem img.flag,
+.langItem .flag {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -260,7 +247,7 @@
   gap: 0;
   margin-left: 0;
   flex-wrap: wrap;
-  /* Фон убран - использует фон header */
+  background: transparent !important;
   padding: 0;
   transition: all 0.3s ease;
 }
@@ -337,7 +324,11 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.navList,
+.navList {
+  list-style: none;
+  margin: 0;
+}
+
 .langDropdown {
   list-style: none;
   padding-left: 0;
@@ -348,27 +339,23 @@
 .flagWrapper {
   position: relative;
   z-index: 9999;
-  overflow: visible; /* добавь, если не стоит */
+  overflow: visible;
   user-select: none;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  margin-right: 12px;
-  margin-left: 0;
 }
 
 .langDropdown {
   position: absolute;
-  top: 48px;
+  top: calc(100% + 4px);
   right: 0;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
-  min-width: 140px;
-  z-index: 10000; /* выше чем у флага */
-  overflow-y: auto; /* если много элементов, чтобы появился скролл */
-  max-height: 200px; /* ограничь высоту */
+  min-width: 120px;
+  z-index: 10000;
+  overflow-y: auto;
+  max-height: 200px;
   padding: 6px 0;
 }
 
@@ -382,21 +369,9 @@
   overflow: visible !important; /* временно */
 }
 
-/* Анимации для глассморфизма - только на навигации */
-.header.scrolled {
-  /* Фон убран - только навигационное меню имеет фон */
-  background: transparent;
-  padding: 20px 20px 0; /* Уменьшаем отступы при скролле */
-}
-
-.header.scrolled .navList {
-  background: rgba(5, 35, 141, 0.8);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border: none;
-  box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+/* При скролле цвет плашки без изменений */
+.navFixed.scrolled .navList {
+  background: #05238D;
 }
 
 
@@ -407,14 +382,6 @@
   pointer-events: auto;
 }
 
-/* Улучшенный глассморфизм для выпадающего меню языков */
-.langDropdown {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
 
 
 @media (max-width: 1650px) {
@@ -435,13 +402,28 @@
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    /* Фон убран - только навигационное меню имеет фон */
     background: transparent;
   }
   
-  .nav {
+  .navSpacer {
+    display: none;
+  }
+  
+  .navFixed {
     order: 2;
+    left: 20px;
+    right: 20px;
+    width: auto;
+    max-width: none;
+  }
+  
+  .nav {
     width: 100%;
+  }
+  
+  .navFixed .navList {
+    width: 100%;
+    max-width: none;
   }
   
   .right {
@@ -465,20 +447,16 @@
   
   .navList {
     flex-wrap: wrap;
-    gap: 5px;
-    padding: 0 5px;
+    gap: 24px;
+    padding: 8px;
     height: auto;
-    min-height: 50px;
-    /* Глассморфизм для навигации на мобильных */
-    background: rgba(5, 35, 141, 0.8);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: none;
+    min-height: auto;
+    background: #05238D;
   }
   
   .navItem {
     font-size: 12px;
-    padding: 8px 12px;
+    padding: 12px 24px;
   }
   
   .brand {
@@ -487,8 +465,8 @@
   }
   
   .logo {
-    width: 25px;
-    height: 25px;
+    width: 48px;
+    height: 48px;
   }
   
   .infoBlock {
@@ -519,14 +497,14 @@
   .navList {
     flex-direction: column;
     height: auto;
-    gap: 10px;
-    padding: 10px;
+    gap: 12px;
+    padding: 12px;
   }
   
   .navItem {
     width: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 12px 24px;
   }
   
   .brand {
@@ -535,7 +513,7 @@
   }
   
   .logo {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
   }
 }

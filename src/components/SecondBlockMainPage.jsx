@@ -33,7 +33,7 @@ export default function HeroBlock() {
           </div>
 
           <button className={styles.ctaButton}>
-            <span className={styles.ctaText}>MORE</span>
+            <span className={styles.ctaText}>WEB SERVICES</span>
             <span className={styles.ctaIcon}><FaArrowRight /></span>
           </button>
         </div>

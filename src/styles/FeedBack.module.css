@@ -22,9 +22,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 890px;
+  width: 895px; /* слегка растянули вправо */
   height: 230px;
-  border: 1px solid gray;
+  border: 1px solid rgba(0, 0, 0, 0.3); /* контур с прозрачностью 30% */
   box-sizing: border-box;
   border-radius: 30px;
   pointer-events: none;
@@ -35,10 +35,14 @@
 }
 
 .title {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 96px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  leading-trim: cap-height;
   color: black;
-  font-size: 80px;
-  line-height: 1.2;
-  font-weight: normal;
   margin: 0;
   user-select: none;
   color: #0344DC;
@@ -46,9 +50,14 @@
 
 .subtitle {
   display: block;
-  margin-left: 20px;
-  font-size: 80px;
-  font-weight: normal;
+  margin-left: 15px; /* суммарный визуальный отступ от левого края контейнера */
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 96px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  leading-trim: cap-height;
   color: #0344DC;
 }
 
@@ -122,9 +131,9 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 440px;
+  width: 438px;
   height: 80px;
-  border: 1px solid gray;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   box-sizing: border-box;
   display: flex;
@@ -193,18 +202,26 @@
 /* 🔽 Селект с галочкой вниз */
 .selectField {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L5 6L10 0H0Z' fill='%23666'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 10px 6px;
+  background-image: none;
   cursor: pointer;
 }
 
+.selectWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.selectIcon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 .selectField option {
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(33px);
-  -webkit-backdrop-filter: blur(33px);
-  color: white;
+  background: #ffffff;
+  color: #000000;
   padding: 10px;
   border: none;
 }
@@ -214,12 +231,40 @@
   width: 726px;
   height: 143px;
   border-radius: 5px;
-  padding: 15px 20px;
+  padding: 15px 60px 15px 20px; /* доп. отступ справа под иконку */
   font-size: 18px;
   resize: none;
   outline: none;
   background-color: white;
   box-sizing: border-box;
+}
+
+.descriptionWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.descriptionIcon {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileList {
+  margin-top: 5px;
+  list-style: none;
+  padding: 0;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.fileListItem {
+  opacity: 0.8;
 }
 
 /* ✅ Чекбокс и текст */
@@ -232,6 +277,55 @@
   user-select: none;
 }
 
+.errorText {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.errorToastContainer {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.errorToast {
+  background: rgba(255, 77, 79, 0.95);
+  color: #ffffff;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  max-width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(5px);
+  animation: fadeInOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+}
+
 .checkbox {
   width: 20px;
   height: 20px;
@@ -240,8 +334,8 @@
 }
 
 .sendButton {
-  width: 260px;
-  height: 67px;
+  width: 308px;
+  height: 57px;
   border-radius: 15px;
   background-color: white;
   border: none;

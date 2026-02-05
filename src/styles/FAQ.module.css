@@ -34,8 +34,7 @@
 
 .headerContent {
   max-width: 345px;
-  margin-top: -30px; /* Поднимаем заголовок и описание выше */
-  /* padding-top: 40px; убрал, чтобы не мешал */
+  margin-top: 5px; /* Еще чуть выше */
 }
 
 .title {
@@ -54,40 +53,47 @@
 }
 
 .description {
-  font-size: 16px;
+  font-family: 'Helvetica', sans-serif;
   font-weight: 400;
-  max-width: 319px;
-  line-height: 1.5;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: -0.01em; /* -1% */
+  color: rgba(1, 32, 63, 0.6); /* #01203F с 40% прозрачности (60% непрозрачности) */
   margin-top: 5px;
-  color: #7a7a7a;
+  width: fit-content;
+  max-width: 500px;
+  leading-trim: cap-height; /* Экспериментальное свойство */
 }
 
 .accordion {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
+  margin-top: 10px;
 }
 
 .accordionItem {
-  border: 1px solid #e0e0e0;
+  width: 930px;
+  min-height: 77px;
   border-radius: 8px;
   overflow: hidden;
 }
 
 .accordionButton {
   width: 100%;
+  min-height: 77px;
   padding: 20px;
   background: white;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.3); /* #0000004D - 30% прозрачности */
+  border-radius: 8px;
   text-align: left;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 16px;
-  font-weight: 500;
-  color: #01203F;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .accordionButton:hover {
@@ -96,6 +102,9 @@
 
 .accordionButton.active {
   background: #f0f0f0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
 }
 
 .accordionButton.active .arrow {
@@ -105,6 +114,14 @@
 .questionText {
   flex: 1;
   margin-right: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 90%;
+  letter-spacing: -0.07em; /* -7% */
+  color: #01203F;
+  leading-trim: cap-height; /* Экспериментальное свойство */
 }
 
 .arrow {
@@ -117,8 +134,13 @@
 .accordionContent {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: white;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .accordionContent.show {

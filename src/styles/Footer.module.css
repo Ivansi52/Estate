@@ -8,6 +8,86 @@
   max-width: 2000px;
   margin: 0 auto;
   width: 100%;
+  position: relative;
+}
+
+.phoneSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -15px;
+  margin-bottom: 40px;
+}
+
+.phoneSectionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.phoneSectionRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phoneCaption {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  opacity: 0.5;
+  color: white;
+  margin: 0;
+  margin-top: 20px;
+  padding-left: 36px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.phoneWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.phoneSection .icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.phoneSection .phoneNumber {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: -0.05em;
+  color: white;
+}
+
+.callbackButton {
+  margin-left: 102px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.callbackButton:hover {
+  opacity: 0.8;
 }
 
 .inner {
@@ -25,12 +105,19 @@
   gap: 20px;
   max-width: 600px;
   position: relative;
+  min-width: 450px;
+  min-height: 320px;
 }
 
 .leftTop {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  position: absolute;
+  top: -68px;
+  left: 20px;
+  z-index: 10;
+  min-width: 450px;
 }
 
 .logoWrapper {
@@ -48,14 +135,21 @@
   flex-direction: column;
   flex-grow: 1;
   position: relative;
+  min-width: 320px;
+  width: auto;
 }
 
 .heading {
-  font-size: 26px;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
-  max-width: 350px;
-  line-height: 1.4;
-  margin-bottom: 16px;
+  font-style: normal;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+  white-space: normal;
+  min-width: 320px;
+  width: auto;
 }
 
 .details {
@@ -70,6 +164,7 @@
   color: white;
   text-decoration: underline;
   cursor: pointer;
+  margin-top: 60px;
 }
 
 .leftBottom {
@@ -78,7 +173,15 @@
   gap: 40px;
 }
 
-/* NEWSLETTER BOX */
+/* NEWSLETTER BOX — привязан к низу футера */
+.newsletterWrapper {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  margin: 0;
+  z-index: 5;
+}
+
 .newsletterBox {
   width: 440px;
   height: 259px;
@@ -89,7 +192,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 40px;
 }
 
 .newsletterTitle {
@@ -180,24 +282,25 @@
 .menuLangWrapper {
   display: flex;
   margin-top: -250px;
-  gap: 24px;
+  gap: 70px;
   position: relative;
   justify-content: flex-end;
   align-items: flex-start;
-  margin-left: 1200px;
+  margin-left: 1180px;
   width: 100%;
   max-width: 600px;
 }
 
 .menuColumns {
   display: flex;
-  gap: 100px;
+  gap: 130px;
   justify-content: flex-start;
 }
 
 
 .menuColumn {
   min-width: 0;
+  flex-shrink: 0;
 }
 
 .menuColumn:first-child {
@@ -205,8 +308,12 @@
 }
 
 .menuTitle {
-  font-size: 18px;
-  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
   margin: 0;
   white-space: nowrap;
 }
@@ -215,17 +322,24 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 14px;
+  margin-top: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
   color: white;
   display: flex;
-  flex-direction: row;
-  gap: 8px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  flex-wrap: nowrap;
 }
 
 .menuList li {
   cursor: pointer;
   transition: color 0.3s;
+  white-space: nowrap;
 }
 
 .menuList li:hover {
@@ -246,12 +360,13 @@
   color: #0344DC;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 3px;
   font-weight: 600;
   font-size: 14px;
   padding: 4px 8px;
   border-radius: 6px;
   cursor: pointer;
+  margin-top: -10px;
 }
 
 .langButton:hover {
@@ -260,6 +375,9 @@
 
 .langArrow {
   transition: transform 0.3s ease;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
 }
 
 .langSelector[aria-expanded='true'] .langArrow {
@@ -343,6 +461,9 @@
 
 /* ПРАВАЯ КОЛОНКА */
 .right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   align-items: flex-end;
   text-align: right;
   max-width: 250px;
@@ -351,7 +472,12 @@
 }
 
 .contactLine {
-  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
   margin-bottom: 6px;
 }
 
@@ -372,10 +498,11 @@
   max-width: 400px;
   font-size: 14px;
   font-weight: 400;
-  color: white; /* если фон синий, чтобы текст был виден */
+  color: white;
   text-align: right;
-  margin-left: auto; /* чтобы прижать к правому краю */
-  margin-top: 20px; /* небольшой отступ сверху */
+  margin-left: auto;
+  margin-top: 20px;
+  opacity: 0.7;
 }
 
 /* Адаптивность */

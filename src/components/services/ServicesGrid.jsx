@@ -279,14 +279,6 @@ export default function ServicesGrid() {
                   {/* Описание */}
                   <p className={styles.description}>
                     {service.description}
-                    <br />
-                    <Link 
-                      href="/projects" 
-                      className={styles.viewPortfolioLink}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      View our portfolio →
-                    </Link>
                   </p>
                 </div>
               );

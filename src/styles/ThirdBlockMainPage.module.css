@@ -93,11 +93,58 @@
   z-index: 1;
 }
 
+.topRowWrapper {
+  position: relative;
+}
+
+.aboutUsBadge {
+  position: absolute;
+  right: 20px;
+  bottom: calc(100% + 30px);
+  width: 210px;
+  height: 57px;
+  background-color: #0344DC;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px 0 16px;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 15;
+}
+
+.aboutUsText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  leading-trim: cap-height;
+  line-height: 120%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.aboutUsIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutUsIconWrapper svg {
+  display: block;
+}
+
 /* Карточки */
 .cardLarge {
   width: 935px;
   height: 585px;
-  background-color: #FFFFFF;
+  background-color: rgba(179, 189, 198, 0.7);
   border-radius: 15px;
   position: relative;
   overflow: hidden;
@@ -314,7 +361,7 @@
 .cardSmall {
   width: 463px;
   height: 585px;
-  background-color: #FFFFFF;
+  background-color: rgba(179, 189, 198, 0.7);
   border-radius: 15px;
   position: relative;
   overflow: hidden;
@@ -355,7 +402,7 @@
 .cardSmall {
   width: 463px;
   height: 585px;
-  background-color: #FFFFFF;
+  background-color: rgba(179, 189, 198, 0.7);
   border-radius: 15px;
   position: relative;
   overflow: hidden;

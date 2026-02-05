@@ -47,8 +47,9 @@ const FAQ = () => {
                 <span className={styles.highlightedWord}>questions</span>
               </h2>
               <p className={styles.description}>
-                We've gathered answers to the questions our clients ask most often. 
-                If you don't find what you're looking for, just write to us — we'll respond personally.
+                We've gathered answers to the questions our clients<br />
+                ask most often. If you don't find what you're looking<br />
+                for, just write to us — we'll respond personally.
               </p>
             </div>
           </div>
