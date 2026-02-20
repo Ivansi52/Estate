@@ -5,31 +5,49 @@ import LexusIcon from '@/images/lexusIcon.png';
 import pionerIcon from '@/images/pioner.png';
 import slavDvorIcon from '@/images/slav_dvor.png';
 import RPIcon from '@/images/RiverPark.png';
-import { useEffect, useState } from 'react';
 import { getOptimizedImageProps } from '@/utils/imageOptimization';
+import { memo } from 'react';
+
+const LOGOS = [
+  { src: LexusIcon, alt: 'Lexus', name: 'Lexus' },
+  { src: pionerIcon, alt: 'Pioner', name: 'Pioner' },
+  { src: slavDvorIcon, alt: 'Slav Dvor', name: 'Slav Dvor' },
+  { src: RPIcon, alt: 'River Park', name: 'River Park' },
+];
+/* 4 копии для длинной бесконечной ленты; цикл на -25% = одна копия */
+const DUPLICATED_LOGOS = [...LOGOS, ...LOGOS, ...LOGOS, ...LOGOS];
+
+const LogosCarousel = memo(function LogosCarousel() {
+  return (
+    <div className={styles.logosContainer}>
+      <div className={styles.logosCarousel}>
+        {DUPLICATED_LOGOS.map((logo, i) => (
+          <div key={`${logo.name}-${i}`} className={styles.logoItem} title={logo.name}>
+            <img
+              src={logo.src?.src ?? logo.src}
+              alt={logo.alt}
+              width={150}
+              height={60}
+              className={styles.logoImage}
+              loading="eager"
+              decoding="async"
+              draggable={false}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+});
 
 export default function FirstBlock() {
-  const [hoveredLogo, setHoveredLogo] = useState(null);
-
-  const logos = [
-    { src: LexusIcon, alt: "Lexus", name: "Lexus" },
-    { src: pionerIcon, alt: "Pioner", name: "Pioner" },
-    { src: slavDvorIcon, alt: "Slav Dvor", name: "Slav Dvor" },
-    { src: RPIcon, alt: "River Park", name: "River Park" },
-  ];
-
-  // Дублируем массив несколько раз для бесконечной анимации
-  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
-
   return (
     <div className={styles.background}>
       <div className={styles.content}>
-        {/* Левая часть с текстом */}
         <div className={styles.leftSection}>
           <p className={styles.tagline}>BOUTIQUE DIGITAL MARKETING AGENCY</p>
           <h1 className={styles.buildingText}><span className={styles.buildingWord}>For B2B</span></h1>
           <h1 className={styles.yourDigitalText}>Leaders</h1>
-          {/* Кнопка под Your Digital */}
           <button className={styles.quoteButton}>
             BOOK A STRATEGY CALL
             <span className={styles.arrowCircle}>
@@ -39,16 +57,12 @@ export default function FirstBlock() {
             </span>
           </button>
         </div>
-        
-        {/* Центральное изображение */}
         <div className={styles.centerImage}>
-          <Image 
+          <Image
             {...getOptimizedImageProps(WaterIcon, "Water", 550, 550, true)}
             className={styles.waterImage}
           />
         </div>
-        
-        {/* Правая часть с текстом */}
         <div className={styles.rightSection}>
           <p className={styles.description}>
             We build websites that increase<br />
@@ -59,32 +73,7 @@ export default function FirstBlock() {
           <h1 className={styles.togetherText}>Results</h1>
         </div>
       </div>
-
-      {/* Карусель логотипов */}
-      <div className={styles.logosContainer}>
-        <div className={styles.logosGradientLeft}></div>
-        <div className={styles.logosCarousel}>
-          {duplicatedLogos.map((logo, index) => (
-            <div 
-              key={index} 
-              className={styles.logoItem}
-              onMouseEnter={() => setHoveredLogo(logo.name)}
-              onMouseLeave={() => setHoveredLogo(null)}
-            >
-              <Image 
-                {...getOptimizedImageProps(logo.src, logo.alt, 150, 60)}
-                className={styles.logoImage}
-              />
-              {hoveredLogo === logo.name && (
-                <div className={styles.logoTooltip}>
-                  {logo.name}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        <div className={styles.logosGradientRight}></div>
-      </div>
+      <LogosCarousel />
     </div>
   );
 }

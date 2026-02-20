@@ -24,6 +24,8 @@ export default function SecondSection() {
           </div>
         </div>
 
+        {/* Обёртка карточек */}
+        <div className={styles.cardsWrapper}>
         {/* Первый ряд - большие карточки */}
         <div className={styles.topRowWrapper}>
           <div className={styles.aboutUsBadge}>
@@ -47,18 +49,19 @@ export default function SecondSection() {
 
           <div className={styles.topRow}>
             {/* Левая карточка */}
-            <div className={`${styles.cardLarge} ${styles.cutBottomRight}`}>
+            <div className={`${styles.cardLarge} ${styles.cutBottomRight} ${styles.inverseRoundBottomRight} ${styles.inverseRoundBottomLeft}`}>
+              <span className={styles.inverseRoundBottomLeftCut} aria-hidden="true" />
               <div className={styles.categoriesLeft}>
                 <span className={styles.category}>Communication</span>
                 <span className={styles.category}>Responsibility</span>
               </div>
               <div className={styles.imageWrapper}>
-                <Image src={logoFirstBigCardIcon} alt="Icon Left Card" width={250} height={250} />
+                <Image src={logoSecondBigCardIcon} alt="Icon Left Card" width={250} height={250} />
               </div>
               <div className={styles.bottomLeftText}>
-                <h3 className={styles.cardTitle}>Direct communication without barriers</h3>
+                <h3 className={styles.cardTitle}>Direct communication <br /> without barriers</h3>
                 <p className={styles.cardDescription}>
-                  Our team speaks fluent Russian, English, German, and Spanish. You’ll <br /> always be in touch directly with the developers.
+                  Our team speaks fluent Russian, <br /> English, German, and Spanish. <br />  You’ll always be in touch directly with the developers.
                 </p>
               </div>
             </div>
@@ -70,12 +73,12 @@ export default function SecondSection() {
                 <span className={styles.category}>Effectiveness</span>
               </div>
               <div className={styles.imageWrapper}>
-                <Image src={logoSecondBigCardIcon} alt="Icon Right Card" width={250} height={250} />
+                <Image src={logoFirstBigCardIcon} alt="Icon Right Card" width={250} height={250} />
               </div>
               <div className={styles.bottomRightText}>
-                <h3 className={styles.cardTitle}>Marketing effectiveness</h3>
+                <h3 className={styles.cardTitle}>Marketing <br /> effectiveness</h3>
                 <p className={styles.cardDescription}>
-                  We developed 20+ strategies and generated leads worth over $200,000. <br /> Reduced ineffective ad spending for 37 companies.
+                  We developed 20+ strategies and <br /> generated leads worth over $200,000. <br /> Reduced ineffective ad spending for 37 companies.
                 </p>
               </div>
             </div>
@@ -147,6 +150,10 @@ export default function SecondSection() {
             </div>
           </div>
         </div>
+        </div>
+
+        {/* Вырез поверх карточек */}
+        <div className={styles.cutoutFill} aria-hidden="true" />
 
         {/* Центр круга */}
         <div className={styles.centerImage}>

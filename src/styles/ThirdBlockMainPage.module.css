@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   font-family: 'Inter', sans-serif;
+  background: rgba(185, 185, 195, 0.4);
 }
 
 .container {
@@ -93,6 +94,26 @@
   z-index: 1;
 }
 
+/* Вырез поверх карточек (круг лежит поверх) */
+.cutoutFill {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 185px;
+  height: 185px;
+  border-radius: 50%;
+  background: #f6f6f6;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Обёртка карточек */
+.cardsWrapper {
+  position: relative;
+  z-index: 1;
+}
+
 .topRowWrapper {
   position: relative;
 }
@@ -144,14 +165,10 @@
 .cardLarge {
   width: 935px;
   height: 585px;
-  background-color: rgba(179, 189, 198, 0.7);
+  background-color: white;
   border-radius: 15px;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 40px;
 }
 
@@ -237,11 +254,25 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Центр фото (иконки) */
-.imageWrapper {
-  flex-shrink: 0;
-  margin: 0 auto;
+/* Картинка по центру большой карточки (как в Figma) */
+.cardLarge .imageWrapper {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  max-width: 100%;
+  max-height: 100%;
   z-index: 2;
+}
+
+.cardLarge .imageWrapper img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* Нижний левый текст для левой карточки */
@@ -279,7 +310,7 @@
 }
 
 .bottomLeftText .cardDescription {
-  font-size: 14px;
+  font-size: 18px;
   color: #666666;
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -361,7 +392,7 @@
 .cardSmall {
   width: 463px;
   height: 585px;
-  background-color: rgba(179, 189, 198, 0.7);
+  background-color: white;
   border-radius: 15px;
   position: relative;
   overflow: hidden;
@@ -402,7 +433,7 @@
 .cardSmall {
   width: 463px;
   height: 585px;
-  background-color: rgba(179, 189, 198, 0.7);
+  background-color: white;
   border-radius: 15px;
   position: relative;
   overflow: hidden;
@@ -412,13 +443,26 @@
   padding: 40px;
 }
 
-/* Иконки на крайних карточках */
-.bottomCardIcon {
+/* Иконка по центру маленькой карточки (как в Figma) */
+.cardSmall .bottomCardIcon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   z-index: 2;
+}
+
+.cardSmall .bottomCardIcon img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 

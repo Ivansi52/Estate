@@ -45,18 +45,18 @@ export default function HeroBlock() {
               <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card1')}>
                 <div className={styles.cardContent}>
                   <div className={styles.categories}>
-                    <span className={styles.category}>Web Design</span>
-                    <span className={styles.category}>Redesign</span>
+                    <span className={styles.category}>Landing pages</span>
+                    <span className={styles.category}>Corporate sites</span>
                     <span className={styles.category}>E-Commerce</span>
                   </div>
                   <div className={styles.titleDescBlock}>
                     <h3 className={styles.largeCardTitle}>WebSite Development</h3>
                     <p className={styles.largeCardDesc}>
-                      Modern, responsive websites delivered turnkey.
+                      Modern, responsive websites<br /> delivered turnkey.
                     </p>
-                    <p className={styles.largeCardTags}>
-                      → Landing pages, corporate sites, redesigns.
-                    </p>
+                    {/*<p className={styles.largeCardTags}>*/}
+                    {/*  → Landing pages, corporate sites, redesigns.*/}
+                    {/*</p>*/}
                   </div>
                 </div>
                 <div className={styles.imageWrapper}>
@@ -107,18 +107,18 @@ export default function HeroBlock() {
               <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card2')}>
                 <div className={styles.cardContent}>
                   <div className={styles.categories}>
-                    <span className={styles.category}>Web Design</span>
-                    <span className={styles.category}>Redesign</span>
-                    <span className={styles.category}>E-Commerce</span>
+                    <span className={styles.category}>Social media</span>
+                    <span className={styles.category}>Email sequences</span>
+                    <span className={styles.category}>Engagement</span>
                   </div>
                   <div className={styles.titleDescBlock}>
                     <h3 className={styles.largeCardTitle}>WebSite Development</h3>
                     <p className={styles.largeCardDesc}>
-                      Modern, responsive websites delivered turnkey.
+                      Modern, responsive websites <br /> delivered turnkey.
                     </p>
-                    <p className={styles.largeCardTags}>
+                    {/* <p className={styles.largeCardTags}>
                       → Landing pages, corporate sites, redesigns.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
                 <div className={styles.imageWrapper}>
@@ -178,14 +178,14 @@ export default function HeroBlock() {
                   <div className={styles.titleDescBlock}>
                     <h3 className={styles.largeCardTitle}>WebSite Development</h3>
                     <p className={styles.largeCardDesc}>
-                      Modern, responsive websites delivered turnkey.
+                      Modern, responsive websites <br /> delivered turnkey.
                     </p>
-                    <p className={styles.largeCardTags}>
+                    {/* <p className={styles.largeCardTags}>
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}>
                         <path d="M0 9.29167V7.20833H12.5L6.77083 1.47917L8.25 0L16.5 8.25L8.25 16.5L6.77083 15.0208L12.5 9.29167H0Z" fill="white"/>
                       </svg>
                       Landing pages, corporate sites, redesigns.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
                 <div className={styles.imageWrapper}>
@@ -237,21 +237,22 @@ export default function HeroBlock() {
               <div className={styles.cardLargeWithImage}>
                 <div className={styles.cardContent} style={{ position: 'relative', zIndex: 2 }}>
                   <div className={styles.categories}>
-                    <span className={styles.category}>Web Design</span>
-                    <span className={styles.category}>Redesign</span>
-                    <span className={styles.category}>E-Commerce</span>
+                  <span className={styles.category}>Audits</span>
+                    <span className={styles.category}>Content</span>
+                    <span className={styles.category}>Semantics</span>
+                    <span className={styles.category}>Traffic growth</span>
                   </div>
                   <div className={styles.titleDescBlock}>
                     <h3 className={styles.largeCardTitle} style={{ whiteSpace: 'nowrap', marginBottom: '15px' }}>Search Engine Optimization (SEO)</h3>
                     <p className={styles.largeCardDesc} style={{ whiteSpace: 'nowrap', marginBottom: '20px' }}>
-                      Getting websites to the top of Yandex and Google.
+                      Getting websites to the top <br /> of Yandex and Google.
                     </p>
-                    <p className={styles.largeCardTags}>
+                    {/* <p className={styles.largeCardTags}>
                       <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}>
                         <path d="M0 9.29167V7.20833H12.5L6.77083 1.47917L8.25 0L16.5 8.25L8.25 16.5L6.77083 15.0208L12.5 9.29167H0Z" fill="white"/>
                       </svg>
                       Audits, content, semantics, traffic growth
-                    </p>
+                    </p> */}
                   </div>
                 </div>
                 <div className={styles.imageWrapper} style={{ position: 'absolute', zIndex: 1, top: '40%', right: 0, transform: 'translateY(-50%) scale(2.0)' }}>
@@ -303,18 +304,18 @@ export default function HeroBlock() {
               <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card4')}>
                 <div className={styles.cardContent}>
                   <div className={styles.categories}>
-                    <span className={styles.category}>Web Design</span>
-                    <span className={styles.category}>Redesign</span>
-                    <span className={styles.category}>E-Commerce</span>
+                    <span className={styles.category}>Web/mobile apps</span>
+                    <span className={styles.category}>Telegram bots</span>
+                    <span className={styles.category}>AI assistants</span>
                   </div>
                   <div className={styles.titleDescBlock}>
                     <h3 className={styles.largeCardTitle}>WebSite Development</h3>
                     <p className={styles.largeCardDesc}>
-                      Modern, responsive websites delivered turnkey.
+                      Modern, responsive websites <br /> delivered turnkey.
                     </p>
-                    <p className={styles.largeCardTags}>
+                    {/* <p className={styles.largeCardTags}>
                       → Landing pages, corporate sites, redesigns.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
                 <div className={styles.imageWrapper}>
@@ -365,18 +366,18 @@ export default function HeroBlock() {
               <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card5')}>
                 <div className={styles.cardContent}>
                   <div className={styles.categories}>
-                    <span className={styles.category}>Web Design</span>
-                    <span className={styles.category}>Redesign</span>
-                    <span className={styles.category}>E-Commerce</span>
+                    <span className={styles.category}>Logos</span>
+                    <span className={styles.category}>Identity</span>
+                    <span className={styles.category}>UI/UX design</span>
                   </div>
                   <div className={styles.titleDescBlock}>
                     <h3 className={styles.largeCardTitle}>WebSite Development</h3>
                     <p className={styles.largeCardDesc}>
                       Modern, responsive websites delivered turnkey.
                     </p>
-                    <p className={styles.largeCardTags}>
+                    {/* <p className={styles.largeCardTags}>
                       → Landing pages, corporate sites, redesigns.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
                 <div className={styles.imageWrapper}>

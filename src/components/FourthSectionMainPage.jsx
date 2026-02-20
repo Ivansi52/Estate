@@ -15,25 +15,25 @@ const cardsData = [
     image: img1,
     categoriesLeft: ['Web design', 'SEO optimization'],
     categoriesRight: ['Product Design'],
-    title: ['Corporate Site', 'for Real', 'Estate'],
+    title: ['Corporate Site', 'for Real Estate'],
   },
   {
     image: img2,
     categoriesLeft: ['Web design', 'SEO optimization'],
     categoriesRight: ['Traffic growth', 'Product Design'],
-    title: ['E-commerce site', 'for Luxury', 'Marketplace'],
+    title: ['E-commerce site', 'for Luxury Marketplace'],
   },
   {
     image: img3,
     categoriesLeft: ['Web design', 'SEO optimization'],
     categoriesRight: ['Traffic growth', 'Product Design'],
-    title: ['Multi-page site', 'for Auto', 'Retailers'],
+    title: ['Multi-page site', 'for Auto Retailers'],
   },
   {
     image: img4,
     categoriesLeft: ['Web design', 'SEO optimization'],
     categoriesRight: ['Traffic growth', 'Product Design'],
-    title: ['Corporate site', 'for Premium ', 'Automotive'],
+    title: ['Corporate site', 'for Premium Automotive'],
   },
 ];
 
@@ -172,7 +172,7 @@ export default function FourthSection({ sectionNumber }) {
                   <div className={styles.seeCaseLink}>
                     {hoverInfoContent.linkText}
                     <svg
-                      className={styles.seeCaseArrow}
+                      className={`${styles.seeCaseArrow} ${!isLeftSide ? styles.arrowReversed : ''}`}
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"

@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: -0.02em;
   color: white;
   line-height: 1.2;
@@ -205,7 +205,9 @@
   position: absolute;
   top: 48px; /* чуть ниже флага */
   right: 0;
-  background: white;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   display: flex;
@@ -222,14 +224,16 @@
   gap: 10px;
   padding: 6px 12px;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   color: #333;
   font-weight: 500;
   font-size: 14px;
+  border-radius: 4px;
 }
 
 .langItem:hover {
-  background-color: #eee;
+  background-color: #093AAF;
+  color: white;
 }
 
 .langItem img.flag,
@@ -347,7 +351,9 @@
   position: absolute;
   top: calc(100% + 4px);
   right: 0;
-  background: white;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   display: flex;

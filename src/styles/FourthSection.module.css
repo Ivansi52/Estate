@@ -34,9 +34,14 @@
 }
 
 .number {
-  font-size: 250px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 300px;
+  leading-trim: cap;
+  line-height: 70%;
+  letter-spacing: -0.13em;
   color: #B9B9C3;
-  line-height: 1;
   flex-shrink: 0;
   margin: 0;
   position: relative;
@@ -145,13 +150,15 @@
   background-color: transparent;
   border: 1px solid transparent;
   box-sizing: border-box;
-  transition: border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Черная рамка появляется только при наведении */
+/* При раскрытом состоянии — чёрная рамка и белый фон */
 .card.leftHover,
 .card.rightHover {
   border-color: #000000;
+  background-color: #ffffff;
 }
 
 /* Картинка внутри карточки - контейнер для анимации */
@@ -325,6 +332,12 @@
   left: 20px;
   z-index: 10;
   user-select: none;
+  transition: left 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* При ховере на 2-й и 4-й карточке — лого остаётся в левом нижнем углу картинки (картинка справа) */
+.card.rightHover .logo {
+  left: calc(50% + 30px); /* 10px отступ карточки + 20px от левого края картинки */
 }
 
 .logo img {
@@ -371,12 +384,14 @@
   border-radius: 0 12px 12px 0;
 }
 
-/* Если карточка справа, инфо слева */
+/* Если карточка справа, инфо слева — зеркало левых: те же отступы, но right вместо left */
 .hoverInfo.right {
   text-align: left;
   left: 0;
   right: 50%;
   border-radius: 12px 0 0 12px;
+  padding-left: 64px;  /* зеркало right у .hoverInfo */
+  padding-right: 20px; /* зеркало left у .hoverInfo — отступ от правой картинки */
 }
 
 /* Два круга в левом верхнем углу блока инфо */
@@ -395,8 +410,8 @@
 
 .infoCircle {
   color: rgb(0, 0, 0);
-  width: 72px;
-  height: 72px;
+  width: 100px;
+  height: 100px;
   border: 1px solid #CFCFD1;
   border-radius: 50%;
   display: flex;
@@ -404,17 +419,23 @@
   justify-content: center;
   align-items: center;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 24px;
   text-align: center;
   user-select: none;
   line-height: 1.2;
+  letter-spacing: 0%;
 }
 
 /* Большие цифры в кругах */
 .infoCircle .bigNumber {
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 700;
   margin-bottom: 4px;
+}
+
+.infoCircle > div:last-child {
+  font-size: 14px;
+  opacity: 0.3;
 }
 
 /* Заголовок в инфо */
@@ -435,7 +456,7 @@
 
 /* Результаты (надпись) */
 .infoResultsLabel {
-  font-size: 14px;
+  font-size: 16px;
   color: #7a7a7a;
   margin-bottom: 12px;
   opacity: 0;
@@ -453,7 +474,7 @@
   padding: 0;
   margin: 0 0 16px 0;
   color: #222;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.5;
   opacity: 0;
   transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.55s;
@@ -502,8 +523,21 @@
   right: 10px;
 }
 
+/* У img2 и img4 стрелка справа от "See the case" */
+.hoverInfo.right .seeCaseLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .hoverInfo.right .seeCaseArrow {
-  left: 10px;
+  position: static;
+  left: auto;
+}
+
+/* Стрелка в обратную сторону для правых карточек (img2, img4) */
+.hoverInfo.right .seeCaseArrow.arrowReversed {
+  transform: none;
 }
 
 

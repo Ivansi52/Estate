@@ -17,9 +17,6 @@ export default function CalculatorPromoBlock() {
           <p className={styles.description}>
             Answer a few questions — and instantly see a cost estimate based on your needs.
           </p>
-          <p className={styles.subDescription}>
-            Get a Free Consultation with a Developer and SEO Specialist after the Estimate
-          </p>
           <Link href="/calculator" className={styles.ctaButton}>
             <span>FIND OUT THE COSTS</span>
             <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,6 +24,9 @@ export default function CalculatorPromoBlock() {
               <path d="M14.1319 24.0796V21.8891H27.2748L21.2509 15.8653L22.8062 14.3101L31.4805 22.9843L22.8062 31.6586L21.2509 30.1034L27.2748 24.0796H14.1319Z" fill="#01203F"/>
             </svg>
           </Link>
+          <p className={styles.subDescriptionUnder}>
+            Get a Free Consultation with a Developer and SEO Specialist after the Estimate
+          </p>
         </div>
         
         {/* Декоративная картинка */}

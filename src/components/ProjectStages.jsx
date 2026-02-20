@@ -250,7 +250,7 @@ export default function StepBlock() {
                       </>
                     )}
                   </div>
-                  <p className={`${styles.stageDescription} ${isActive ? styles.stageDescriptionActive : ''} ${step.id === 2 ? styles.stageDescription2 : ''}`}>
+                  <p className={`${styles.stageDescription} ${isActive ? styles.stageDescriptionActive : ''} ${step.id === 2 ? styles.stageDescription2 : ''} ${step.id === 3 ? styles.stageDescription3 : ''}`}>
                     {step.description}
                   </p>
                 </button>
