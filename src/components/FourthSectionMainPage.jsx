@@ -43,7 +43,7 @@ const hoverInfoContent = {
     { bigNumber: '+300%', text: 'traffic' },
     { bigNumber: 'over 9', text: 'weeks' },
   ],
-  title: 'Multi-page site for Auto Retailers',
+  title: ['Multi-page site', 'for Auto Retailers'],
   resultsLabel: 'Results:',
   resultsList: [
     'Organic traffic grew by 300% over 9 weeks',
@@ -162,7 +162,13 @@ export default function FourthSection({ sectionNumber }) {
                       </div>
                     ))}
                   </div>
-                  <div className={styles.infoTitle}>{hoverInfoContent.title}</div>
+                  <div className={styles.infoTitle}>
+                    {Array.isArray(hoverInfoContent.title)
+                      ? hoverInfoContent.title.map((line, i) => (
+                          <span key={i}>{line}{i < hoverInfoContent.title.length - 1 && <br />}</span>
+                        ))
+                      : hoverInfoContent.title}
+                  </div>
                   <div className={styles.infoResultsLabel}>{hoverInfoContent.resultsLabel}</div>
                   <ul className={styles.infoResultsList}>
                     {hoverInfoContent.resultsList.map((item, i) => (
@@ -173,8 +179,8 @@ export default function FourthSection({ sectionNumber }) {
                     {hoverInfoContent.linkText}
                     <svg
                       className={`${styles.seeCaseArrow} ${!isLeftSide ? styles.arrowReversed : ''}`}
-                      width="24"
-                      height="24"
+                      width="30"
+                      height="30"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"

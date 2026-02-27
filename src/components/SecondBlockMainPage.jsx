@@ -7,13 +7,19 @@ import HesterenkaImage from '@/images/hesterenka.png';
 import SEOImage from '@/images/seo-image.png';
 import { getOptimizedImageProps } from '@/utils/imageOptimization';
 
+const CARD_NEIGHBORS = {
+  card1: ['card2'],
+  card2: ['card1'],
+  card4: ['card5'],
+  card5: ['card4'],
+};
+
 export default function HeroBlock() {
   const [expandedCard, setExpandedCard] = useState(null);
 
-  const handleServiceClick = (cardId) => {
-    // Если карточка уже раскрыта - закрываем её, иначе раскрываем
-    setExpandedCard(expandedCard === cardId ? null : cardId);
-  };
+  const isSubtitleHidden = (cardId) =>
+    expandedCard && CARD_NEIGHBORS[cardId]?.includes(expandedCard);
+
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -26,9 +32,8 @@ export default function HeroBlock() {
               <span className={styles.headingLine}>can build <span className={styles.highlight}>together</span></span>
             </h2>
             <p className={styles.subtext}>
-              <span className={styles.subtextLine}>We craft digital solutions that drive results —</span>
-              <span className={styles.subtextLine}>tailored to your business, your audience,</span>
-              <span className={styles.subtextLine}>and your goals.</span>
+              <span className={styles.subtextLine}>We craft digital solutions that drive results — tailored  </span>
+              <span className={styles.subtextLine}>to your business, your audience, and your goals.</span>
             </p>
           </div>
 
@@ -42,7 +47,11 @@ export default function HeroBlock() {
           <div className={styles.row}>
             {/* Маленькие карточки */}
             {expandedCard === 'card1' ? (
-              <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card1')}>
+              <div
+                className={styles.cardLargeWithImage}
+                onMouseEnter={() => setExpandedCard('card1')}
+                onMouseLeave={() => setExpandedCard(null)}
+              >
                 <div className={styles.cardContent}>
                   <div className={styles.categories}>
                     <span className={styles.category}>Landing pages</span>
@@ -50,7 +59,7 @@ export default function HeroBlock() {
                     <span className={styles.category}>E-Commerce</span>
                   </div>
                   <div className={styles.titleDescBlock}>
-                    <h3 className={styles.largeCardTitle}>WebSite Development</h3>
+                    <h3 className={styles.largeCardTitle}>Website Development</h3>
                     <p className={styles.largeCardDesc}>
                       Modern, responsive websites<br /> delivered turnkey.
                     </p>
@@ -70,9 +79,10 @@ export default function HeroBlock() {
                 </button>
               </div>
             ) : (
-              <div 
-                className={styles.cardSmall}
-                onClick={() => handleServiceClick('card1')}
+              <div
+                className={`${styles.cardSmall} ${isSubtitleHidden('card1') ? styles.neighborExpanded : ''}`}
+                onMouseEnter={() => setExpandedCard('card1')}
+                onMouseLeave={() => setExpandedCard(null)}
               >
                 <div className={styles.cardLogo}>
                   <div className={styles.logoCircle}>
@@ -82,7 +92,7 @@ export default function HeroBlock() {
                   </div>
                   <div className={styles.titleAndDesc}>
                     <h3 className={styles.cardTitle}>Contextual Advertising</h3>
-                    <p className={styles.cardDesc}>
+                    <p className={`${styles.cardDesc} ${isSubtitleHidden('card1') ? styles.cardDescHidden : ''}`}>
                       Setup and optimization of advertising campaigns.
                     </p>
                   </div>
@@ -92,7 +102,7 @@ export default function HeroBlock() {
                     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '4px' }}>
                       <path d="M0 9.29167V7.20833H12.5L6.77083 1.47917L8.25 0L16.5 8.25L8.25 16.5L6.77083 15.0208L12.5 9.29167H0Z" fill="#01203F"/>
                     </svg>
-                    Google Ads, Yandex.Direct, RSYA, retargeting.
+                    Google Ads, YouTube Ads, Meta Ads, retargeting.
                   </p>
                   <div className={styles.diagonalArrow}>
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -104,7 +114,11 @@ export default function HeroBlock() {
             )}
 
             {expandedCard === 'card2' ? (
-              <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card2')}>
+              <div
+                className={styles.cardLargeWithImage}
+                onMouseEnter={() => setExpandedCard('card2')}
+                onMouseLeave={() => setExpandedCard(null)}
+              >
                 <div className={styles.cardContent}>
                   <div className={styles.categories}>
                     <span className={styles.category}>Social media</span>
@@ -112,7 +126,7 @@ export default function HeroBlock() {
                     <span className={styles.category}>Engagement</span>
                   </div>
                   <div className={styles.titleDescBlock}>
-                    <h3 className={styles.largeCardTitle}>WebSite Development</h3>
+                    <h3 className={styles.largeCardTitle}>Website Development</h3>
                     <p className={styles.largeCardDesc}>
                       Modern, responsive websites <br /> delivered turnkey.
                     </p>
@@ -132,9 +146,10 @@ export default function HeroBlock() {
                 </button>
               </div>
             ) : (
-              <div 
-                className={styles.cardSmall}
-                onClick={() => handleServiceClick('card2')}
+              <div
+                className={`${styles.cardSmall} ${isSubtitleHidden('card2') ? styles.neighborExpanded : ''}`}
+                onMouseEnter={() => setExpandedCard('card2')}
+                onMouseLeave={() => setExpandedCard(null)}
               >
                 <div className={styles.cardLogo}>
                   <div className={styles.logoCircle}>
@@ -143,8 +158,8 @@ export default function HeroBlock() {
                     </svg>
                   </div>
                   <div className={styles.titleAndDesc}>
-                    <h3 className={styles.cardTitle}>SMM and Email </h3>
-                    <p className={styles.cardDesc}>
+                    <h3 className={styles.cardTitle}>Social Media Marketing </h3>
+                    <p className={`${styles.cardDesc} ${isSubtitleHidden('card2') ? styles.cardDescHidden : ''}`}>
                       Helping you communicate <br />
                        directly with your audience.
                     </p>
@@ -176,7 +191,7 @@ export default function HeroBlock() {
                     <span className={styles.category}>E-Commerce</span>
                   </div>
                   <div className={styles.titleDescBlock}>
-                    <h3 className={styles.largeCardTitle}>WebSite Development</h3>
+                    <h3 className={styles.largeCardTitle}>Website Development</h3>
                     <p className={styles.largeCardDesc}>
                       Modern, responsive websites <br /> delivered turnkey.
                     </p>
@@ -199,9 +214,10 @@ export default function HeroBlock() {
                 </button>
               </div>
             ) : (
-              <div 
+              <div
                 className={styles.cardSmall}
-                onClick={() => handleServiceClick('card3')}
+                onMouseEnter={() => setExpandedCard('card3')}
+                onMouseLeave={() => setExpandedCard(null)}
               >
                 <div className={styles.cardLogo}>
                   <div className={styles.logoCircle}>
@@ -266,9 +282,10 @@ export default function HeroBlock() {
                 </button>
               </div>
             ) : (
-              <div 
+              <div
                 className={styles.cardSmall}
-                onClick={() => handleServiceClick('card6')}
+                onMouseEnter={() => setExpandedCard('card6')}
+                onMouseLeave={() => setExpandedCard(null)}
               >
                 <div className={styles.cardLogo}>
                   <div className={styles.logoCircle}>
@@ -301,7 +318,11 @@ export default function HeroBlock() {
 
             {/* Две маленькие карточки справа */}
             {expandedCard === 'card4' ? (
-              <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card4')}>
+              <div
+                className={styles.cardLargeWithImage}
+                onMouseEnter={() => setExpandedCard('card4')}
+                onMouseLeave={() => setExpandedCard(null)}
+              >
                 <div className={styles.cardContent}>
                   <div className={styles.categories}>
                     <span className={styles.category}>Web/mobile apps</span>
@@ -309,7 +330,7 @@ export default function HeroBlock() {
                     <span className={styles.category}>AI assistants</span>
                   </div>
                   <div className={styles.titleDescBlock}>
-                    <h3 className={styles.largeCardTitle}>WebSite Development</h3>
+                    <h3 className={styles.largeCardTitle}>Website Development</h3>
                     <p className={styles.largeCardDesc}>
                       Modern, responsive websites <br /> delivered turnkey.
                     </p>
@@ -329,9 +350,10 @@ export default function HeroBlock() {
                 </button>
               </div>
             ) : (
-              <div 
-                className={styles.cardSmall}
-                onClick={() => handleServiceClick('card4')}
+              <div
+                className={`${styles.cardSmall} ${isSubtitleHidden('card4') ? styles.neighborExpanded : ''}`}
+                onMouseEnter={() => setExpandedCard('card4')}
+                onMouseLeave={() => setExpandedCard(null)}
               >
                 <div className={styles.cardLogo}>
                   <div className={styles.logoCircle}>
@@ -340,8 +362,10 @@ export default function HeroBlock() {
                     </svg>
                   </div>
                   <div className={styles.titleAndDesc}>
-                    <h3 className={styles.cardTitle}>Mobile Apps</h3>
-                    <p className={styles.cardDesc}>
+                    <h3 className={styles.cardTitle}>
+                      Mobile Apps &{isSubtitleHidden('card4') ? <><br />AI bots</> : ' AI bots'}
+                    </h3>
+                    <p className={`${styles.cardDesc} ${isSubtitleHidden('card4') ? styles.cardDescHidden : ''}`}>
                       Development of digital products.
                     </p>
                   </div>
@@ -363,7 +387,11 @@ export default function HeroBlock() {
             )}
 
             {expandedCard === 'card5' ? (
-              <div className={styles.cardLargeWithImage} onClick={() => handleServiceClick('card5')}>
+              <div
+                className={styles.cardLargeWithImage}
+                onMouseEnter={() => setExpandedCard('card5')}
+                onMouseLeave={() => setExpandedCard(null)}
+              >
                 <div className={styles.cardContent}>
                   <div className={styles.categories}>
                     <span className={styles.category}>Logos</span>
@@ -371,9 +399,10 @@ export default function HeroBlock() {
                     <span className={styles.category}>UI/UX design</span>
                   </div>
                   <div className={styles.titleDescBlock}>
-                    <h3 className={styles.largeCardTitle}>WebSite Development</h3>
+                    <h3 className={styles.largeCardTitle}>Webdesign</h3>
                     <p className={styles.largeCardDesc}>
-                      Modern, responsive websites delivered turnkey.
+                      Creating visual style <br />
+                      and brand logic.
                     </p>
                     {/* <p className={styles.largeCardTags}>
                       → Landing pages, corporate sites, redesigns.
@@ -382,7 +411,7 @@ export default function HeroBlock() {
                 </div>
                 <div className={styles.imageWrapper}>
                   <Image
-                    {...getOptimizedImageProps(HesterenkaImage, "WebSite Development", 675, 675, true)}
+                    {...getOptimizedImageProps(HesterenkaImage, "Design and Branding", 675, 675, true)}
                   />
                 </div>
                 <div className={styles.cutCorner}></div>
@@ -391,9 +420,10 @@ export default function HeroBlock() {
                 </button>
               </div>
             ) : (
-              <div 
-                className={styles.cardSmall}
-                onClick={() => handleServiceClick('card5')}
+              <div
+                className={`${styles.cardSmall} ${isSubtitleHidden('card5') ? styles.neighborExpanded : ''}`}
+                onMouseEnter={() => setExpandedCard('card5')}
+                onMouseLeave={() => setExpandedCard(null)}
               >
                 <div className={styles.cardLogo}>
                   <div className={styles.logoCircle}>
@@ -402,9 +432,10 @@ export default function HeroBlock() {
                     </svg>
                   </div>
                   <div className={styles.titleAndDesc}>
-                    <h3 className={styles.cardTitle}>Design and Branding</h3>
-                    <p className={styles.cardDesc}>
-                      Creating visual style and brand logic.
+                    <h3 className={styles.cardTitle}>Webdesign & Branding</h3>
+                    <p className={`${styles.cardDesc} ${isSubtitleHidden('card5') ? styles.cardDescHidden : ''}`}>
+                      Creating visual style <br />
+                      and brand logic.
                     </p>
                   </div>
                 </div>

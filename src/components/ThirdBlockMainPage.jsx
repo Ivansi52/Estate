@@ -59,7 +59,7 @@ export default function SecondSection() {
                 <Image src={logoSecondBigCardIcon} alt="Icon Left Card" width={250} height={250} />
               </div>
               <div className={styles.bottomLeftText}>
-                <h3 className={styles.cardTitle}>Direct communication <br /> without barriers</h3>
+                <h3 className={styles.cardTitle}>Direct communication without barriers</h3>
                 <p className={styles.cardDescription}>
                   Our team speaks fluent Russian, <br /> English, German, and Spanish. <br />  You’ll always be in touch directly with the developers.
                 </p>
@@ -76,7 +76,7 @@ export default function SecondSection() {
                 <Image src={logoFirstBigCardIcon} alt="Icon Right Card" width={250} height={250} />
               </div>
               <div className={styles.bottomRightText}>
-                <h3 className={styles.cardTitle}>Marketing <br /> effectiveness</h3>
+                <h3 className={styles.cardTitle}>Marketing effectiveness</h3>
                 <p className={styles.cardDescription}>
                   We developed 20+ strategies and <br /> generated leads worth over $200,000. <br /> Reduced ineffective ad spending for 37 companies.
                 </p>
@@ -111,7 +111,7 @@ export default function SecondSection() {
                 <div className={styles.centerCardText}>
                     <h3 className={styles.cardTitle}>Experience in countries</h3>
                     <p className={styles.cardDescription}>
-                    We take into account legal, cultural, and marketing specifics of each market. Your brand will be protected from risks and financial losses.
+                    We take into account legal, cultural, and marketing specifics of each market. Your brand will be protected from financial losses.
                     </p>
                 </div>
                 </div>
@@ -129,7 +129,7 @@ export default function SecondSection() {
                 <div className={styles.centerCardText}>
                     <h3 className={styles.cardTitle}>Ready integrations</h3>
                     <p className={styles.cardDescription}>
-                    We connect CRM, payment systems, chatbots, and <br /> other tools to boost conversion rates and save your managers’ time.
+                    We connect CRM, payment systems, <br /> chatbots, and other tools to boost conversion rates and save your managers’ time.
                     </p>
                 </div>
                 </div>
@@ -145,7 +145,7 @@ export default function SecondSection() {
             <div className={styles.bottomRightText}>
               <h3 className={styles.cardTitle}>Partnership and  expertise</h3>
               <p className={styles.cardDescription}>
-                We integrate into your business from day one, <br /> leveraging experience from 100+ successful cases and <br /> deep niche knowledge.
+                We integrate into your business from day one, leveraging experience from 100+ successful cases and deep niche knowledge.
               </p>
             </div>
           </div>

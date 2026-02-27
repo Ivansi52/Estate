@@ -1,8 +1,7 @@
 .wrapper {
-  padding: 100px 20px;
+  padding: 100px 72px;
   display: flex;
   justify-content: center;
-  background-color: #fff;
   font-family: 'Inter', sans-serif;
   overflow: visible;
 }
@@ -52,6 +51,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  margin-top: -10px;
 }
 
 .heading {
@@ -90,7 +90,7 @@
   letter-spacing: -7%;
   color: #7a7a7a;
   margin: 0;
-  margin-top: 8px;
+  margin-top: 24px;
 }
 
 .moreButton {
@@ -107,7 +107,7 @@
   height: 57px;
   width: 191px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 76px;
   box-sizing: border-box;
 }
 
@@ -132,7 +132,7 @@
   gap: 10px;
   justify-content: center;
   position: relative;
-  top: -155px;
+  top: -130px;
   z-index: 2;
   overflow: visible;
 }
@@ -140,7 +140,7 @@
 /* Карточка */
 .card {
   width: 100%;
-  height: 49vh;
+  height: 580px;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
@@ -351,7 +351,7 @@
   height: 100%;
   width: 50%;
   background-color: white;
-  padding: 24px 32px 10px 40px; /* меньше отступы, снизу 10px до края карточки */
+  padding: 10px 24px 10px 24px; /* по высоте картинки (top 10px), отступ от боков 24px */
   box-sizing: border-box;
   color: #222;
   opacity: 0;
@@ -390,8 +390,8 @@
   left: 0;
   right: 50%;
   border-radius: 12px 0 0 12px;
-  padding-left: 64px;  /* зеркало right у .hoverInfo */
-  padding-right: 20px; /* зеркало left у .hoverInfo — отступ от правой картинки */
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 /* Два круга в левом верхнем углу блока инфо */
@@ -468,16 +468,23 @@
   opacity: 1;
 }
 
-/* Список результатов */
+/* Список результатов — по уровню заголовка (Multi-page) */
 .infoResultsList {
   list-style: none;
   padding: 0;
   margin: 0 0 16px 0;
+  padding-left: 0;
+  margin-left: 0;
   color: #222;
   font-size: 17px;
   line-height: 1.5;
   opacity: 0;
   transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.55s;
+}
+
+.infoResultsList li {
+  padding-left: 20px;
+  margin-left: 0;
 }
 
 .card.leftHover .hoverInfo.left .infoResultsList,
@@ -497,7 +504,7 @@
 .seeCaseLink {
   font-size: 18px;
   color: #0344DC;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: underline;
   cursor: pointer;
   align-self: flex-start;
@@ -527,7 +534,8 @@
 .hoverInfo.right .seeCaseLink {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 265px;
+  white-space: nowrap;
 }
 
 .hoverInfo.right .seeCaseArrow {

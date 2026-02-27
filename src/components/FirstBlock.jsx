@@ -5,13 +5,14 @@ import LexusIcon from '@/images/lexusIcon.png';
 import pionerIcon from '@/images/pioner.png';
 import slavDvorIcon from '@/images/slav_dvor.png';
 import RPIcon from '@/images/RiverPark.png';
+import VoyahIcon from '@/images/VOYAH.svg'
 import { getOptimizedImageProps } from '@/utils/imageOptimization';
 import { memo } from 'react';
 
 const LOGOS = [
   { src: LexusIcon, alt: 'Lexus', name: 'Lexus' },
   { src: pionerIcon, alt: 'Pioner', name: 'Pioner' },
-  { src: slavDvorIcon, alt: 'Slav Dvor', name: 'Slav Dvor' },
+  { src: VoyahIcon, alt: 'Voyah ', name: 'VOYAH' },
   { src: RPIcon, alt: 'River Park', name: 'River Park' },
 ];
 /* 4 копии для длинной бесконечной ленты; цикл на -25% = одна копия */
@@ -45,7 +46,7 @@ export default function FirstBlock() {
     <div className={styles.background}>
       <div className={styles.content}>
         <div className={styles.leftSection}>
-          <p className={styles.tagline}>BOUTIQUE DIGITAL MARKETING AGENCY</p>
+          <p className={styles.tagline}>WEB DEVELOPMENT & SEO</p>
           <h1 className={styles.buildingText}><span className={styles.buildingWord}>For B2B</span></h1>
           <h1 className={styles.yourDigitalText}>Leaders</h1>
           <button className={styles.quoteButton}>

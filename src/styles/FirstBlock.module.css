@@ -151,13 +151,32 @@
   margin: 5px 40px 0 0;
 }
 
-/* Карусель логотипов — без маски и тяжёлых эффектов, чтобы не лагало */
+/* Карусель логотипов: маска — плавное затухание у левого и правого краёв */
 .logosContainer {
   position: absolute;
   bottom: 4vh;
   left: 72px;
   right: 72px;
   overflow: hidden;
+  --fade-width: 80px;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black var(--fade-width),
+    black calc(100% - var(--fade-width)),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    black var(--fade-width),
+    black calc(100% - var(--fade-width)),
+    transparent 100%
+  );
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
 }
 
 .logosCarousel {
