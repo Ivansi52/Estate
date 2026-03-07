@@ -4,16 +4,70 @@ import styles from '@/styles/SixthSection.module.css';
 
 import circleImage from '@/images/Intersect.png';
 import icon from '@/images/heart_beat.png';
-import topLeft from '@/images/top_left.png';
-import topRight from '@/images/top_right.png';
-import bottomLeft from '@/images/buttom_left.png';
-import bottomRight from '@/images/buttom_right.png';
-import leftCenter from '@/images/left_center.png';
-import rightCenter from '@/images/right_center.png';
-import bottomLeftFromCenter from '@/images/buttom_left_from_center.png';
-import bottomRightFromCenter from '@/images/buttom_right_from_center.png';
-import topLeftFromCenter from '@/images/top_left_from_center.png';
-import topRightFromCenter from '@/images/top_right_from_center.png';
+
+// Линии к Medicine и Restaurant & Hospitality (верхние)
+const LinesTopMedicineRestaurant = () => (
+  <svg
+    className={styles.linesTopMedicineRestaurant}
+    width={339}
+    height={192}
+    viewBox="0 0 339 192"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M5.33336 2.66699C5.33336 1.19423 4.13945 0.000320435 2.66669 0.000320435C1.19392 0.000320435 1.52588e-05 1.19423 1.52588e-05 2.66699C1.52588e-05 4.13976 1.19392 5.33366 2.66669 5.33366C4.13945 5.33366 5.33336 4.13976 5.33336 2.66699ZM157.667 191.667L160.553 186.667H154.78L157.667 191.667ZM2.66669 2.66699V3.16699L117.667 3.16699V2.66699V2.16699L2.66669 2.16699V2.66699ZM157.667 42.667H157.167L157.167 187.167H157.667H158.167L158.167 42.667H157.667ZM117.667 2.66699V3.16699C139.482 3.16699 157.167 20.8517 157.167 42.667H157.667H158.167C158.167 20.2995 140.034 2.16699 117.667 2.16699V2.66699Z" fill="#0344DC" />
+    <path d="M338.333 2.66699C338.333 1.19423 337.139 0.000320435 335.667 0.000320435C334.194 0.000320435 333 1.19423 333 2.66699C333 4.13976 334.194 5.33366 335.667 5.33366C337.139 5.33366 338.333 4.13976 338.333 2.66699ZM180.667 191.667L183.553 186.667H177.78L180.667 191.667ZM335.667 2.66699V2.16699H220.667V2.66699V3.16699H335.667V2.66699ZM180.667 42.667H180.167L180.167 187.167H180.667H181.167L181.167 42.667H180.667ZM220.667 2.66699V2.16699C198.299 2.16699 180.167 20.2995 180.167 42.667H180.667H181.167C181.167 20.8517 198.851 3.16699 220.667 3.16699V2.66699Z" fill="#0344DC" />
+  </svg>
+);
+
+// Линии к Education и Premium Segment (нижние)
+const LinesBottomEducationPremium = () => (
+  <svg
+    className={styles.linesBottomEducationPremium}
+    width={339}
+    height={192}
+    viewBox="0 0 339 192"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M333 189C333 190.473 334.194 191.667 335.667 191.667C337.139 191.667 338.333 190.473 338.333 189C338.333 187.527 337.139 186.333 335.667 186.333C334.194 186.333 333 187.527 333 189ZM180.667 0L177.78 5H183.553L180.667 0ZM335.667 189V188.5H220.667V189V189.5H335.667V189ZM180.667 149H181.167V4.5H180.667H180.167V149H180.667ZM220.667 189V188.5C198.851 188.5 181.167 170.815 181.167 149H180.667H180.167C180.167 171.368 198.299 189.5 220.667 189.5V189Z" fill="#0344DC" />
+    <path d="M-1.0252e-05 189C-1.0252e-05 190.473 1.1939 191.667 2.66666 191.667C4.13942 191.667 5.33332 190.473 5.33332 189C5.33332 187.527 4.13942 186.333 2.66666 186.333C1.1939 186.333 -1.0252e-05 187.527 -1.0252e-05 189ZM157.667 0L154.78 5H160.553L157.667 0ZM2.66666 189V189.5H117.667V189V188.5H2.66666V189ZM157.667 149H158.167V4.5H157.667H157.167V149H157.667ZM117.667 189V189.5C140.034 189.5 158.167 171.368 158.167 149H157.667H157.167C157.167 170.815 139.482 188.5 117.667 188.5V189Z" fill="#0344DC" />
+  </svg>
+);
+
+// Линии к Construction, Real Estate, Automotive — один path, чтобы не было разрыва между верхней и нижней линиями
+const LinesLeftMiddle = () => (
+  <svg
+    className={styles.linesLeftMiddle}
+    width={210}
+    height={314}
+    viewBox="0 0 210 314"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="#0344DC"
+      d="M46 2.66699C46 4.13975 47.1939 5.33366 48.6667 5.33366C50.1394 5.33366 51.3333 4.13975 51.3333 2.66699C51.3333 1.19423 50.1394 0.000325441 48.6667 0.000325441C47.1939 0.000325441 46 1.19423 46 2.66699ZM209.667 156.667L204.667 153.78V159.554L209.667 156.667ZM48.6667 2.66699V3.16699H89.1667V2.66699V2.16699H48.6667V2.66699ZM129.167 42.667H128.667V116.667H129.167H129.667V42.667H129.167ZM169.167 156.667V157.167H205.167V156.667V156.167H169.167V156.667ZM129.167 116.667H128.667C128.667 139.035 146.799 157.167 169.167 157.167V156.667V156.167C147.351 156.167 129.667 138.482 129.667 116.667H129.167ZM89.1667 2.66699V3.16699C110.982 3.16699 128.667 20.8517 128.667 42.667H129.167H129.667C129.667 20.2995 111.534 2.16699 89.1667 2.16699V2.66699Z M-1.0252e-05 156.667C-1.0252e-05 158.14 1.1939 159.334 2.66666 159.334C4.13942 159.334 5.33332 158.14 5.33332 156.667C5.33332 155.194 4.13942 154 2.66666 154C1.1939 154 -1.0252e-05 155.194 -1.0252e-05 156.667ZM209.667 156.667L204.667 153.78V159.554L209.667 156.667ZM2.66666 156.667V157.167H106.167V156.667V156.167H2.66666V156.667ZM106.167 156.667V157.167H205.167V156.667V156.167H106.167V156.667Z M46 310.667C46 312.14 47.1939 313.334 48.6667 313.334C50.1394 313.334 51.3333 312.14 51.3333 310.667C51.3333 309.194 50.1394 308 48.6667 308C47.1939 308 46 309.194 46 310.667ZM209.667 156.667L204.667 153.78V159.554L209.667 156.667ZM48.6667 310.667V311.167H89.1667V310.667V310.167H48.6667V310.667ZM129.167 270.667H129.667V196.667H129.167H128.667V270.667H129.167ZM169.167 156.667V157.167H205.167V156.667V156.167H169.167V156.667ZM129.167 196.667H129.667C129.667 174.852 147.351 157.167 169.167 157.167V156.667V156.167C146.799 156.167 128.667 174.299 128.667 196.667H129.167ZM89.1667 310.667V311.167C111.534 311.167 129.667 293.035 129.667 270.667H129.167H128.667C128.667 292.482 110.982 310.167 89.1667 310.167V310.667Z"
+    />
+  </svg>
+);
+
+// Линии к Manufacturing, Tourism, Beauty (справа) — один path, чтобы не было разрыва
+const LinesRightMiddle = () => (
+  <svg
+    className={styles.linesRightMiddle}
+    width={210}
+    height={314}
+    viewBox="0 0 210 314"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="#0344DC"
+      d="M158.333 2.66699C158.333 4.13975 159.527 5.33366 161 5.33366C162.473 5.33366 163.667 4.13975 163.667 2.66699C163.667 1.19423 162.473 0.000325441 161 0.000325441C159.527 0.000325441 158.333 1.19423 158.333 2.66699ZM0 156.667L5 159.554V153.78L0 156.667ZM161 2.66699V2.16699H120.5V2.66699V3.16699H161V2.66699ZM80.5 42.667H80V116.667H80.5H81V42.667H80.5ZM40.5 156.667V156.167H4.5V156.667V157.167H40.5V156.667ZM80.5 116.667H80C80 138.482 62.3152 156.167 40.5 156.167V156.667V157.167C62.8675 157.167 81 139.035 81 116.667H80.5ZM120.5 2.66699V2.16699C98.1325 2.16699 80 20.2995 80 42.667H80.5H81C81 20.8517 98.6848 3.16699 120.5 3.16699V2.66699Z M204.333 156.667C204.333 158.14 205.527 159.334 207 159.334C208.473 159.334 209.667 158.14 209.667 156.667C209.667 155.194 208.473 154 207 154C205.527 154 204.333 155.194 204.333 156.667ZM0 156.667L5 159.554V153.78L0 156.667ZM207 156.667V156.167H103.5V156.667V157.167H207V156.667ZM103.5 156.667V156.167H4.5V156.667V157.167H103.5V156.667Z M158.333 310.667C158.333 312.14 159.527 313.334 161 313.334C162.473 313.334 163.667 312.14 163.667 310.667C163.667 309.194 162.473 308 161 308C159.527 308 158.333 309.194 158.333 310.667ZM0 156.667L5 159.554V153.78L0 156.667ZM161 310.667V310.167H120.5V310.667V311.167H161V310.667ZM80.5 270.667H81V196.667H80.5H80V270.667H80.5ZM40.5 156.667V156.167H4.5V156.667V157.167H40.5V156.667ZM80.5 196.667H81C81 174.299 62.8675 156.167 40.5 156.167V156.667V157.167C62.3152 157.167 80 174.852 80 196.667H80.5ZM120.5 310.667V310.167C98.6848 310.167 81 292.482 81 270.667H80.5H80C80 293.035 98.1325 311.167 120.5 311.167V310.667Z"
+    />
+  </svg>
+);
 
 // SVG Icons
 const IconMedicine = () => (
@@ -134,23 +188,15 @@ export default function SixthSection() {
 
         {/* Grid with circle and fields */}
         <div className={styles.grid}>
-          {/* ВЕРХНИЕ PNG полоски */}
-          <Image src={topLeft} alt="top lines" className={styles.linesTopLeft} width={155} height={189} />
-          <Image src={topRight} alt="top lines" className={styles.linesTopRight} width={155} height={189} />
+          {/* Линии к Medicine и Restaurant & Hospitality */}
+          <LinesTopMedicineRestaurant />
 
-          {/* НИЖНИЕ PNG полоски */}
-          <Image src={bottomLeft} alt="bottom lines" className={styles.linesBottomLeft} width={155} height={189} />
-          <Image src={bottomRight} alt="bottom lines" className={styles.linesBottomRight} width={155} height={189} />
+          {/* Линии к Education и Premium Segment */}
+          <LinesBottomEducationPremium />
 
           {/* ЦЕНТРАЛЬНЫЕ PNG полоски */}
-          <Image src={leftCenter} alt="center left lines" className={styles.linesCenterLeft} width={160} height={0} />
-          <Image src={rightCenter} alt="center right lines" className={styles.linesCenterRight} width={160} height={0} />
-
-          {/* ДОПОЛНИТЕЛЬНЫЕ ПОЛОСКИ ИЗ ЦЕНТРА */}
-          <Image src={bottomLeftFromCenter} alt="bottom left from center" className={styles.linesBottomLeftFromCenter} width={100} height={160} />
-          <Image src={bottomRightFromCenter} alt="bottom right from center" className={styles.linesBottomRightFromCenter} width={100} height={160} />
-          <Image src={topLeftFromCenter} alt="top left from center" className={styles.linesTopLeftFromCenter} width={100} height={160} />
-          <Image src={topRightFromCenter} alt="top right from center" className={styles.linesTopRightFromCenter} width={100} height={160} />
+          <LinesLeftMiddle />
+          <LinesRightMiddle />
 
           <div className={`${styles.column} ${styles.leftColumn}`}>
             {itemsLeft.map((item, index) => {
@@ -171,14 +217,18 @@ export default function SixthSection() {
           </div>
 
           <div className={styles.circle}>
-            <Image src={circleImage} alt="circle" width={235} height={235} />
+            <Image src={circleImage} alt="circle" width={180} height={180} />
           </div>
 
           <div className={`${styles.column} ${styles.rightColumn}`}>
             {itemsRight.map((item, index) => {
               const IconComponent = getIcon(item);
+              const textCentered = item === 'Restaurant & Hospitality' || item === 'Manufacturing & Industry';
               return (
-                <div key={index} className={styles.item}>
+                <div
+                  key={index}
+                  className={`${styles.item} ${textCentered ? styles.itemTextCentered : ''}`}
+                >
                   {IconComponent ? (
                     <div className={styles.iconWrapper}>
                       <IconComponent />

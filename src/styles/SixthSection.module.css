@@ -1,5 +1,4 @@
 .wrapper {
-  background-color: #fff;
   font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: center;
@@ -13,7 +12,8 @@
   display: flex;
   flex-direction: column;
   /* gap: 80px; */
-  padding: 0 20px;
+  padding-left: 20px;
+  padding-right: 72px;
   box-sizing: border-box;
 }
 
@@ -136,6 +136,20 @@
   z-index: 1;
 }
 
+/* Только текст по центру блока, иконка остаётся слева */
+.itemTextCentered span {
+  position: static;
+  left: auto;
+  top: auto;
+  transform: none;
+  width: auto;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .iconWrapper {
   display: flex;
   align-items: center;
@@ -193,51 +207,41 @@
 }
 
 .circle {
-  width: 235px;
-  height: 235px;
+  width: 180px;
+  height: 180px;
   flex-shrink: 0;
   position: relative;
   margin: 0 40px;
   z-index: 2;
 }
 
-.linesTopLeft {
+/* Линии к Medicine и Restaurant & Hospitality (SVG) */
+.linesTopMedicineRestaurant {
   position: absolute;
   top: 20%;
-  left: 610px;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
-  opacity: 0.5;
   pointer-events: none;
 }
 
-.linesTopRight {
-  position: absolute;
-  top: 20%;
-  right: 610px;
-  transform: translateY(-50%);
-  z-index: 1;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.linesBottomLeft {
+/* Линии к Education и Premium Segment (SVG) */
+.linesBottomEducationPremium {
   position: absolute;
   top: 80%;
-  left: 610px;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
-  opacity: 0.5;
   pointer-events: none;
 }
 
-.linesBottomRight {
+/* Линии к Construction, Real Estate, Automotive (SVG) */
+.linesLeftMiddle {
   position: absolute;
-  top: 80%;
-  right: 610px;
-  transform: translateY(-50%);
+  top: 50%;
+  left: 610px;
+  transform: translateY(-50%) translateX(-110px);
   z-index: 1;
-  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -251,6 +255,14 @@
   pointer-events: none;
 }
 
+.linesRightMiddle {
+  position: absolute;
+  top: 50%;
+  right: 610px;
+  transform: translateY(-50%) translateX(110px);
+  z-index: 1;
+  pointer-events: none;
+}
 .linesCenterRight {
   position: absolute;
   top: 50%;
@@ -345,16 +357,14 @@
   }
   
   /* Адаптивность для всех полосок */
-  .linesTopLeft,
-  .linesBottomLeft,
+  .linesLeftMiddle,
   .linesCenterLeft,
   .linesBottomLeftFromCenter,
   .linesTopLeftFromCenter {
     left: 590px;
   }
   
-  .linesTopRight,
-  .linesBottomRight,
+  .linesRightMiddle,
   .linesCenterRight,
   .linesBottomRightFromCenter,
   .linesTopRightFromCenter {
@@ -445,13 +455,13 @@
     object-fit: contain;
   }
   
-  .linesTopLeft,
-  .linesBottomLeft,
+  .linesTopMedicineRestaurant,
+  .linesBottomEducationPremium,
+  .linesLeftMiddle,
   .linesCenterLeft,
   .linesBottomLeftFromCenter,
   .linesTopLeftFromCenter,
-  .linesTopRight,
-  .linesBottomRight,
+  .linesRightMiddle,
   .linesCenterRight,
   .linesBottomRightFromCenter,
   .linesTopRightFromCenter {

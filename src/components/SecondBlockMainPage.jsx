@@ -48,7 +48,7 @@ export default function HeroBlock() {
             {/* Маленькие карточки */}
             {expandedCard === 'card1' ? (
               <div
-                className={styles.cardLargeWithImage}
+                className={`${styles.cardLargeWithImage} ${styles.cardExpanded}`}
                 onMouseEnter={() => setExpandedCard('card1')}
                 onMouseLeave={() => setExpandedCard(null)}
               >
@@ -115,7 +115,7 @@ export default function HeroBlock() {
 
             {expandedCard === 'card2' ? (
               <div
-                className={styles.cardLargeWithImage}
+                className={`${styles.cardLargeWithImage} ${styles.cardExpanded}`}
                 onMouseEnter={() => setExpandedCard('card2')}
                 onMouseLeave={() => setExpandedCard(null)}
               >
@@ -319,7 +319,7 @@ export default function HeroBlock() {
             {/* Две маленькие карточки справа */}
             {expandedCard === 'card4' ? (
               <div
-                className={styles.cardLargeWithImage}
+                className={`${styles.cardLargeWithImage} ${styles.cardExpanded}`}
                 onMouseEnter={() => setExpandedCard('card4')}
                 onMouseLeave={() => setExpandedCard(null)}
               >
@@ -388,7 +388,7 @@ export default function HeroBlock() {
 
             {expandedCard === 'card5' ? (
               <div
-                className={styles.cardLargeWithImage}
+                className={`${styles.cardLargeWithImage} ${styles.cardExpanded}`}
                 onMouseEnter={() => setExpandedCard('card5')}
                 onMouseLeave={() => setExpandedCard(null)}
               >
@@ -432,7 +432,7 @@ export default function HeroBlock() {
                     </svg>
                   </div>
                   <div className={styles.titleAndDesc}>
-                    <h3 className={styles.cardTitle}>Webdesign & Branding</h3>
+                    <h3 className={styles.cardTitle}>Web design & Branding</h3>
                     <p className={`${styles.cardDesc} ${isSubtitleHidden('card5') ? styles.cardDescHidden : ''}`}>
                       Creating visual style <br />
                       and brand logic.

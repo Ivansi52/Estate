@@ -1,7 +1,7 @@
 .faqContainer {
   max-width: 2000px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 72px;
 }
 
 .mainContent {
@@ -92,7 +92,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: background 0.35s ease, border-radius 0.35s ease;
   box-sizing: border-box;
 }
 
@@ -125,7 +125,7 @@
 }
 
 .arrow {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,7 +134,7 @@
 .accordionContent {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
   background: white;
   border-left: 1px solid rgba(0, 0, 0, 0.3);
   border-right: 1px solid rgba(0, 0, 0, 0.3);
@@ -148,7 +148,7 @@
 }
 
 .accordionContent p {
-  padding: 0 20px 20px;
+  padding: 24px 20px 20px;
   margin: 0;
   color: #666;
   line-height: 1.5;
@@ -163,7 +163,7 @@
   background-color: #0344DC;
   color: white;
   padding: 20px;
-  height: 312px;
+  height: 344px;
   width: 612px;
   border-radius: 12px;
   display: flex;
@@ -184,19 +184,20 @@
 }
 
 .cardDescription {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  max-width: 374px;
+  max-width: 450px;
   line-height: 1.5;
   margin-bottom: 20px;
   color: #B9B9C3;
+  opacity: 0.7;
 }
 
 .requestButton {
   background: white;
-  color: #0344DC;
+  color: #01203F;
   border: none;
-  padding: 20px 30px;
+  padding: 20px 20px 20px 30px;
   font-size: 24px;
   font-weight: 500;
   border-radius: 8px;
@@ -219,13 +220,14 @@
 .arrowCircle {
   background: #0344DC;
   color: white;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  margin-left: auto;
 }
 
 .requestButton:hover .arrowCircle {

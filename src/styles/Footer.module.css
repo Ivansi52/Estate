@@ -1,6 +1,6 @@
 .footer {
   background-color: #0344DC;
-  padding: 40px 20px 20px;
+  padding: 40px 20px 6px;
   color: white;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -17,13 +17,14 @@
   align-items: center;
   justify-content: center;
   margin-top: -15px;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
 .phoneSectionContent {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: 300px;
 }
 
 .phoneSectionRow {
@@ -106,7 +107,7 @@
   max-width: 600px;
   position: relative;
   min-width: 450px;
-  min-height: 320px;
+  min-height: 260px;
 }
 
 .leftTop {
@@ -114,8 +115,8 @@
   gap: 20px;
   align-items: flex-start;
   position: absolute;
-  top: -68px;
-  left: 20px;
+  top: -93px;
+  left: 15px;
   z-index: 10;
   min-width: 450px;
 }
@@ -146,10 +147,22 @@
   font-size: 26px;
   line-height: 100%;
   letter-spacing: -0.02em;
-  margin-bottom: 0;
+  margin: -2px 0 0;
   white-space: normal;
   min-width: 320px;
   width: auto;
+}
+
+.headingSubtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -0.07em;
+  margin: 10px 0 0;
+  color: white;
+  opacity: 50%;
 }
 
 .details {
@@ -164,7 +177,7 @@
   color: white;
   text-decoration: underline;
   cursor: pointer;
-  margin-top: 60px;
+  margin-top: 15px;
 }
 
 .leftBottom {
@@ -178,7 +191,7 @@
   position: absolute;
   left: 20px;
   bottom: 20px;
-  margin: 0;
+  margin: 0 0 10px 10px;
   z-index: 5;
 }
 
@@ -210,11 +223,16 @@
   line-height: 1.4;
 }
 
-.inputRow {
+.newsletterRow {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 10px 0;
+  margin: -10px 0;
+}
+
+.emailRow {
+  flex: 0 0 auto  ;
+  
 }
 
 .emailInput {
@@ -226,6 +244,16 @@
   color: #0344DC;
   padding: 9px 4px;
   width: 326px;
+}
+
+.emailInput::placeholder {
+  color: #0344DC;
+  opacity: 0.5;
+}
+
+.sendButtonWrapper {
+  flex: 0 0 auto;
+  margin-top: 32px;
 }
 
 .sendButton {
@@ -281,14 +309,15 @@
 /* МЕНЮ И ЯЗЫК */
 .menuLangWrapper {
   display: flex;
-  margin-top: -250px;
+  margin-top: -190px;
   gap: 70px;
   position: relative;
   justify-content: flex-end;
   align-items: flex-start;
-  margin-left: 1180px;
+  margin-left: 1130px;
   width: 100%;
   max-width: 600px;
+  transform: translateY(18px);
 }
 
 .menuColumns {
@@ -322,7 +351,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-top: 20px;
+  margin-top: 24px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -462,8 +491,8 @@
 /* ПРАВАЯ КОЛОНКА */
 .right {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 25px;
+  right: 36px;
   align-items: flex-end;
   text-align: right;
   max-width: 250px;
@@ -501,8 +530,10 @@
   color: white;
   text-align: right;
   margin-left: auto;
-  margin-top: 20px;
+  margin-top: 8px;
   opacity: 0.7;
+  margin-bottom: 24px;
+  margin-right: 24px;
 }
 
 /* Адаптивность */
@@ -608,11 +639,6 @@
   
   .newsletterBox {
     padding: 15px;
-  }
-  
-  .inputRow {
-    flex-direction: column;
-    gap: 10px;
   }
   
   .emailInput {

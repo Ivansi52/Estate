@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styles from '@/styles/FAQ.module.css';
 
-const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+const FAQ = ({ sectionNumber = '05' }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -40,7 +40,7 @@ const FAQ = () => {
       <div className={styles.mainContent}>
         <div className={styles.leftColumn}>
           <div className={styles.headerWrapper}>
-            <div className={styles.number}>05</div>
+            <div className={styles.number}>{sectionNumber}</div>
             <div className={styles.headerContent}>
               <h2 className={styles.title}>
                 Frequently asked{' '}

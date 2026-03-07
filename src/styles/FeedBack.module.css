@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 20px 72px;
 }
 
 .imageWrapper {
@@ -22,8 +22,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 895px; /* слегка растянули вправо */
-  height: 230px;
+  width: 876px;
+  height: 222px;
   border: 1px solid rgba(0, 0, 0, 0.3); /* контур с прозрачностью 30% */
   box-sizing: border-box;
   border-radius: 30px;
@@ -50,11 +50,11 @@
 
 .subtitle {
   display: block;
-  margin-left: 15px; /* суммарный визуальный отступ от левого края контейнера */
+  margin-left: 15px;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 96px;
+  font-size: 72px;
   line-height: 100%;
   letter-spacing: -0.01em;
   leading-trim: cap-height;
@@ -131,7 +131,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 438px;
+  width: 426px;
   height: 80px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
@@ -180,6 +180,161 @@
   gap: 5px;
 }
 
+/* Телефон: код страны с флагом + поле номера */
+.phoneRow {
+  display: flex;
+  gap: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.countrySelectWrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: 67px;
+  flex-shrink: 0;
+}
+
+.countryTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 72px;
+  height: 100%;
+  padding: 0 10px 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(33px);
+  -webkit-backdrop-filter: blur(33px);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.countryTrigger:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.countryTrigger:focus-visible {
+  border-color: #fff;
+}
+
+.countryTriggerFlag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 21px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.countryFlagImg {
+  width: 28px;
+  height: 21px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+.countryTriggerArrow {
+  flex-shrink: 0;
+  opacity: 0.9;
+  transition: transform 0.2s;
+}
+
+.countrySelectWrapper[data-open="true"] .countryTriggerArrow {
+  transform: rotate(180deg);
+}
+
+.countryDropdownList {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 10;
+  min-width: 180px;
+  max-height: 280px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.countryDropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  color: #1a1a1a;
+  font-size: 16px;
+  transition: background 0.15s;
+}
+
+.countryDropdownItem:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.countryDropdownItem[aria-selected="true"] {
+  background: rgba(3, 68, 220, 0.12);
+}
+
+.countryDropdownFlag {
+  width: 28px;
+  height: 21px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.countryDropdownCode {
+  font-variant-numeric: tabular-nums;
+}
+
+.phoneInput {
+  flex: 1;
+  min-width: 0;
+  height: 67px;
+  border-radius: 5px;
+  padding: 0 20px;
+  font-size: 18px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(33px);
+  -webkit-backdrop-filter: blur(33px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.phoneInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.phoneInput:focus {
+  border-color: #fff;
+  border-left: none;
+}
+
+.countrySelectWrapper:focus-within {
+  border-color: #fff;
+}
+
+.phoneRow .countrySelectWrapper {
+  border-radius: 5px 0 0 5px;
+}
+
 /* 📝 Поля ввода (353x67 вместо 72) */
 .inputField,
 .selectField {
@@ -195,7 +350,8 @@
 
 .inputField:focus,
 .selectField:focus,
-.textArea:focus {
+.textArea:focus,
+.phoneInput:focus {
   border-color: #0344DC;
 }
 
@@ -204,6 +360,7 @@
   appearance: none;
   background-image: none;
   cursor: pointer;
+  font-weight: 400;
 }
 
 .selectWrapper {
@@ -224,6 +381,7 @@
   color: #000000;
   padding: 10px;
   border: none;
+  font-weight: 400;
 }
 
 /* 🧾 Большое текстовое поле (711x143 вместо 148) */
@@ -244,11 +402,26 @@
   display: inline-block;
 }
 
-.descriptionIcon {
+.descriptionIconBlock {
   position: absolute;
   right: 20px;
   top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.descriptionIcon {
   cursor: pointer;
+}
+
+.descriptionFileHint {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  user-select: none;
 }
 
 .fileInput {
@@ -398,6 +571,10 @@
   box-sizing: border-box;
 }
 
+.selectField {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 /* Высоты и ширины */
 .inputField,
 .selectField {
@@ -422,7 +599,8 @@
 /* Focus — белая граница */
 .inputField:focus,
 .selectField:focus,
-.textArea:focus {
+.textArea:focus,
+.phoneInput:focus {
   border: 1px solid #fff;
 }
 
@@ -461,16 +639,16 @@
 /* Адаптивность */
 @media (max-width: 1200px) {
   .overlayBox {
-    width: 700px;
+    width: 520px;
     height: 180px;
   }
   
   .title {
-    font-size: 60px;
+    font-size: 52px;
   }
   
   .subtitle {
-    font-size: 60px;
+    font-size: 52px;
   }
   
   .formBox {
@@ -534,17 +712,27 @@
     margin: 20px 0;
   }
   
-  .inputRow {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .inputField,
-  .selectField {
-    width: 100%;
-    font-size: 14px;
-    padding: 12px;
-  }
+.inputRow {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.phoneRow {
+  width: 100%;
+}
+
+.countrySelectWrapper,
+.phoneInput {
+  height: 56px;
+  font-size: 16px;
+}
+
+.inputField,
+.selectField {
+  width: 100%;
+  font-size: 14px;
+  padding: 12px;
+}
   
   .textArea {
     font-size: 14px;

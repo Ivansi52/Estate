@@ -10,6 +10,7 @@ import ProjectStages from '@/components/ProjectStages';
 import SixthSection from "@/components/SixthSection";
 import TrustedBlock from "@/components/TrustedBlock";
 import FeedBack from "@/components/FeedBack";
+import FAQ from "@/components/services/FAQ";
 import StructuredData from '@/components/SEO/StructuredData';
 
 export default function Home() {
@@ -56,7 +57,11 @@ export default function Home() {
     <ProjectStages/>
     <SixthSection/>
     <TrustedBlock number="07"/>
+    <div style = {{marginBottom: '200px'}}>
+    <FAQ sectionNumber="08" />
+    </div>
     <FeedBack/>
+    
     </>
   );
 }

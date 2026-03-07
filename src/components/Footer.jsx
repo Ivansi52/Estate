@@ -8,7 +8,6 @@ import EsFlag from '@/images/EsFlag.png';
 import RussiaFlag from '@/images/RussiaFlag.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BsArrowRight } from 'react-icons/bs';
 import { useState, useRef, useEffect } from 'react';
 
 export default function Footer() {
@@ -45,7 +44,7 @@ export default function Footer() {
   }
 
   return (
-    <div style={{ padding: '0 20px 20px' }}>
+    <div style={{ padding: '0 72px 20px' }}>
       <footer className={styles.footer}>
         {/* Phone number section - centered at top */}
         <div className={styles.phoneSection}>
@@ -81,11 +80,17 @@ export default function Footer() {
             <h3 className={styles.newsletterSubtitle}>
               No spam — only valuable content to help you grow your digital presence.
             </h3>
-            <div className={styles.inputRow}>
-              <input type="email" placeholder="Email" className={styles.emailInput} />
-              <button className={styles.sendButton}>
-                <BsArrowRight size={24} color="#fff" />
-              </button>
+            <div className={styles.newsletterRow}>
+              <div className={styles.emailRow}>
+                <input type="email" placeholder="Email" className={styles.emailInput} />
+              </div>
+              <div className={styles.sendButtonWrapper}>
+                <button className={styles.sendButton}>
+                  <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.81455 18.9119V15.9752L23.4344 15.9752L15.3586 7.89947L17.4436 5.81445L29.0727 17.4436L17.4436 29.0726L15.3586 26.9876L23.4344 18.9119H5.81455Z" fill="white"/>
+                  </svg>
+                </button>
+              </div>
             </div>
             <label className={styles.agreeRow}>
               <input type="checkbox" className={styles.checkbox} />
@@ -108,8 +113,8 @@ export default function Footer() {
                   Digital marketing agency,<br />
                   Web development & SEO
                 </h2>
+                <p className={styles.headingSubtitle}>Create sites for businesses for over <br /> 5 years in USA, Europe, LatAm.</p>
 
-                
                 <div className={styles.download}>Download Company Presentation</div>
               </div>
             </div>

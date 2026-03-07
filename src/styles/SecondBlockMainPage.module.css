@@ -450,6 +450,24 @@
 }
 
 
+/* Раскрытая карточка — без бордеров, тени; кнопка и плашка тоже без тени/бордера */
+.cardLargeWithImage.cardExpanded {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none;
+}
+
+.cardLargeWithImage.cardExpanded::after {
+  border: none;
+  box-shadow: none;
+}
+
+.cardLargeWithImage.cardExpanded .cutCornerButton {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
 .cardLargeWithImage {
   position: relative;
   display: flex;
@@ -488,6 +506,8 @@
   color: white;
   border-radius: 12px;
   border: none;
+  outline: none;
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -495,6 +515,12 @@
   cursor: pointer;
   /* transform: rotate(-45deg); */
   font-size: 25px;
+}
+
+.cutCornerButton:hover,
+.cutCornerButton:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 /* Поворачиваем только иконку */

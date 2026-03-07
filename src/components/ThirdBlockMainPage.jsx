@@ -1,12 +1,49 @@
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
+import Script from 'next/script';
 import styles from '@/styles/ThirdBlockMainPage.module.css';
-import SharImage from '@/images/shar.png';
 import logoFirstBigCardIcon from '@/images/icon_mirro_1.png';
 import logoSecondBigCardIcon from '@/images/icon_mirro_2.png';
 import leftCardIcon from '@/images/left_card_icon.png';
 import rightCardIcon from '@/images/right_card_icon.png';
 
+function hideSplineLogo(viewerEl) {
+  if (!viewerEl?.shadowRoot) return;
+  const root = viewerEl.shadowRoot;
+  root.querySelectorAll('a').forEach((a) => {
+    if (a.href?.includes('spline') || /built with|spline/i.test(a.textContent || '')) {
+      a.style.setProperty('display', 'none', 'important');
+    }
+  });
+}
+
 export default function SecondSection() {
+  const splineRef = useRef(null);
+  const centerWrapRef = useRef(null);
+
+  useEffect(() => {
+    const el = splineRef.current;
+    if (!el) return;
+    const run = () => hideSplineLogo(el);
+    el.addEventListener('load-complete', run);
+    run();
+    const t = setInterval(run, 150);
+    const stop = setTimeout(() => clearInterval(t), 3000);
+    return () => {
+      el.removeEventListener('load-complete', run);
+      clearInterval(t);
+      clearTimeout(stop);
+    };
+  }, []);
+
+  useEffect(() => {
+    const wrap = centerWrapRef.current;
+    if (!wrap) return;
+    const onWheel = (e) => e.stopPropagation();
+    wrap.addEventListener('wheel', onWheel, true);
+    return () => wrap.removeEventListener('wheel', onWheel, true);
+  }, []);
+
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -152,12 +189,24 @@ export default function SecondSection() {
         </div>
         </div>
 
-        {/* Вырез поверх карточек */}
+        {/* Вырез поверх карточек (бэк шара — оставляем) */}
         <div className={styles.cutoutFill} aria-hidden="true" />
 
-        {/* Центр круга */}
-        <div className={styles.centerImage}>
-          <Image src={SharImage} alt="Circle" width={178} height={178} />
+        {/* Spline 3D: шар + бэк */}
+        <Script
+          src="https://unpkg.com/@splinetool/viewer@1.12.58/build/spline-viewer.js"
+          strategy="afterInteractive"
+          type="module"
+        />
+        <div ref={centerWrapRef} className={styles.centerImage}>
+          <spline-viewer
+            ref={splineRef}
+            url="https://prod.spline.design/Kw5fOFJcsz8sqnWI/scene.splinecode"
+            background="#d4e8f7"
+            loading="eager"
+            events-target="local"
+            className={styles.splineViewer}
+          />
         </div>
 
       </div>

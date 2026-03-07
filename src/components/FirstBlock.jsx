@@ -47,8 +47,8 @@ export default function FirstBlock() {
       <div className={styles.content}>
         <div className={styles.leftSection}>
           <p className={styles.tagline}>WEB DEVELOPMENT & SEO</p>
-          <h1 className={styles.buildingText}><span className={styles.buildingWord}>For B2B</span></h1>
-          <h1 className={styles.yourDigitalText}>Leaders</h1>
+          <h1 className={styles.buildingText}><span className={styles.buildingWord}>DIGITAL</span>
+          <span className={styles.yourDigitalText}>MARKETING</span></h1>
           <button className={styles.quoteButton}>
             BOOK A STRATEGY CALL
             <span className={styles.arrowCircle}>
@@ -70,8 +70,8 @@ export default function FirstBlock() {
             sales, strengthen trust, and scale<br />
             with your marketing
           </p>
-          <h1 className={styles.successText}>That Value</h1>
-          <h1 className={styles.togetherText}>Results</h1>
+          <h1 className={styles.successText}>AGENCY</h1>
+          <h1 className={styles.togetherText}>IN USA</h1>
         </div>
       </div>
       <LogosCarousel />
