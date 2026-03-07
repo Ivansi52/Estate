@@ -60,7 +60,7 @@
 .navFixed {
   position: fixed;
   top: 20px;
-  left: 396px;
+  left: 455px;
   z-index: 100001;
   display: flex;
   justify-content: flex-start;
@@ -225,7 +225,7 @@
   padding: 6px 12px;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
-  color: #333;
+  color: black;
   font-weight: 500;
   font-size: 14px;
   border-radius: 4px;

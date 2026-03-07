@@ -212,7 +212,7 @@ export default function Footer() {
         <div className={styles.footerBottomText}>
           Website development and promotion.<br />
           PPC advertising, SMM, brand reputation management.<br />
-          © 2Clients, 2025. All rights reserved. Copying is prohibited.
+          © 2Clients, 2026. All rights reserved. Copying is prohibited.
         </div>
       </footer>
     </div>
