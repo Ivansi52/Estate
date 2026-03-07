@@ -163,9 +163,9 @@
 .controls {
   position: absolute;
   bottom: 0;
-  right: -45px;
-  width: 270px;
-  height: 110px;
+  right: -15px;
+  width: 240px;
+  height: 120px;
   display: flex;
   gap: 30px;
   z-index: 3;

@@ -604,7 +604,7 @@
 
 .bottomRow .cutTopRight .centerCardText {
   position: absolute;
-  bottom: 20px;
+  bottom: 24px;
   left: 20px;
   max-width: none;
   padding-left: 0;
@@ -638,7 +638,7 @@
 
 .bottomRow .cutTopLeft .centerCardText {
   position: absolute;
-  bottom: 20px;
+  bottom: 24px;
   right: 20px;
   max-width: none;
   padding-right: 0;
