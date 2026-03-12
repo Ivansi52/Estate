@@ -417,7 +417,7 @@
 }
 
 .descriptionFileHint {
-  font-size: 10px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.6);
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -437,7 +437,39 @@
 }
 
 .fileListItem {
-  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.9;
+}
+
+.fileListItemName {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fileListRemoveBtn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.fileListRemoveBtn:hover {
+  background: rgba(255, 77, 79, 0.8);
+  color: #fff;
 }
 
 /* ✅ Чекбокс и текст */

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import styles from '@/styles/TrustedBlock.module.css';
-import bgImage from '@/images/fon_zigzag.png';
+import bgImage from '@/images/fon_zigzag.svg';
 import cards from '@/data/cards'; // массив карточек
 import Image from 'next/image';
 import { getOptimizedImageProps } from '@/utils/imageOptimization';

@@ -152,7 +152,7 @@
   margin: 0;
   color: #666;
   line-height: 1.5;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .bottomSection {
@@ -213,8 +213,7 @@
 }
 
 .requestButton:hover {
-  background: #f8f8f8;
-  transform: translateY(-2px);
+  transform: translateY(-6px);
 }
 
 .arrowCircle {
@@ -226,12 +225,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
   margin-left: auto;
-}
-
-.requestButton:hover .arrowCircle {
-  transform: translateX(4px);
 }
 
 /* Адаптивность */
